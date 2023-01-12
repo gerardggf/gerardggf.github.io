@@ -1,6 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:gerardggf_cv/pages/certifications.dart';
+import 'package:gerardggf_cv/pages/education.dart';
+import 'package:gerardggf_cv/pages/experience.dart';
+import 'package:gerardggf_cv/pages/info.dart';
+import 'package:gerardggf_cv/pages/projects.dart';
 import 'package:gerardggf_cv/pages/widgets/app_bar_text_button.dart';
 import 'package:gerardggf_cv/pages/widgets/contact_info.dart';
+import 'package:gerardggf_cv/pages/widgets/footer.dart';
 import 'package:gerardggf_cv/routes/routes.dart';
 
 import '../const.dart';
@@ -15,35 +21,62 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   bool _languageDisplayed = false;
 
+  List<String> sections = [
+    'info',
+    'experience',
+    'education',
+    'certifications',
+    'projects',
+  ];
+  String _selectedSection = 'home';
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: const Text("Currículum Vitae"),
+        title: InkWell(
+          child: const Text("Currículum Vitae"),
+          onTap: () {
+            _selectedSection = sections[0];
+            setState(() {});
+          },
+        ),
         elevation: 0,
         backgroundColor: Colors.black87,
-        actions: const [
+        actions: [
           AppBarTextButton(
             iconData: Icons.work,
             label: "Experiencia",
-            route: Routes.experience,
+            onPressed: () {
+              _selectedSection = sections[1];
+              setState(() {});
+            },
           ),
           AppBarTextButton(
             iconData: Icons.book,
             label: "Educación",
-            route: Routes.education,
+            onPressed: () {
+              _selectedSection = sections[2];
+              setState(() {});
+            },
           ),
           AppBarTextButton(
             iconData: Icons.work_history,
             label: "Certificaciones",
-            route: Routes.certifications,
+            onPressed: () {
+              _selectedSection = sections[3];
+              setState(() {});
+            },
           ),
           AppBarTextButton(
             iconData: Icons.computer,
             label: "Proyectos",
-            route: Routes.projects,
+            onPressed: () {
+              _selectedSection = sections[4];
+              setState(() {});
+            },
           ),
-          SizedBox(
+          const SizedBox(
             width: 100,
           ),
         ],
@@ -62,7 +95,7 @@ class _HomePageState extends State<HomePage> {
                   child: Column(
                     children: [
                       Padding(
-                        padding: const EdgeInsets.all(8),
+                        padding: const EdgeInsets.all(10),
                         child: ClipRRect(
                           borderRadius: BorderRadius.circular(10),
                           child: Image.asset(
@@ -84,7 +117,7 @@ class _HomePageState extends State<HomePage> {
                                   fontWeight: FontWeight.bold, fontSize: 30),
                             ),
                             SizedBox(
-                              height: 15,
+                              height: 20,
                             ),
                             ContactInfo(
                               label: "Correo electrónico",
@@ -107,6 +140,9 @@ class _HomePageState extends State<HomePage> {
                               data: "gerardggf",
                               onPressedUrl: "https://github.com/gerardggf",
                             ),
+                            SizedBox(
+                              height: 40,
+                            )
                           ],
                         ),
                       )
@@ -119,24 +155,23 @@ class _HomePageState extends State<HomePage> {
               ),
               Flexible(
                 flex: 3,
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  children: [
-                    const Text(
-                      "Gerard Gutiérrez Flotats",
-                      style:
-                          TextStyle(fontSize: 60, fontWeight: FontWeight.w900),
-                    ),
-                    const SizedBox(
-                      height: 20,
-                    ),
-                    Text(
-                      "Tengo ${getMiEdad()} años y me dedico al desarrollo de aplicaciones multiplataforma con Flutter.",
-                    ),
-                    const Text(
-                      "Esta página web ha sido desarrollada en su totalidad con Flutter",
-                    ),
-                  ],
+                child: Builder(
+                  builder: (context) {
+                    switch (_selectedSection) {
+                      case 'info':
+                        return const InfoPage();
+                      case 'experience':
+                        return const ExperiencePage();
+                      case 'education':
+                        return const EducationPage();
+                      case 'certifications':
+                        return const CertificationsPage();
+                      case 'projects':
+                        return const ProjectsPage();
+                      default:
+                        return const InfoPage();
+                    }
+                  },
                 ),
               ),
             ],
@@ -150,22 +185,7 @@ class _HomePageState extends State<HomePage> {
           const SizedBox(
             height: kPadding,
           ),
-          Container(
-            decoration: BoxDecoration(
-                borderRadius: BorderRadius.circular(20), color: Colors.black12),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: TextButton(
-                    onPressed: () {},
-                    child: const Text("Descargar CV"),
-                  ),
-                ),
-              ],
-            ),
-          ),
+          const Footer(),
         ],
       ),
       floatingActionButton: Wrap(
@@ -188,13 +208,6 @@ class _HomePageState extends State<HomePage> {
         ],
       ),
     );
-  }
-
-  int getMiEdad() {
-    final DateTime hoy = DateTime.now();
-    final DateTime birthDate = DateTime(1999, 9, 13);
-    final result = hoy.difference(birthDate);
-    return (result.inDays / 365).round();
   }
 }
 
