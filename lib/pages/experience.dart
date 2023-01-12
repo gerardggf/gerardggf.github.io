@@ -5,6 +5,9 @@ class ExperiencePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return Container(
+      padding: const EdgeInsets.all(20),
+      child: const Text("holaaaaaaa que tla estas"),
+    );
   }
 }

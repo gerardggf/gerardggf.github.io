@@ -1,1 +1,1 @@
-const double kPadding = 20.0;
+const double kPadding = 15.0;

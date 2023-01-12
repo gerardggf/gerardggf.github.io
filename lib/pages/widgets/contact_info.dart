@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gerardggf_cv/const.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactInfo extends StatelessWidget {
@@ -15,21 +16,41 @@ class ContactInfo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return GestureDetector(
-      onTap: () async => _launchUrl(Uri.parse(onPressedUrl)),
-      child: Padding(
-        padding: const EdgeInsets.only(bottom: 20),
-        child: Column(
-          children: [
-            Text(
-              label,
-              style: const TextStyle(fontSize: 18),
-            ),
-            FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(data),
-            ),
-          ],
+    return Padding(
+      padding: const EdgeInsets.only(bottom: kPadding + 10),
+      child: InkWell(
+        onTap: () async => _launchUrl(
+          Uri.parse(onPressedUrl),
+        ),
+        focusColor: Colors.red,
+        child: Container(
+          padding: const EdgeInsets.all(kPadding),
+          decoration: BoxDecoration(
+              color: Colors.white, borderRadius: BorderRadius.circular(10)),
+          child: Column(
+            children: [
+              Align(
+                alignment: Alignment.centerLeft,
+                child: Text(
+                  label,
+                  style: const TextStyle(fontSize: 18),
+                ),
+              ),
+              const SizedBox(
+                height: 5,
+              ),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    data,
+                    style: const TextStyle(color: Colors.blue),
+                  ),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

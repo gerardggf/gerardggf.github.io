@@ -5,21 +5,19 @@ class AppBarTextButton extends StatelessWidget {
     super.key,
     required this.iconData,
     required this.label,
-    required this.route,
+    required this.onPressed,
   });
 
   final IconData iconData;
   final String label;
-  final String route;
+  final VoidCallback onPressed;
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10),
       child: TextButton.icon(
-        onPressed: () {
-          Navigator.pushNamed(context, route);
-        },
+        onPressed: onPressed,
         icon: Icon(
           iconData,
           color: Colors.white,
