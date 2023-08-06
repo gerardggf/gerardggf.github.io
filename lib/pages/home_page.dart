@@ -7,7 +7,6 @@ import 'package:gerardggf_cv/pages/projects.dart';
 import 'package:gerardggf_cv/pages/widgets/app_bar_text_button.dart';
 import 'package:gerardggf_cv/pages/widgets/contact_info.dart';
 import 'package:gerardggf_cv/pages/widgets/footer.dart';
-import 'package:gerardggf_cv/routes/routes.dart';
 
 import '../const.dart';
 
