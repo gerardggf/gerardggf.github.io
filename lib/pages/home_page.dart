@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gerardggf_cv/pages/certifications.dart';
-import 'package:gerardggf_cv/pages/education.dart';
-import 'package:gerardggf_cv/pages/experience.dart';
-import 'package:gerardggf_cv/pages/info.dart';
-import 'package:gerardggf_cv/pages/projects.dart';
+import 'package:gerardggf_cv/pages/certifications_view.dart';
+import 'package:gerardggf_cv/pages/education_view.dart';
+import 'package:gerardggf_cv/pages/experience_view.dart';
+import 'package:gerardggf_cv/pages/info_view.dart';
+import 'package:gerardggf_cv/pages/projects_view.dart';
 import 'package:gerardggf_cv/pages/widgets/app_bar_text_button.dart';
 import 'package:gerardggf_cv/pages/widgets/contact_info.dart';
 import 'package:gerardggf_cv/pages/widgets/footer.dart';
@@ -158,17 +158,17 @@ class _HomePageState extends State<HomePage> {
                   builder: (context) {
                     switch (_selectedSection) {
                       case 'info':
-                        return const InfoPage();
+                        return const InfoView();
                       case 'experience':
-                        return const ExperiencePage();
+                        return const ExperienceView();
                       case 'education':
-                        return const EducationPage();
+                        return const EducationView();
                       case 'certifications':
-                        return const CertificationsPage();
+                        return const CertificationsView();
                       case 'projects':
-                        return const ProjectsPage();
+                        return const ProjectsView();
                       default:
-                        return const InfoPage();
+                        return const InfoView();
                     }
                   },
                 ),

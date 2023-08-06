@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:gerardggf_cv/pages/certifications.dart';
-import 'package:gerardggf_cv/pages/education.dart';
-import 'package:gerardggf_cv/pages/experience.dart';
+import 'package:gerardggf_cv/pages/certifications_view.dart';
+import 'package:gerardggf_cv/pages/education_view.dart';
+import 'package:gerardggf_cv/pages/experience_view.dart';
 import 'package:gerardggf_cv/pages/home_page.dart';
-import 'package:gerardggf_cv/pages/projects.dart';
+import 'package:gerardggf_cv/pages/projects_view.dart';
 
 import 'routes.dart';
 
@@ -18,9 +18,9 @@ Map<String, Widget Function(BuildContext)> get appRoutes {
     //   return LlocScreen(idLloc: idLloc);
     // },
     Routes.home: (_) => const HomePage(),
-    Routes.experience: (_) => const ExperiencePage(),
-    Routes.education: (_) => const EducationPage(),
-    Routes.certifications: (_) => const CertificationsPage(),
-    Routes.projects: (_) => const ProjectsPage(),
+    Routes.experience: (_) => const ExperienceView(),
+    Routes.education: (_) => const EducationView(),
+    Routes.certifications: (_) => const CertificationsView(),
+    Routes.projects: (_) => const ProjectsView(),
   };
 }

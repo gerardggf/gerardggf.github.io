@@ -14,9 +14,6 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Gerard Gutiérrez Flotats',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
       initialRoute: Routes.home,
       routes: appRoutes,
     );

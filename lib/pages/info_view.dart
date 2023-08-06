@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class InfoPage extends StatelessWidget {
-  const InfoPage({super.key});
+class InfoView extends StatelessWidget {
+  const InfoView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,9 +26,9 @@ class InfoPage extends StatelessWidget {
   }
 
   int getMiEdad() {
-    final DateTime hoy = DateTime.now();
+    final DateTime now = DateTime.now();
     final DateTime birthDate = DateTime(1999, 9, 13);
-    final result = hoy.difference(birthDate);
+    final result = now.difference(birthDate);
     return (result.inDays / 365).round();
   }
 }
