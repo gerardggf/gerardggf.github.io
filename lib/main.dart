@@ -1,9 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:gerardggf_cv/routes/app_routes.dart';
-import 'package:gerardggf_cv/routes/routes.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gerardggf_cv/presentation/routes/app_routes.dart';
+import 'package:gerardggf_cv/presentation/routes/routes.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(
+    const ProviderScope(
+      overrides: [],
+      child: MyApp(),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
