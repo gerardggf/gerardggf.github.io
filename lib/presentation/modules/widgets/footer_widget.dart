@@ -2,6 +2,7 @@
 import 'dart:html';
 
 import 'package:flutter/material.dart';
+import 'package:gerardggf_cv/const.dart';
 
 class FooterWidget extends StatelessWidget {
   const FooterWidget({super.key});
@@ -10,7 +11,9 @@ class FooterWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          borderRadius: BorderRadius.circular(20), color: Colors.black12),
+        borderRadius: BorderRadius.circular(20),
+        color: AppColors.primary,
+      ),
       child: Padding(
         padding: const EdgeInsets.all(10),
         child: Row(

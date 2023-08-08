@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:gerardggf_cv/presentation/const.dart';
+import 'package:gerardggf_cv/const.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class ContactInfoWidget extends StatelessWidget {
@@ -37,10 +37,11 @@ class ContactInfoWidget extends StatelessWidget {
               if (asset != null)
                 Expanded(
                   child: SizedBox(
-                    height: 40,
+                    height: 50,
                     child: asset!,
                   ),
                 ),
+              const SizedBox(width: 10),
               Expanded(
                 flex: 3,
                 child: Column(

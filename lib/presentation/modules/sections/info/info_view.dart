@@ -29,6 +29,7 @@ class InfoView extends StatelessWidget {
     final DateTime now = DateTime.now();
     final DateTime birthDate = DateTime(1999, 9, 13);
     final result = now.difference(birthDate);
-    return (result.inDays / 365).round();
+    print(result.inDays);
+    return (result.inDays / 365).floor();
   }
 }

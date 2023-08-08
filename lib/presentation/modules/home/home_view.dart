@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gerardggf_cv/presentation/modules/home/home_controller.dart';
-import '../../const.dart';
-import '../sections/certifications_view.dart';
-import '../sections/education_view.dart';
-import '../sections/experience_view.dart';
-import '../sections/info_view.dart';
-import '../sections/projects_view.dart';
+import '../../../const.dart';
+import '../sections/certifications/certifications_view.dart';
+import '../sections/education/education_view.dart';
+import '../sections/experience/experience_view.dart';
+import '../sections/info/info_view.dart';
+import '../sections/projects/projects_view.dart';
 import '../widgets/app_bar_widget.dart';
 import '../widgets/footer_widget.dart';
 import '../widgets/languages_dropdown_widget.dart';
@@ -35,23 +35,34 @@ class _HomeViewState extends ConsumerState<HomeView> {
     final notifier = ref.watch(homeControllerProvider.notifier);
     final controller = ref.watch(homeControllerProvider);
     return Scaffold(
-      body: Column(
-        children: [
-          const Expanded(
-            child: AppBarWidget(),
+      body: Container(
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage('img/bg.jpg'),
+            fit: BoxFit.fitHeight,
+            opacity: 0.5,
+            colorFilter: ColorFilter.mode(
+              Colors.white,
+              BlendMode.color,
+            ),
           ),
-          Expanded(
-            flex: 15,
-            child: ListView(
+        ),
+        child: Stack(
+          children: [
+            ListView(
               padding: const EdgeInsets.all(kPadding),
               children: [
+                const SizedBox(
+                  height: kToolbarHeight + 30,
+                ),
                 Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     const Expanded(
                       child: SidebarWidget(),
                     ),
                     const SizedBox(
-                      width: 20,
+                      width: 10,
                     ),
                     Expanded(
                       flex: 3,
@@ -88,8 +99,9 @@ class _HomeViewState extends ConsumerState<HomeView> {
                 const FooterWidget(),
               ],
             ),
-          ),
-        ],
+            const AppBarWidget(),
+          ],
+        ),
       ),
       floatingActionButton: Wrap(
         direction: Axis.vertical,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../const.dart';
+import '../../../const.dart';
 import 'contact_info_widget.dart';
 
 class SidebarWidget extends StatelessWidget {
@@ -11,6 +11,9 @@ class SidebarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      margin: const EdgeInsets.only(
+        top: 10,
+      ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
         color: AppColors.primary,
@@ -47,7 +50,7 @@ class SidebarWidget extends StatelessWidget {
                   data: "gerardgutierrez",
                   url: "https://www.linkedin.com/in/gerardgutierrez/",
                   asset: Image.asset(
-                    'assets/icons/linkedin_icon.png',
+                    'assets/icons/linkedin.png',
                   ),
                 ),
                 ContactInfoWidget(
@@ -55,7 +58,7 @@ class SidebarWidget extends StatelessWidget {
                   data: "gerardggf",
                   url: "https://github.com/gerardggf",
                   asset: Image.asset(
-                    'assets/icons/github_icon.png',
+                    'assets/icons/github.png',
                   ),
                 ),
                 ContactInfoWidget(
