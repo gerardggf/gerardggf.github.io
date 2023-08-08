@@ -39,6 +39,11 @@ dependencies:
   flutter_riverpod: ^2.3.6
   url_launcher: ^6.1.12
   freezed_annotation: ^2.4.1
+  slang: ^3.22.0
+  slang_flutter: ^3.22.0
+  intl: ^0.18.1
+  shared_preferences: ^2.2.0
+  
 
 dev_dependencies:
   flutter_test:

@@ -19,7 +19,7 @@ class InfoView extends StatelessWidget {
           "Tengo ${getMiEdad()} años y me dedico al desarrollo de aplicaciones multiplataforma con Flutter.",
         ),
         const Text(
-          "Esta página web ha sido desarrollada en su totalidad con Flutter",
+          "Esta página web ha sido desarrollada con dicha tecnología",
         ),
       ],
     );

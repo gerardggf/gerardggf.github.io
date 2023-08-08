@@ -7,12 +7,13 @@ class ContactInfoWidget extends StatelessWidget {
     super.key,
     required this.label,
     required this.data,
-    this.assetImage,
+    this.asset,
     this.url,
   });
 
   final String label, data;
-  final String? assetImage, url;
+  final String? url;
+  final Widget? asset;
 
   @override
   Widget build(BuildContext context) {
@@ -33,11 +34,11 @@ class ContactInfoWidget extends StatelessWidget {
           ),
           child: Row(
             children: [
-              if (assetImage != null)
+              if (asset != null)
                 Expanded(
-                  child: Image.asset(
-                    assetImage!,
-                    height: 30,
+                  child: SizedBox(
+                    height: 40,
+                    child: asset!,
                   ),
                 ),
               Expanded(

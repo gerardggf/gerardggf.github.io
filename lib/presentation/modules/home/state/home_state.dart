@@ -6,5 +6,6 @@ part 'home_state.freezed.dart';
 class HomeState with _$HomeState {
   factory HomeState({
     @Default('home') String section,
+    @Default(false) bool languagesDisplayed,
   }) = _HomeState;
 }
