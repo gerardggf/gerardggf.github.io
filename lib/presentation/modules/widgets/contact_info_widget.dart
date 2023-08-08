@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gerardggf_cv/const.dart';
-import 'package:gerardggf_cv/presentation/utils/launch_url.dart';
+import 'package:gerardggf_cv/presentation/utils/url_actions.dart';
 
 class ContactInfoWidget extends StatelessWidget {
   const ContactInfoWidget({
