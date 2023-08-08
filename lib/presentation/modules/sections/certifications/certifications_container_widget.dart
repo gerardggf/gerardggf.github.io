@@ -3,20 +3,31 @@ import 'package:flutter/material.dart';
 import '../../../../const.dart';
 import '../../../utils/format_datetimes.dart';
 
-class CertificationContainerWidget extends StatelessWidget {
+class CertificationContainerWidget extends StatefulWidget {
   const CertificationContainerWidget({
     super.key,
     required this.school,
     required this.certification,
-    required this.assetPath,
-    required this.content,
-    required this.date,
+    this.assetPath,
+    this.date,
+    this.content,
+    this.certificatePath,
     this.technologies,
   });
 
-  final String school, certification, content, assetPath;
-  final DateTime date;
+  final String school, certification;
+  final String? content, certificatePath, assetPath;
+  final DateTime? date;
   final List<String>? technologies;
+
+  @override
+  State<CertificationContainerWidget> createState() =>
+      _CertificationContainerWidgetState();
+}
+
+class _CertificationContainerWidgetState
+    extends State<CertificationContainerWidget> {
+  bool panelIsExpanded = false;
 
   @override
   Widget build(BuildContext context) {
@@ -29,12 +40,13 @@ class CertificationContainerWidget extends StatelessWidget {
       margin: const EdgeInsets.all(10),
       child: Row(
         children: [
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: Image.asset(assetPath),
+          if (widget.assetPath != null)
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Image.asset(widget.assetPath!),
+              ),
             ),
-          ),
           const SizedBox(width: 10),
           Expanded(
             flex: 5,
@@ -42,29 +54,31 @@ class CertificationContainerWidget extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  certification,
+                  widget.certification,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 24,
                   ),
                 ),
                 Text(
-                  school,
+                  widget.school,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
                 Text(
-                  '${getStringFromDatetime(date)}',
+                  widget.date != null
+                      ? getMonthYearFromDatetime(widget.date!)
+                      : 'Actualmente',
                   style: const TextStyle(
                     fontStyle: FontStyle.italic,
-                    color: Colors.grey,
+                    color: Colors.black87,
                   ),
                 ),
-                Text(content),
-                if (technologies != null)
+                if (widget.content != null) Text('· ${widget.content}'),
+                if (widget.technologies != null)
                   Wrap(
-                    children: technologies!
+                    children: widget.technologies!
                         .map(
                           (e) => Padding(
                             padding: const EdgeInsets.all(5).copyWith(
@@ -77,6 +91,31 @@ class CertificationContainerWidget extends StatelessWidget {
                           ),
                         )
                         .toList(),
+                  ),
+                if (widget.certificatePath != null) const SizedBox(height: 20),
+                if (widget.certificatePath != null)
+                  ExpansionPanelList(
+                    expansionCallback: (int index, bool isExpanded) {
+                      panelIsExpanded = isExpanded;
+                      setState(() {});
+                    },
+                    children: [
+                      ExpansionPanel(
+                        headerBuilder: (BuildContext context, bool isExpanded) {
+                          return const ListTile(
+                            title: Text('Certificado'),
+                          );
+                        },
+                        body: Padding(
+                          padding: const EdgeInsets.all(10).copyWith(top: 0),
+                          child: Image.asset(
+                            widget.certificatePath!,
+                            fit: BoxFit.fitWidth,
+                          ),
+                        ),
+                        isExpanded: panelIsExpanded,
+                      ),
+                    ],
                   ),
               ],
             ),

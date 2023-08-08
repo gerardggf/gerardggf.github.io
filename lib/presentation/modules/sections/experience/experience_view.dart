@@ -54,11 +54,17 @@ class ExperienceView extends StatelessWidget {
             content:
                 'Desarrollo de una aplicación híbrida de escalada interactiva mediante luces LED',
             position: 'Flutter developer',
-            technologies: const ['Flutter', 'Dart', 'Bluetooth', 'Firebase'],
+            technologies: const [
+              'Flutter',
+              'Dart',
+              'Bluetooth',
+              'Firebase',
+              'SQLite'
+            ],
             startDate: DateTime(2020),
           ),
           ExperienceContainerWidget(
-            company: 'Appex factory',
+            company: 'Appex Factory',
             content:
                 'Desarrollador de aplicaciones multiplataforma para proyectos de clientes en Flutter',
             position: 'Flutter developer',
@@ -70,7 +76,8 @@ class ExperienceView extends StatelessWidget {
               'Firebase',
               'Stripe',
               'APIs',
-              'Machine Learning'
+              'Machine Learning',
+              'AWS',
             ],
           ),
         ],

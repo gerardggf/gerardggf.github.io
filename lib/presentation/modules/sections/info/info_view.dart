@@ -10,7 +10,10 @@ class InfoView extends StatelessWidget {
       children: [
         const Text(
           "Gerard Gutiérrez Flotats",
-          style: TextStyle(fontSize: 60, fontWeight: FontWeight.w900),
+          style: TextStyle(
+            fontSize: 60,
+            fontWeight: FontWeight.w900,
+          ),
         ),
         const SizedBox(
           height: 20,
@@ -19,7 +22,7 @@ class InfoView extends StatelessWidget {
           "Tengo ${getMiEdad()} años y me dedico al desarrollo de aplicaciones multiplataforma con Flutter.",
         ),
         const Text(
-          "Esta página web ha sido desarrollada con dicha tecnología",
+          "Esta página web ha sido desarrollada desde cero con dicha tecnología",
         ),
       ],
     );
@@ -29,7 +32,6 @@ class InfoView extends StatelessWidget {
     final DateTime now = DateTime.now();
     final DateTime birthDate = DateTime(1999, 9, 13);
     final result = now.difference(birthDate);
-    print(result.inDays);
     return (result.inDays / 365).floor();
   }
 }

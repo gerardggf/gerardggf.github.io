@@ -30,6 +30,7 @@ class EducationView extends ConsumerWidget {
               'HTML',
               'CSS',
               'TypeScript',
+              'SAP'
             ],
             assetPath: 'icons/uab.png',
           ),
@@ -50,6 +51,76 @@ class EducationView extends ConsumerWidget {
                 fontSize: 24,
               ),
             ),
+          ),
+          const SizedBox(height: 20),
+          const Padding(
+            padding: EdgeInsets.all(30),
+            child: Text(
+              'Idiomas',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 32,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          const Row(
+            children: [
+              Expanded(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Column(
+                    children: [
+                      Text(
+                        'Catalán',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text('Certificado: C2 (Bachillerato)'),
+                      Text('Nivel nativo'),
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Column(
+                    children: [
+                      Text(
+                        'Español',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text('Certificado: C2 (Bachillerato)'),
+                      Text('Nivel nativo'),
+                    ],
+                  ),
+                ),
+              ),
+              Expanded(
+                child: FittedBox(
+                  fit: BoxFit.scaleDown,
+                  child: Column(
+                    children: [
+                      Text(
+                        'Inglés',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                        ),
+                      ),
+                      SizedBox(height: 10),
+                      Text('Certificado: B2 (FCE Cambridge)'),
+                      Text('Nivel avanzado'),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
