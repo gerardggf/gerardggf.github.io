@@ -69,7 +69,7 @@ class _CertificationContainerWidgetState
                 Text(
                   widget.date != null
                       ? getMonthYearFromDatetime(widget.date!)
-                      : 'Actualmente',
+                      : 'Cursando',
                   style: const TextStyle(
                     fontStyle: FontStyle.italic,
                     color: Colors.black87,

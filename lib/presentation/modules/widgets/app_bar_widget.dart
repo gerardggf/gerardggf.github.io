@@ -94,35 +94,42 @@ class AppBarWidget extends ConsumerWidget {
           Expanded(
             flex: 5,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                CustomAppBarTextButton(
-                  iconData: Icons.work,
-                  label: "Experiencia",
-                  onPressed: () {
-                    notifier.updateSection(Sections.experience.name);
-                  },
+                Expanded(
+                  child: CustomAppBarTextButton(
+                    iconData: Icons.work,
+                    label: "Experiencia",
+                    onPressed: () {
+                      notifier.updateSection(Sections.experience.name);
+                    },
+                  ),
                 ),
-                CustomAppBarTextButton(
-                  iconData: Icons.book,
-                  label: "Educación",
-                  onPressed: () {
-                    notifier.updateSection(Sections.education.name);
-                  },
+                Expanded(
+                  child: CustomAppBarTextButton(
+                    iconData: Icons.book,
+                    label: "Educación",
+                    onPressed: () {
+                      notifier.updateSection(Sections.education.name);
+                    },
+                  ),
                 ),
-                CustomAppBarTextButton(
-                  iconData: CupertinoIcons.doc,
-                  label: "Certificaciones",
-                  onPressed: () {
-                    notifier.updateSection(Sections.certifications.name);
-                  },
+                Expanded(
+                  child: CustomAppBarTextButton(
+                    iconData: CupertinoIcons.doc,
+                    label: "Certificaciones",
+                    onPressed: () {
+                      notifier.updateSection(Sections.certifications.name);
+                    },
+                  ),
                 ),
-                CustomAppBarTextButton(
-                  iconData: Icons.computer,
-                  label: "Proyectos",
-                  onPressed: () {
-                    notifier.updateSection(Sections.projects.name);
-                  },
+                Expanded(
+                  child: CustomAppBarTextButton(
+                    iconData: Icons.computer,
+                    label: "Proyectos",
+                    onPressed: () {
+                      notifier.updateSection(Sections.projects.name);
+                    },
+                  ),
                 ),
               ],
             ),
@@ -157,6 +164,7 @@ class CustomAppBarTextButton extends StatelessWidget {
         fit: BoxFit.scaleDown,
         child: Text(
           label,
+          overflow: TextOverflow.ellipsis,
           style: const TextStyle(
             fontSize: 20,
             color: Colors.white,

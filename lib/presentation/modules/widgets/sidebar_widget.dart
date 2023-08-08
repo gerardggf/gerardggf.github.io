@@ -48,7 +48,7 @@ class SidebarWidget extends StatelessWidget {
                 ContactInfoWidget(
                   label: "LinkedIn",
                   data: "gerardgutierrez",
-                  url: "https://www.linkedin.com/in/gerardgutierrez/",
+                  url: Urls.linkedIn,
                   asset: Image.asset(
                     'assets/icons/linkedin.png',
                   ),
@@ -56,7 +56,7 @@ class SidebarWidget extends StatelessWidget {
                 ContactInfoWidget(
                   label: "GitHub",
                   data: "gerardggf",
-                  url: "https://github.com/gerardggf",
+                  url: Urls.github,
                   asset: Image.asset(
                     'assets/icons/github.png',
                   ),
@@ -64,7 +64,7 @@ class SidebarWidget extends StatelessWidget {
                 ContactInfoWidget(
                   label: "Correo electrónico",
                   data: "gerard.ggf@gmail.com",
-                  url: sendEmailUrl(),
+                  url: Urls.sendEmailUrl(),
                   asset: const Icon(Icons.mail),
                 ),
                 const ContactInfoWidget(
@@ -78,13 +78,5 @@ class SidebarWidget extends StatelessWidget {
         ],
       ),
     );
-  }
-
-  String sendEmailUrl() {
-    return Uri(
-      scheme: 'mailto',
-      path: 'gerard.ggf@gmail.com',
-      //query: 'subject=Default Subject&body=Default body',
-    ).toString();
   }
 }

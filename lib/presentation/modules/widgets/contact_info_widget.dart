@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gerardggf_cv/const.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:gerardggf_cv/presentation/utils/launch_url.dart';
 
 class ContactInfoWidget extends StatelessWidget {
   const ContactInfoWidget({
@@ -22,7 +22,7 @@ class ContactInfoWidget extends StatelessWidget {
       child: InkWell(
         onTap: url == null
             ? null
-            : () async => _launchUrl(
+            : () async => launchSomeUrl(
                   Uri.parse(url!),
                 ),
         focusColor: Colors.red,
@@ -71,11 +71,5 @@ class ContactInfoWidget extends StatelessWidget {
         ),
       ),
     );
-  }
-
-  Future<void> _launchUrl(url) async {
-    if (!await launchUrl(url)) {
-      throw 'No se pudo abrir la URL: $url';
-    }
   }
 }
