@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../const.dart';
 import '../../../utils/format_datetimes.dart';
 
-class EducationContainerWidget extends StatelessWidget {
+class EducationContainerWidget extends ConsumerWidget {
   const EducationContainerWidget({
     super.key,
     required this.school,
@@ -21,7 +22,7 @@ class EducationContainerWidget extends StatelessWidget {
   final List<String>? technologies;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       decoration: BoxDecoration(
         color: AppColors.primary,
@@ -72,8 +73,10 @@ class EducationContainerWidget extends StatelessWidget {
                               top: 15,
                               bottom: 0,
                             ),
-                            child: Chip(
-                              label: Text(e),
+                            child: InkWell(
+                              child: Chip(
+                                label: Text(e),
+                              ),
                             ),
                           ),
                         )

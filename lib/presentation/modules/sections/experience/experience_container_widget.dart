@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../const.dart';
+import '../../../../domain/enums.dart';
 import '../../../../generated/translations.g.dart';
 import '../../../utils/format_datetimes.dart';
+import '../../home/home_controller.dart';
 
-class ExperienceContainerWidget extends StatelessWidget {
+class ExperienceContainerWidget extends ConsumerWidget {
   const ExperienceContainerWidget(
       {super.key,
       required this.company,
@@ -20,7 +23,7 @@ class ExperienceContainerWidget extends StatelessWidget {
   final List<String>? technologies;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       decoration: BoxDecoration(
         color: AppColors.primary,
@@ -59,8 +62,15 @@ class ExperienceContainerWidget extends StatelessWidget {
                         top: 15,
                         bottom: 0,
                       ),
-                      child: Chip(
-                        label: Text(e),
+                      child: InkWell(
+                        onTap: () {
+                          ref
+                              .read(homeControllerProvider.notifier)
+                              .updateSection(Sections.education.name);
+                        },
+                        child: Chip(
+                          label: Text(e),
+                        ),
                       ),
                     ),
                   )

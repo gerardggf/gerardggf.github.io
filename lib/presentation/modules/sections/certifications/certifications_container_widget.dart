@@ -1,10 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gerardggf_cv/domain/enums.dart';
 import 'package:gerardggf_cv/generated/translations.g.dart';
+import 'package:gerardggf_cv/presentation/modules/home/home_controller.dart';
 
 import '../../../../const.dart';
 import '../../../utils/format_datetimes.dart';
 
-class CertificationContainerWidget extends StatefulWidget {
+class CertificationContainerWidget extends ConsumerStatefulWidget {
   const CertificationContainerWidget({
     super.key,
     required this.school,
@@ -22,12 +25,12 @@ class CertificationContainerWidget extends StatefulWidget {
   final List<String>? technologies;
 
   @override
-  State<CertificationContainerWidget> createState() =>
+  ConsumerState<CertificationContainerWidget> createState() =>
       _CertificationContainerWidgetState();
 }
 
 class _CertificationContainerWidgetState
-    extends State<CertificationContainerWidget> {
+    extends ConsumerState<CertificationContainerWidget> {
   bool panelIsExpanded = false;
 
   @override
@@ -86,8 +89,15 @@ class _CertificationContainerWidgetState
                               top: 15,
                               bottom: 0,
                             ),
-                            child: Chip(
-                              label: Text(e),
+                            child: InkWell(
+                              onTap: () {
+                                ref
+                                    .read(homeControllerProvider.notifier)
+                                    .updateSection(Sections.education.name);
+                              },
+                              child: Chip(
+                                label: Text(e),
+                              ),
                             ),
                           ),
                         )

@@ -62,7 +62,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
                       child: Column(
                         children: [
                           const SidebarWidget(),
-                          InkWell(
+                          GestureDetector(
                             onTap: () async => launchSomeUrl(
                               Uri.parse(Urls.buymeACoffee),
                             ),
