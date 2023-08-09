@@ -12,9 +12,6 @@ import '../widgets/footer_widget.dart';
 import '../widgets/languages_floating_action_widget.dart';
 import '../widgets/sidebar_widget.dart';
 
-//TODO: pendiente traducciones y repo traducciones
-//TODO: pendiente poner bien fechas y algunos textos
-
 class HomeView extends ConsumerStatefulWidget {
   const HomeView({super.key});
 

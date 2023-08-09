@@ -11,7 +11,6 @@ class LanguagesFloatingActionButtonWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final controller = ref.watch(homeControllerProvider);
     final notifier = ref.watch(homeControllerProvider.notifier);
-
     return Wrap(
       direction: Axis.vertical,
       crossAxisAlignment: WrapCrossAlignment.end,
@@ -25,7 +24,7 @@ class LanguagesFloatingActionButtonWidget extends ConsumerWidget {
                 margin: const EdgeInsets.all(10),
                 child: FloatingActionButton.extended(
                   onPressed: () {
-                    LocaleSettings.setLocale(AppLocale.ca);
+                    notifier.updateLocale(AppLocale.ca.name);
                   },
                   label: Text(texts.global.catalan),
                 ),
@@ -34,7 +33,7 @@ class LanguagesFloatingActionButtonWidget extends ConsumerWidget {
                 margin: const EdgeInsets.all(10),
                 child: FloatingActionButton.extended(
                   onPressed: () {
-                    LocaleSettings.setLocale(AppLocale.es);
+                    notifier.updateLocale(AppLocale.es.name);
                   },
                   label: Text(texts.global.spanish),
                 ),
@@ -43,7 +42,7 @@ class LanguagesFloatingActionButtonWidget extends ConsumerWidget {
                 margin: const EdgeInsets.all(10),
                 child: FloatingActionButton.extended(
                   onPressed: () {
-                    LocaleSettings.setLocale(AppLocale.en);
+                    notifier.updateLocale(AppLocale.en.name);
                   },
                   label: Text(texts.global.english),
                 ),

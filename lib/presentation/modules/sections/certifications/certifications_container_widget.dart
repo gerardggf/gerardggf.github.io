@@ -95,28 +95,35 @@ class _CertificationContainerWidgetState
                   ),
                 if (widget.certificatePath != null) const SizedBox(height: 20),
                 if (widget.certificatePath != null)
-                  ExpansionPanelList(
-                    expansionCallback: (int index, bool isExpanded) {
-                      panelIsExpanded = isExpanded;
+                  InkWell(
+                    onTap: () {
+                      panelIsExpanded = !panelIsExpanded;
                       setState(() {});
                     },
-                    children: [
-                      ExpansionPanel(
-                        headerBuilder: (BuildContext context, bool isExpanded) {
-                          return ListTile(
-                            title: Text(texts.global.certificate),
-                          );
-                        },
-                        body: Padding(
-                          padding: const EdgeInsets.all(10).copyWith(top: 0),
-                          child: Image.asset(
-                            widget.certificatePath!,
-                            fit: BoxFit.fitWidth,
+                    child: ExpansionPanelList(
+                      expansionCallback: (int index, bool isExpanded) {
+                        panelIsExpanded = isExpanded;
+                        setState(() {});
+                      },
+                      children: [
+                        ExpansionPanel(
+                          headerBuilder:
+                              (BuildContext context, bool isExpanded) {
+                            return ListTile(
+                              title: Text(texts.global.certificate),
+                            );
+                          },
+                          body: Padding(
+                            padding: const EdgeInsets.all(10).copyWith(top: 0),
+                            child: Image.asset(
+                              widget.certificatePath!,
+                              fit: BoxFit.fitWidth,
+                            ),
                           ),
+                          isExpanded: panelIsExpanded,
                         ),
-                        isExpanded: panelIsExpanded,
-                      ),
-                    ],
+                      ],
+                    ),
                   ),
               ],
             ),

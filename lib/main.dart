@@ -1,6 +1,6 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gerardggf_cv/domain/enums.dart';
 import 'package:gerardggf_cv/generated/translations.g.dart';
 import 'package:gerardggf_cv/presentation/modules/home/home_controller.dart';
 import 'package:gerardggf_cv/presentation/routes/router.dart';
@@ -14,6 +14,9 @@ final sharedPreferencesProvider = Provider<SharedPreferences>(
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   final sharedPreferences = await SharedPreferences.getInstance();
+  LocaleSettings.setLocaleRaw(
+    sharedPreferences.getString(Preferences.locale.name) ?? AppLocale.en.name,
+  );
 
   runApp(
     TranslationProvider(
@@ -27,9 +30,9 @@ void main() async {
   );
 }
 
-final localeStreamController = StreamProvider(
-  (ref) => LocaleSettings.getLocaleStream(),
-);
+// final localeStreamController = StreamProvider(
+//   (ref) => LocaleSettings.getLocaleStream(),
+// );
 
 class MyApp extends ConsumerStatefulWidget {
   const MyApp({super.key});
@@ -42,11 +45,6 @@ class _MyAppState extends ConsumerState<MyApp> with RouterMixin {
   @override
   Widget build(BuildContext context) {
     final homeController = ref.watch(homeControllerProvider);
-    final localeStream = ref.watch(localeStreamController);
-    if (kDebugMode) {
-      print(localeStream.value?.languageCode ?? 'en');
-    }
-    setState(() {});
     return GestureDetector(
       onTap: homeController.languagesDisplayed
           ? () {
@@ -57,9 +55,7 @@ class _MyAppState extends ConsumerState<MyApp> with RouterMixin {
           : null,
       child: MaterialApp.router(
         supportedLocales: AppLocaleUtils.supportedLocales,
-        locale: Locale(
-          localeStream.value?.languageCode ?? 'en',
-        ),
+        locale: Locale(LocaleSettings.currentLocale.name),
         debugShowCheckedModeBanner: false,
         localizationsDelegates: const [
           GlobalMaterialLocalizations.delegate,

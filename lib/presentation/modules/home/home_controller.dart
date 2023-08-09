@@ -1,6 +1,7 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gerardggf_cv/domain/enums.dart';
 import 'package:gerardggf_cv/domain/repositories/preferences_repository.dart';
+import 'package:gerardggf_cv/generated/translations.g.dart';
 
 import 'state/home_state.dart';
 
@@ -30,5 +31,11 @@ class HomeController extends StateNotifier<HomeState> {
 
   void updateLanguagesDisplayed(bool value) {
     state = state.copyWith(languagesDisplayed: value);
+  }
+
+  void updateLocale(String value) {
+    LocaleSettings.setLocaleRaw(value);
+    preferencesRepository.setLocale(value);
+    updateLanguagesDisplayed(false);
   }
 }
