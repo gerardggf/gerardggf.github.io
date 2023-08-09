@@ -9,6 +9,7 @@ class AppColors {
 class Urls {
   static const String linkedIn = "https://www.linkedin.com/in/gerardgutierrez/";
   static const String github = "https://github.com/gerardggf";
+  static const String buymeACoffee = "https://www.buymeacoffee.com/gerardggf";
   static String sendEmailUrl() {
     return Uri(
       scheme: 'mailto',

@@ -49,6 +49,7 @@ class CertificationsView extends StatelessWidget {
             certification: 'Introduction Course to SQL Server',
             assetPath: '/icons/datacamp.png',
             date: DateTime(2019, 10),
+            certificatePath: 'certifications/intro_sql_server.png',
           ),
           CertificationContainerWidget(
             school: 'Datacamp',

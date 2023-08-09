@@ -8,7 +8,7 @@
     "desktopApplication": "Desktop application",
     "personalGithubAccount":"personal Github account",
     "consoleApplication":"Console application",
-    "mboardText": "First desktop application I made. Created in Python with a local SQLite database for creating and editing climbing routes. There has been no continuity",
+    "mboardText": "My first desktop application. Created in Python with a local SQLite database for creating and editing climbing routes. There has been no continuity",
     "llocsText":"One of my first Flutter apps, using Firebase Authentication, Firebase Firestore, and Firebase Storage. There has been no continuity.",
     "cubetsText":"Arcade game with different levels in which you must collect coins and dodge enemies to move on to the next one. There has been no continuity.",
     "cubetisText":"Improvement of the Cubets game, applying a clean architecture and introducing new logic. Under development",

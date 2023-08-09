@@ -9,11 +9,13 @@ class ContactInfoWidget extends StatelessWidget {
     required this.data,
     this.asset,
     this.url,
+    this.color,
   });
 
   final String label, data;
   final String? url;
   final Widget? asset;
+  final Color? color;
 
   @override
   Widget build(BuildContext context) {
@@ -29,7 +31,7 @@ class ContactInfoWidget extends StatelessWidget {
         child: Container(
           padding: const EdgeInsets.all(kPadding),
           decoration: BoxDecoration(
-            color: Colors.white,
+            color: color ?? Colors.white,
             borderRadius: BorderRadius.circular(10),
           ),
           child: Row(

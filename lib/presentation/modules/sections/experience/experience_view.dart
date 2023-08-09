@@ -31,6 +31,7 @@ class ExperienceView extends StatelessWidget {
               'Excel',
               'VBA',
               'T-SQL',
+              'Hardware',
               'Python',
               'GeInforERP'
             ],
@@ -60,6 +61,7 @@ class ExperienceView extends StatelessWidget {
               'Flutter',
               'Dart',
               'Bluetooth',
+              'Hardware',
               'Firebase',
               'SQLite'
             ],
@@ -75,10 +77,11 @@ class ExperienceView extends StatelessWidget {
               'Flutter',
               'Dart',
               'Bluetooth',
+              'Hardware',
               'Firebase',
               'Stripe',
               'APIs',
-              'Machine Learning',
+              'Google ML Kit',
               'AWS',
             ],
           ),

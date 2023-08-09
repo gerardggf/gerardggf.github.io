@@ -8,7 +8,7 @@
     "desktopApplication": "Aplicación de escritorio",
     "personalGithubAccount":"cuenta personal de Github",
     "consoleApplication":"Aplicación de consola",
-    "mboardText":"Primera aplicación de escritorio que hice. Creada en Python con una base de datos local SQLite para la creación y edición de vías de escalada. No se le ha dado continuidad.",
+    "mboardText":"Mi primera aplicación. Creada en Python con una base de datos local SQLite para la creación y edición de vías de escalada. No se le ha dado continuidad.",
     "llocsText":"Una de mis primeras aplicaciones en Flutter, en la cual se utiliza Firebase Authentication, Firebase Firestore y Firebase Storage. No se le ha dado continuidad.",
     "cubetsText":"Juego de arcade con diferentes niveles en el que debes recoger monedas y esquivarlos enemigos para pasar al siguiente. No se le ha dado continuidad.",
     "cubetisText":"Mejora del juego Cubets, aplicando una arquitectura limpia e introduciendo nuevas lógicas. En desarrollo.",
