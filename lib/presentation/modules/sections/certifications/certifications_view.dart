@@ -82,6 +82,7 @@ class CertificationsView extends StatelessWidget {
             certification:
                 'Protege tu Negocio: Ciberseguridad en el Teletrabajo',
             assetPath: '/icons/google_activate.png',
+            certificatePath: 'certifications/ciber_telecommute.png',
             date: DateTime(2021, 5),
           ),
           CertificationContainerWidget(
@@ -89,6 +90,7 @@ class CertificationsView extends StatelessWidget {
             certification: 'Desarrollo de aplicaciones móvil',
             assetPath: '/icons/google_activate.png',
             date: DateTime(2022, 7),
+            certificatePath: 'certifications/mobile_apps_dev.png',
           ),
           CertificationContainerWidget(
             school: 'Sololearn',

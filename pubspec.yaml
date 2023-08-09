@@ -98,6 +98,9 @@ flutter:
     - assets/certifications/intro_relational_sql.png
     - assets/certifications/machine_learning.png
     - assets/certifications/manipulador_alimentos.png
+    - assets/certifications/ciber_telecommute.png
+    - assets/certifications/mobile_apps_dev.png
+
 
     - assets/cv_english.pdf
     - assets/img/bg.jpg
