@@ -1,3 +1,4 @@
+import 'package:gerardggf_cv/generated/translations.g.dart';
 import 'package:intl/intl.dart';
 
 String? getStringFromDatetime(DateTime? date) {
@@ -5,44 +6,45 @@ String? getStringFromDatetime(DateTime? date) {
   return DateFormat('dd/MM/yyyy').format(date);
 }
 
-String getMonthYearFromDatetime(DateTime date) {
+String? getMonthYearFromDatetime(DateTime? date) {
   String? month;
+  if (date == null) return null;
   switch (date.month) {
     case 1:
-      month = 'Enero';
+      month = texts.global.january;
       break;
     case 2:
-      month = 'Frebrero';
+      month = texts.global.february;
       break;
     case 3:
-      month = 'Marzo';
+      month = texts.global.march;
       break;
     case 4:
-      month = 'Abril';
+      month = texts.global.april;
       break;
     case 5:
-      month = 'Mayo';
+      month = texts.global.may;
       break;
     case 6:
-      month = 'Junio';
+      month = texts.global.june;
       break;
     case 7:
-      month = 'Julio';
+      month = texts.global.july;
       break;
     case 8:
-      month = 'Agosto';
+      month = texts.global.august;
       break;
     case 9:
-      month = 'Septiembre';
+      month = texts.global.september;
       break;
     case 10:
-      month = 'Octubre';
+      month = texts.global.october;
       break;
     case 11:
-      month = 'Noviembre';
+      month = texts.global.november;
       break;
     case 12:
-      month = 'Diciembre';
+      month = texts.global.december;
       break;
   }
   return '$month ${date.year}';

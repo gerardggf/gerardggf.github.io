@@ -1,4 +1,31 @@
 {
-    "language":"Català",
-    "languageCode":"CA"
+    "languageName":"Català",
+    "languageCode":"CA",
+        "experience": "Experiència",
+        "education": "Educació",
+        "certificates": "Certificats",
+        "projects": "Projectes",
+        "contactInformation": "Informació de contacte",
+        "email": "Correu electrònic",
+        "phoneNumber": "Número de telèfon",
+        "download": "Descarregar",
+        "catalan": "Català",
+        "spanish": "Espanyol",
+        "english": "Anglès",
+        "language": "Llengua",
+        "certificate": "Certificat",
+        "january": "Gener",
+        "february": "Febrer",
+        "march": "Març",
+        "april": "Abril",
+        "may": "Maig",
+        "june": "Juny",
+        "july": "Juliol",
+        "august": "agost",
+        "september": "setembre",
+        "october": "Octubre",
+        "november": "Novembre",
+        "december": "Desembre"
+        
+      
 }

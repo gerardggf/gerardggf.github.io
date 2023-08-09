@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gerardggf_cv/generated/translations.g.dart';
 
 import '../../../domain/enums.dart';
 import '../home/home_controller.dart';
@@ -98,7 +99,7 @@ class AppBarWidget extends ConsumerWidget {
                 Expanded(
                   child: CustomAppBarTextButton(
                     iconData: Icons.work,
-                    label: "Experiencia",
+                    label: texts.global.experience,
                     onPressed: () {
                       notifier.updateSection(Sections.experience.name);
                     },
@@ -107,7 +108,7 @@ class AppBarWidget extends ConsumerWidget {
                 Expanded(
                   child: CustomAppBarTextButton(
                     iconData: Icons.book,
-                    label: "Educación",
+                    label: texts.global.education,
                     onPressed: () {
                       notifier.updateSection(Sections.education.name);
                     },
@@ -116,7 +117,7 @@ class AppBarWidget extends ConsumerWidget {
                 Expanded(
                   child: CustomAppBarTextButton(
                     iconData: CupertinoIcons.doc,
-                    label: "Certificaciones",
+                    label: texts.global.certificates,
                     onPressed: () {
                       notifier.updateSection(Sections.certifications.name);
                     },
@@ -125,7 +126,7 @@ class AppBarWidget extends ConsumerWidget {
                 Expanded(
                   child: CustomAppBarTextButton(
                     iconData: Icons.computer,
-                    label: "Proyectos",
+                    label: texts.global.projects,
                     onPressed: () {
                       notifier.updateSection(Sections.projects.name);
                     },

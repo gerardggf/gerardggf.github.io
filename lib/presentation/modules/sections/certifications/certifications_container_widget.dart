@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gerardggf_cv/generated/translations.g.dart';
 
 import '../../../../const.dart';
 import '../../../utils/format_datetimes.dart';
@@ -68,7 +69,7 @@ class _CertificationContainerWidgetState
                 ),
                 Text(
                   widget.date != null
-                      ? getMonthYearFromDatetime(widget.date!)
+                      ? getMonthYearFromDatetime(widget.date!)!
                       : 'Cursando',
                   style: const TextStyle(
                     fontStyle: FontStyle.italic,
@@ -102,8 +103,8 @@ class _CertificationContainerWidgetState
                     children: [
                       ExpansionPanel(
                         headerBuilder: (BuildContext context, bool isExpanded) {
-                          return const ListTile(
-                            title: Text('Certificado'),
+                          return ListTile(
+                            title: Text(texts.global.certificate),
                           );
                         },
                         body: Padding(

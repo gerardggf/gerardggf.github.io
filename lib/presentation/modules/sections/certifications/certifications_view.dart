@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gerardggf_cv/generated/translations.g.dart';
 import 'package:gerardggf_cv/presentation/modules/sections/certifications/certifications_container_widget.dart';
 
 class CertificationsView extends StatelessWidget {
@@ -14,8 +15,8 @@ class CertificationsView extends StatelessWidget {
             school: 'Mulesoft',
             certification: 'Mulesoft Certified Developer - Level 1',
             assetPath: '/icons/mulesoft.png',
-            content:
-                'Certificación como desarrollador de aplicaciones para la integración de sistemas y transformación de datos con Dataweave',
+            content: texts.certificates
+                .certificationAsASystemsIntegrationApplicationsDeveloperAndDataTransformationWithDataweave,
             date: DateTime(2022, 7),
             certificatePath: 'certifications/mcd_level1.png',
           ),

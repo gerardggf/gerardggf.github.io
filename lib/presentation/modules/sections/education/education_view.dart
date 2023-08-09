@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gerardggf_cv/domain/enums.dart';
+import 'package:gerardggf_cv/generated/translations.g.dart';
 import 'package:gerardggf_cv/presentation/modules/home/home_controller.dart';
 import 'package:gerardggf_cv/presentation/modules/sections/education/education_container_widget.dart';
 
@@ -16,11 +17,11 @@ class EducationView extends ConsumerWidget {
         children: [
           EducationContainerWidget(
             school: 'Universitat Autónoma de Barcelona (UAB)',
-            degree: 'Empresa y tecnología',
-            content:
-                'Grado universitario de Empresa y Tecnología con mención en gestión de la infraestructura informática',
-            startDate: DateTime(2020),
-            finishDate: DateTime(2021),
+            degree: texts.education.bussinesAndTechnology,
+            content: texts.education
+                .universityDegreeInBusinessAndTechnologyWithAMentionInItInfrastructureManagement,
+            startDate: DateTime(2018, 9),
+            finishDate: DateTime(2021, 6),
             technologies: const [
               'Excel',
               'VBA',
@@ -45,26 +46,26 @@ class EducationView extends ConsumerWidget {
                   .read(homeControllerProvider.notifier)
                   .updateSection(Sections.certifications.name);
             },
-            label: const Text(
-              'Ver todas las certificaciones',
-              style: TextStyle(
+            label: Text(
+              texts.education.seeAllCertifications,
+              style: const TextStyle(
                 fontSize: 24,
               ),
             ),
           ),
           const SizedBox(height: 20),
-          const Padding(
-            padding: EdgeInsets.all(30),
+          Padding(
+            padding: const EdgeInsets.all(30),
             child: Text(
-              'Idiomas',
-              style: TextStyle(
+              texts.education.languages,
+              style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 32,
               ),
               textAlign: TextAlign.center,
             ),
           ),
-          const Row(
+          Row(
             children: [
               Expanded(
                 child: FittedBox(
@@ -72,14 +73,16 @@ class EducationView extends ConsumerWidget {
                   child: Column(
                     children: [
                       Text(
-                        'Catalán',
-                        style: TextStyle(
+                        texts.global.catalan,
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 10),
-                      Text('Certificado: C2 (Bachillerato)'),
-                      Text('Nivel nativo'),
+                      const SizedBox(height: 10),
+                      Text(
+                        '${texts.global.certificate}: C2 (${texts.education.baccalaureate})',
+                      ),
+                      Text(texts.education.nativeLevel),
                     ],
                   ),
                 ),
@@ -90,14 +93,16 @@ class EducationView extends ConsumerWidget {
                   child: Column(
                     children: [
                       Text(
-                        'Español',
-                        style: TextStyle(
+                        texts.global.spanish,
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 10),
-                      Text('Certificado: C2 (Bachillerato)'),
-                      Text('Nivel nativo'),
+                      const SizedBox(height: 10),
+                      Text(
+                        '${texts.global.certificate}: C2 (${texts.education.baccalaureate})',
+                      ),
+                      Text(texts.education.nativeLevel),
                     ],
                   ),
                 ),
@@ -108,14 +113,14 @@ class EducationView extends ConsumerWidget {
                   child: Column(
                     children: [
                       Text(
-                        'Inglés',
-                        style: TextStyle(
+                        texts.global.english,
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
-                      SizedBox(height: 10),
-                      Text('Certificado: B2 (FCE Cambridge)'),
-                      Text('Nivel avanzado'),
+                      const SizedBox(height: 10),
+                      Text('${texts.global.certificate}: B2 (FCE Cambridge)'),
+                      Text(texts.education.advancedLevel),
                     ],
                   ),
                 ),

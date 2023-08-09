@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gerardggf_cv/generated/translations.g.dart';
 
 import 'experience_container_widget.dart';
 
@@ -14,18 +15,18 @@ class ExperienceView extends StatelessWidget {
         children: [
           ExperienceContainerWidget(
             company: 'ForAll Phones',
-            position: 'Comercial',
-            content: 'Venta de teléfonos reacondicionados',
-            startDate: DateTime(2019),
-            finishDate: DateTime(2019),
+            position: texts.experience.commercial,
+            content: texts.experience.saleOfRefurbishedPhones,
+            startDate: DateTime(2019, 3),
+            finishDate: DateTime(2019, 9),
           ),
           ExperienceContainerWidget(
             company: 'Solé Diesel',
-            position: 'Técnico de sistemas',
-            content:
-                'Mantenimiento de la seguridad física y lógica de la infraestructura de redes de la empresa, participación en el proyecto web y creación de reportings mediante T-SQL',
-            startDate: DateTime(2020),
-            finishDate: DateTime(2021),
+            position: texts.experience.systemsTechnician,
+            content: texts.experience
+                .maintenanceOfThePhysicalAndLogicalSecurityOfTheCompanysComputerNetworkInfrastructureParticipationInTheWebProjectAndCreationOfReportsUsingTsql,
+            startDate: DateTime(2020, 12),
+            finishDate: DateTime(2021, 7),
             technologies: const [
               'Excel',
               'VBA',
@@ -35,11 +36,12 @@ class ExperienceView extends StatelessWidget {
             ],
           ),
           ExperienceContainerWidget(
-            content:
-                'Auditor de los sistemas informáticos y participación en el equipo de transformación y digitalización de la auditoría',
+            content: texts.experience
+                .informationSystemsAuditorAndParticipationInTheAuditTransformationAndDigitizationTeam,
             company: 'PwC',
             position: 'Digital Assurance Associate',
-            startDate: DateTime(2020),
+            startDate: DateTime(2021, 9),
+            finishDate: DateTime(2022, 10),
             technologies: const [
               'ACL Analytics',
               'Excel',
@@ -51,8 +53,8 @@ class ExperienceView extends StatelessWidget {
           ),
           ExperienceContainerWidget(
             company: 'Shiny Wall',
-            content:
-                'Desarrollo de una aplicación híbrida de escalada interactiva mediante luces LED',
+            content: texts.experience
+                .developmentOfAHybridInteractiveClimbingApplicationUsingLedLights,
             position: 'Flutter developer',
             technologies: const [
               'Flutter',
@@ -61,14 +63,14 @@ class ExperienceView extends StatelessWidget {
               'Firebase',
               'SQLite'
             ],
-            startDate: DateTime(2020),
+            startDate: DateTime(2023, 2),
           ),
           ExperienceContainerWidget(
             company: 'Appex Factory',
-            content:
-                'Desarrollador de aplicaciones multiplataforma para proyectos de clientes en Flutter',
+            content: texts.experience
+                .developmentOfCrossplatformApplicationsForClientProjectsInFlutter,
             position: 'Flutter developer',
-            startDate: DateTime(2020),
+            startDate: DateTime(2022, 10),
             technologies: const [
               'Flutter',
               'Dart',

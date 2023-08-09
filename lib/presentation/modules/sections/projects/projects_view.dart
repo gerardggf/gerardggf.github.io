@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gerardggf_cv/const.dart';
+import 'package:gerardggf_cv/generated/translations.g.dart';
 import 'package:gerardggf_cv/presentation/modules/sections/projects/project_container_widget.dart';
 import 'package:gerardggf_cv/presentation/utils/url_actions.dart';
 
@@ -16,13 +17,13 @@ class ProjectsView extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
           ),
           padding: const EdgeInsets.all(20),
-          margin: const EdgeInsets.all(10),
+          margin: const EdgeInsets.all(15),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Text(
-                'Principales proyectos personales',
-                style: TextStyle(
+              Text(
+                texts.projects.mainPersonalProjects,
+                style: const TextStyle(
                   fontWeight: FontWeight.bold,
                   fontSize: 22,
                 ),
@@ -35,31 +36,34 @@ class ProjectsView extends StatelessWidget {
                   );
                 },
                 child: RichText(
-                  text: const TextSpan(
+                  text: TextSpan(
                     text: '',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 16,
                     ),
                     children: [
                       TextSpan(
-                        text:
-                            'Cabe destacar que los proyectos en los que más me he focalizado y dedicado mi tiempo, son los realizados, (la gran mayoría desde cero) para las empresas por las cuales he trabajado y trabajo actualmente,',
+                        text: texts.projects
+                            .itShouldBeNotedThatTheProjectsInWhichIHaveFocusedAndDedicatedMyTimeTheMostAreThoseCarriedOuttheVastMajorityFromScratchForTheCompaniesForWhichICurrentlyWorkedOrIHaveWorked,
                       ),
                       TextSpan(
-                        text: ' los cuales no he incluído en este portafolio',
-                        style: TextStyle(
+                        text:
+                            ' ${texts.projects.whichIHaveNotIncludedInThisPortfolio} ',
+                        style: const TextStyle(
                           fontWeight: FontWeight.bold,
                         ),
                       ),
                       TextSpan(
-                          text:
-                              ', pero destacando las aplicaciones de ShinyWall y Zycle.'),
+                        text:
+                            ',${texts.projects.butIHighlightTheShinywallAndZycleApplications}',
+                      ),
                       TextSpan(
-                          text:
-                              '\n\nActualmente, la mayoría de estos proyectos se encuentran en desarrollo u obsoletos y su código está accesible desde la cuenta de '),
+                        text:
+                            '\n\n${texts.projects.currentlyMostOfTheseProjectsAreUnderDevelopmentButTheirCodeIsAccessibleFromMyPersonalGithubAccount} ',
+                      ),
                       TextSpan(
-                        text: 'Github',
-                        style: TextStyle(color: Colors.blue),
+                        text: texts.projects.personalGithubAccount,
+                        style: const TextStyle(color: Colors.blue),
                       ),
                     ],
                   ),
@@ -78,37 +82,38 @@ class ProjectsView extends StatelessWidget {
           children: [
             ProjectContainerWidget(
               name: 'MBoard',
-              type: 'Aplicación de escritorio',
-              content:
-                  'Primera aplicación de escritorio que hice. Creada en Python con una base de datos local SQLite para la creación y edición de vías de escalada. No se le ha dado continuidad.',
+              type: texts.projects.desktopApplication,
+              content: texts.projects.mboardText,
               date: DateTime(2018),
             ),
             ProjectContainerWidget(
               name: 'Llocs',
-              type: 'Aplicación móvil',
+              type: texts.projects.mobileApp,
               date: DateTime(2022),
-              content:
-                  'Una de mis primeras aplicaciones en Flutter, en la cual se utiliza Firebase Authentication, Firebase Firestore y Firebase Storage. No se le ha dado continuidad.',
+              content: texts.projects.llocsText,
             ),
             ProjectContainerWidget(
               name: 'Cubets',
-              type: 'Aplicación móvil',
-              content:
-                  'Juego de arcade con diferentes niveles en el que debes recoger monedas y esquivarlos enemigos para pasar al siguiente. No se le ha dado continuidad.',
+              type: texts.projects.mobileApp,
+              content: texts.projects.cubetsText,
               date: DateTime(2022),
             ),
             ProjectContainerWidget(
               name: 'Ebntz',
-              type: 'Aplicación móvil',
+              type: texts.projects.mobileApp,
               date: DateTime(2023),
-              content:
-                  'Red social que te permite búsqueda por nombres de festivales y artistas directamente a través del cartel del evento o festival utilizando el aprendizaje automático. En desarrollo.',
+              content: texts.projects.ebntzText,
             ),
             ProjectContainerWidget(
               name: 'Cubetis',
-              type: 'Aplicación móvil',
-              content:
-                  'Mejora del juego Cubets, aplicando una arquitectura limpia e introduciendo nuevas lógicas. En desarrollo.',
+              type: texts.projects.mobileApp,
+              content: texts.projects.cubetisText,
+              date: DateTime(2023),
+            ),
+            ProjectContainerWidget(
+              name: 'Flutter Translations',
+              type: texts.projects.consoleApplication,
+              content: texts.projects.flutterTranslationsText,
               date: DateTime(2023),
             ),
           ],

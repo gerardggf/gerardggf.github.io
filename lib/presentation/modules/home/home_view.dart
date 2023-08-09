@@ -9,8 +9,11 @@ import '../sections/info/info_view.dart';
 import '../sections/projects/projects_view.dart';
 import '../widgets/app_bar_widget.dart';
 import '../widgets/footer_widget.dart';
-import '../widgets/languages_dropdown_widget.dart';
+import '../widgets/languages_floating_action_widget.dart';
 import '../widgets/sidebar_widget.dart';
+
+//TODO: pendiente traducciones y repo traducciones
+//TODO: pendiente poner bien fechas y algunos textos
 
 class HomeView extends ConsumerStatefulWidget {
   const HomeView({super.key});
@@ -32,7 +35,6 @@ class _HomeViewState extends ConsumerState<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-    final notifier = ref.watch(homeControllerProvider.notifier);
     final controller = ref.watch(homeControllerProvider);
     return Scaffold(
       body: Container(
@@ -103,24 +105,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
           ],
         ),
       ),
-      floatingActionButton: Wrap(
-        direction: Axis.vertical,
-        crossAxisAlignment: WrapCrossAlignment.end,
-        children: [
-          if (controller.languagesDisplayed) const LanguagesDropdownWidget(),
-          Container(
-            margin: const EdgeInsets.all(10),
-            child: FloatingActionButton.extended(
-              icon: const Icon(Icons.language),
-              onPressed: () {
-                notifier
-                    .updateLanguagesDisplayed(!controller.languagesDisplayed);
-              },
-              label: const Text("Idiomas"),
-            ),
-          ),
-        ],
-      ),
+      floatingActionButton: const LanguagesFloatingActionButtonWidget(),
     );
   }
 }

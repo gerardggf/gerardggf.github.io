@@ -1,4 +1,31 @@
 {
-    "language":"English",
-    "languageCode":"EN"
+    "languageName":"English",
+    "languageCode":"EN",
+        "experience": "Experience",
+        "education": "Education",
+        "certificates": "Certifcates",
+        "projects": "Projects",
+        "contactInformation": "Contact information",
+        "email": "E-mail",
+        "phoneNumber": "Phone number",
+        "download": "Download",
+        "catalan": "Catalan",
+        "spanish": "Spanish",
+        "english": "English",
+        "language": "Language",
+        "certificate": "Certificate",
+        "january": "January",
+        "february": "February",
+        "march": "March",
+        "april": "April",
+        "may": "May",
+        "june": "June",
+        "july": "July",
+        "august": "August",
+        "september": "September",
+        "october": "October",
+        "november": "November",
+        "december": "December"
+        
+      
 }

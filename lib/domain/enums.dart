@@ -8,4 +8,5 @@ enum Sections {
 
 enum Preferences {
   section,
+  locale,
 }

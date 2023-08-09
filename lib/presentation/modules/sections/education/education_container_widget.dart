@@ -56,7 +56,7 @@ class EducationContainerWidget extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  '${getStringFromDatetime(startDate)} - ${getStringFromDatetime(finishDate) ?? 'Cursando'}',
+                  '${getMonthYearFromDatetime(startDate)} - ${getMonthYearFromDatetime(finishDate) ?? 'Cursando'}',
                   style: const TextStyle(
                     fontStyle: FontStyle.italic,
                     color: Colors.black87,

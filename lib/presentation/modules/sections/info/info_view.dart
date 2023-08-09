@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gerardggf_cv/const.dart';
+import 'package:gerardggf_cv/generated/translations.g.dart';
 import 'package:gerardggf_cv/presentation/utils/url_actions.dart';
 
 class InfoView extends StatelessWidget {
@@ -23,27 +24,34 @@ class InfoView extends StatelessWidget {
             height: 20,
           ),
           Text(
-            "Tengo ${getMiEdad()} años y me dedico al desarrollo de aplicaciones multiplataforma con Flutter.",
+            texts.info.introText(
+              age: getMyAge(),
+            ),
             style: const TextStyle(fontSize: 18),
           ),
           const SizedBox(height: 15),
-          const Text(
-            'Esta página web ha sido desarrollada desde cero con dicha tecnología.\n\nA continuación se puede descargar mi Currículum Vitae, o bien navegar por las distintas pestanyas para obtener más información en detalle.',
-            style: TextStyle(fontSize: 18),
+          Text(
+            texts.info.introText2,
+            style: const TextStyle(fontSize: 18),
+          ),
+          const SizedBox(height: 15),
+          Text(
+            texts.info.introtext3,
+            style: const TextStyle(fontSize: 18),
           ),
           const SizedBox(height: 30),
-          const Row(
+          Row(
             children: [
               DownloadCvWidget(
-                title: 'Descargar\nCV Català',
+                title: '${texts.global.download}\nCV ${texts.global.catalan}',
                 path: 'assets/cv_english.pdf',
               ),
               DownloadCvWidget(
-                title: 'Descargar\nCV Español',
+                title: '${texts.global.download}\nCV ${texts.global.spanish}',
                 path: 'assets/cv_english.pdf',
               ),
               DownloadCvWidget(
-                title: 'Descargar\nCV English',
+                title: '${texts.global.download}\nCV ${texts.global.english}',
                 path: 'assets/cv_english.pdf',
               ),
             ],
@@ -53,7 +61,7 @@ class InfoView extends StatelessWidget {
     );
   }
 
-  int getMiEdad() {
+  int getMyAge() {
     final DateTime now = DateTime.now();
     final DateTime birthDate = DateTime(1999, 9, 13);
     final result = now.difference(birthDate);

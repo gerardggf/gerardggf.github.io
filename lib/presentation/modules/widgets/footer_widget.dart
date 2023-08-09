@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gerardggf_cv/const.dart';
+import 'package:gerardggf_cv/domain/enums.dart';
+import 'package:gerardggf_cv/presentation/modules/home/home_controller.dart';
 
-import '../../utils/url_actions.dart';
+import '../../../generated/translations.g.dart';
 
-class FooterWidget extends StatelessWidget {
+class FooterWidget extends ConsumerWidget {
   const FooterWidget({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
@@ -20,9 +23,11 @@ class FooterWidget extends StatelessWidget {
           children: [
             TextButton(
               onPressed: () {
-                downloadCV('assets/cv_english.pdf');
+                ref
+                    .read(homeControllerProvider.notifier)
+                    .updateSection(Sections.info.name);
               },
-              child: const Text('Descargar CV'),
+              child: Text('${texts.global.download} CV'),
             ),
             const SizedBox(width: 10),
             const Text('-'),

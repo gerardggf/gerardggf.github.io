@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../../const.dart';
+import '../../../../generated/translations.g.dart';
 import '../../../utils/format_datetimes.dart';
 
 class ExperienceContainerWidget extends StatelessWidget {
@@ -42,7 +43,7 @@ class ExperienceContainerWidget extends StatelessWidget {
             style: const TextStyle(fontWeight: FontWeight.bold),
           ),
           Text(
-            '${getStringFromDatetime(startDate)} - ${getStringFromDatetime(finishDate) ?? 'Actualmente'}',
+            '${getMonthYearFromDatetime(startDate)} - ${getMonthYearFromDatetime(finishDate) ?? texts.experience.currently}',
             style: const TextStyle(
               fontStyle: FontStyle.italic,
               color: Colors.black87,

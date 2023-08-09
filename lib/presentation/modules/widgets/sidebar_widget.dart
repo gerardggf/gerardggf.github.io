@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gerardggf_cv/generated/translations.g.dart';
 
 import '../../../const.dart';
 import 'contact_info_widget.dart';
@@ -38,9 +39,12 @@ class SidebarWidget extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: kPadding),
             child: Column(
               children: [
-                const Text(
-                  "Información de contacto",
-                  style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                Text(
+                  texts.global.contactInformation,
+                  style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 28,
+                  ),
                 ),
                 const SizedBox(
                   height: 20,
@@ -62,15 +66,15 @@ class SidebarWidget extends StatelessWidget {
                   ),
                 ),
                 ContactInfoWidget(
-                  label: "Correo electrónico",
+                  label: texts.global.email,
                   data: "gerard.ggf@gmail.com",
                   url: Urls.sendEmailUrl(),
                   asset: const Icon(Icons.mail),
                 ),
-                const ContactInfoWidget(
-                  label: "Teléfono móvil",
+                ContactInfoWidget(
+                  label: texts.global.phoneNumber,
                   data: "+34 622806551",
-                  asset: Icon(Icons.phone_iphone),
+                  asset: const Icon(Icons.phone_iphone),
                 ),
               ],
             ),
