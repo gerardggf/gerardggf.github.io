@@ -13,8 +13,6 @@ mixin RouterMixin on State<MyApp> {
         name: Routes.home,
         path: '/',
         builder: (context, state) {
-          final language = state.pathParameters["lang"];
-          print(language);
           return const HomeView();
         },
       ),

@@ -30,6 +30,9 @@ class AppBarWidget extends ConsumerWidget {
           Expanded(
             flex: 2,
             child: InkWell(
+              borderRadius: const BorderRadius.only(
+                bottomRight: Radius.circular(50),
+              ),
               child: Container(
                 padding: const EdgeInsets.all(10),
                 decoration: const BoxDecoration(
