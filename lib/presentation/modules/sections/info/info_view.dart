@@ -27,17 +27,17 @@ class InfoView extends StatelessWidget {
             texts.info.introText(
               age: getMyAge(),
             ),
-            style: const TextStyle(fontSize: 18),
+            style: const TextStyle(fontSize: 22),
           ),
           const SizedBox(height: 15),
           Text(
             texts.info.introText2,
-            style: const TextStyle(fontSize: 18),
+            style: const TextStyle(fontSize: 22),
           ),
           const SizedBox(height: 15),
           Text(
             texts.info.introtext3,
-            style: const TextStyle(fontSize: 18),
+            style: const TextStyle(fontSize: 22),
           ),
           const SizedBox(height: 30),
           Row(

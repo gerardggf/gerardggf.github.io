@@ -25,7 +25,7 @@ class ProjectsView extends StatelessWidget {
                 texts.projects.mainPersonalProjects,
                 style: const TextStyle(
                   fontWeight: FontWeight.bold,
-                  fontSize: 22,
+                  fontSize: 26,
                 ),
               ),
               const SizedBox(height: 10),
@@ -39,7 +39,7 @@ class ProjectsView extends StatelessWidget {
                   text: TextSpan(
                     text: '',
                     style: const TextStyle(
-                      fontSize: 16,
+                      fontSize: 18,
                     ),
                     children: [
                       TextSpan(
