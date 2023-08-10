@@ -40,52 +40,69 @@ class AppBarWidget extends ConsumerWidget {
                   ),
                   color: Colors.black87,
                 ),
-                child: const Row(
+                child: Stack(
                   children: [
-                    Expanded(
-                      child: FittedBox(
-                        fit: BoxFit.fitHeight,
-                        child: Text(
-                          "CV",
-                          style: TextStyle(
-                            color: Colors.white,
-                            fontSize: 30,
-                            fontWeight: FontWeight.bold,
+                    const Row(
+                      children: [
+                        Expanded(
+                          child: FittedBox(
+                            fit: BoxFit.fitHeight,
+                            child: Text(
+                              "CV",
+                              style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 30,
+                                fontWeight: FontWeight.w900,
+                              ),
+                              textAlign: TextAlign.end,
+                            ),
                           ),
-                          textAlign: TextAlign.end,
+                        ),
+                        Expanded(
+                          flex: 2,
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Expanded(
+                                child: FittedBox(
+                                  fit: BoxFit.fitWidth,
+                                  child: Text(
+                                    'Gerard Gutiérrez ',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                              Expanded(
+                                child: FittedBox(
+                                  fit: BoxFit.fitWidth,
+                                  child: Text(
+                                    'Flotats',
+                                    style: TextStyle(
+                                      color: Colors.white,
+                                    ),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    if (ref.watch(homeControllerProvider).section ==
+                        Sections.info.name)
+                      Positioned(
+                        left: 0,
+                        child: Container(
+                          decoration: const BoxDecoration(
+                            color: Colors.white,
+                            shape: BoxShape.circle,
+                          ),
+                          width: 15,
+                          height: 15,
                         ),
                       ),
-                    ),
-                    Expanded(
-                      flex: 2,
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        children: [
-                          Expanded(
-                            child: FittedBox(
-                              fit: BoxFit.fitWidth,
-                              child: Text(
-                                'Gerard Gutiérrez ',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ),
-                          Expanded(
-                            child: FittedBox(
-                              fit: BoxFit.fitWidth,
-                              child: Text(
-                                'Flotats',
-                                style: TextStyle(
-                                  color: Colors.white,
-                                ),
-                              ),
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
                   ],
                 ),
               ),
@@ -182,7 +199,7 @@ class CustomAppBarTextButton extends ConsumerWidget {
           label,
           overflow: TextOverflow.ellipsis,
           style: TextStyle(
-            fontSize: isSelected ? 30 : 18,
+            fontSize: isSelected ? 30 : 20,
             color: Colors.white,
           ),
         ),

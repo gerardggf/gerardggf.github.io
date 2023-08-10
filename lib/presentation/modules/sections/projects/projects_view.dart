@@ -74,6 +74,7 @@ class ProjectsView extends StatelessWidget {
         ),
         GridView(
           shrinkWrap: true,
+          physics: const NeverScrollableScrollPhysics(),
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             childAspectRatio: (1 / 1.5),

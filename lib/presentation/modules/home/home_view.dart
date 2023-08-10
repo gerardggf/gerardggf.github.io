@@ -50,6 +50,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
         child: Stack(
           children: [
             ListView(
+              physics: const BouncingScrollPhysics(),
               padding: const EdgeInsets.all(kPadding),
               children: [
                 const SizedBox(

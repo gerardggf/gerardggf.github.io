@@ -13,12 +13,20 @@ class InfoView extends StatelessWidget {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Text(
-            "Gerard Gutiérrez Flotats",
-            style: TextStyle(
-              fontSize: 60,
-              fontWeight: FontWeight.w900,
-            ),
+          Stack(
+            children: [
+              Positioned(
+                  child: CustomPaint(
+                painter: RectPainter(),
+              )),
+              const Text(
+                "Gerard Gutiérrez Flotats",
+                style: TextStyle(
+                  fontSize: 60,
+                  fontWeight: FontWeight.w900,
+                ),
+              ),
+            ],
           ),
           const SizedBox(
             height: 20,
@@ -70,5 +78,23 @@ class InfoView extends StatelessWidget {
     final DateTime birthDate = DateTime(1999, 9, 13);
     final result = now.difference(birthDate);
     return (result.inDays / 365).floor();
+  }
+}
+
+class RectPainter extends CustomPainter {
+  @override
+  void paint(Canvas canvas, Size size) {
+    var paint1 = Paint()
+      ..color = Colors.yellow
+      ..style = PaintingStyle.fill;
+    canvas.drawRect(
+      const Offset(25, 50) & const Size(600, 25),
+      paint1,
+    );
+  }
+
+  @override
+  bool shouldRepaint(RectPainter oldDelegate) {
+    return false;
   }
 }

@@ -15,7 +15,7 @@ class ExperienceView extends StatelessWidget {
         children: [
           ExperienceContainerWidget(
             company: 'ForAll Phones',
-            position: texts.experience.commercial,
+            position: '${texts.experience.commercial} (Community Shaper)',
             content: texts.experience.saleOfRefurbishedPhones,
             startDate: DateTime(2019, 3),
             finishDate: DateTime(2019, 9),
@@ -55,7 +55,9 @@ class ExperienceView extends StatelessWidget {
               'Dart',
               'Bluetooth',
               'Firebase',
-              'SQLite'
+              'SQLite',
+              'Google ML Kit',
+              'Arduino'
             ],
             startDate: DateTime(2023, 2),
           ),

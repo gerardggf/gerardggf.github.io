@@ -16,7 +16,7 @@ class SidebarWidget extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       margin: const EdgeInsets.only(
-        top: 10,
+        top: 15,
       ),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
@@ -27,7 +27,7 @@ class SidebarWidget extends ConsumerWidget {
         mainAxisSize: MainAxisSize.min,
         children: [
           Padding(
-            padding: const EdgeInsets.all(10),
+            padding: const EdgeInsets.all(12),
             child: InkWell(
               onTap: () {
                 ref
