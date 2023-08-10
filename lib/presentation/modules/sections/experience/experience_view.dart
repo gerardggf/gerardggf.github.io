@@ -27,14 +27,7 @@ class ExperienceView extends StatelessWidget {
                 .maintenanceOfThePhysicalAndLogicalSecurityOfTheCompanysComputerNetworkInfrastructureParticipationInTheWebProjectAndCreationOfReportsUsingTsql,
             startDate: DateTime(2020, 12),
             finishDate: DateTime(2021, 7),
-            technologies: const [
-              'Excel',
-              'VBA',
-              'T-SQL',
-              'Hardware',
-              'Python',
-              'GeInforERP'
-            ],
+            skills: const ['Excel', 'VBA', 'T-SQL', 'Python', 'GeInforERP'],
           ),
           ExperienceContainerWidget(
             content: texts.experience
@@ -43,7 +36,7 @@ class ExperienceView extends StatelessWidget {
             position: 'Digital Assurance Associate',
             startDate: DateTime(2021, 9),
             finishDate: DateTime(2022, 10),
-            technologies: const [
+            skills: const [
               'ACL Analytics',
               'Excel',
               'VBA',
@@ -57,11 +50,10 @@ class ExperienceView extends StatelessWidget {
             content: texts.experience
                 .developmentOfAHybridInteractiveClimbingApplicationUsingLedLights,
             position: 'Flutter developer',
-            technologies: const [
+            skills: const [
               'Flutter',
               'Dart',
               'Bluetooth',
-              'Hardware',
               'Firebase',
               'SQLite'
             ],
@@ -73,11 +65,10 @@ class ExperienceView extends StatelessWidget {
                 .developmentOfCrossplatformApplicationsForClientProjectsInFlutter,
             position: 'Flutter developer',
             startDate: DateTime(2022, 10),
-            technologies: const [
+            skills: const [
               'Flutter',
               'Dart',
               'Bluetooth',
-              'Hardware',
               'Firebase',
               'Stripe',
               'APIs',

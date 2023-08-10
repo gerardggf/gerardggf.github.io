@@ -3,6 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gerardggf_cv/generated/translations.g.dart';
 
 import '../home/home_controller.dart';
+// ignore: avoid_web_libraries_in_flutter
+import 'dart:html' as html;
 
 class LanguagesFloatingActionButtonWidget extends ConsumerWidget {
   const LanguagesFloatingActionButtonWidget({super.key});
@@ -25,6 +27,7 @@ class LanguagesFloatingActionButtonWidget extends ConsumerWidget {
                 child: FloatingActionButton.extended(
                   onPressed: () {
                     notifier.updateLocale(AppLocale.ca.name);
+                    html.window.location.reload();
                   },
                   label: Text(texts.global.catalan),
                 ),
@@ -34,6 +37,7 @@ class LanguagesFloatingActionButtonWidget extends ConsumerWidget {
                 child: FloatingActionButton.extended(
                   onPressed: () {
                     notifier.updateLocale(AppLocale.es.name);
+                    html.window.location.reload();
                   },
                   label: Text(texts.global.spanish),
                 ),
@@ -43,6 +47,7 @@ class LanguagesFloatingActionButtonWidget extends ConsumerWidget {
                 child: FloatingActionButton.extended(
                   onPressed: () {
                     notifier.updateLocale(AppLocale.en.name);
+                    html.window.location.reload();
                   },
                   label: Text(texts.global.english),
                 ),

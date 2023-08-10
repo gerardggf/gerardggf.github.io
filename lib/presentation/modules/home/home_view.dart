@@ -39,7 +39,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
         decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('img/bg.jpg'),
-            fit: BoxFit.fitHeight,
+            fit: BoxFit.fitWidth,
             opacity: 0.5,
             colorFilter: ColorFilter.mode(
               Colors.white,
@@ -62,7 +62,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
                       child: Column(
                         children: [
                           const SidebarWidget(),
-                          GestureDetector(
+                          InkWell(
                             onTap: () async => launchSomeUrl(
                               Uri.parse(Urls.buymeACoffee),
                             ),

@@ -1,16 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gerardggf_cv/domain/enums.dart';
 import 'package:gerardggf_cv/generated/translations.g.dart';
+import 'package:gerardggf_cv/presentation/modules/home/home_controller.dart';
 
 import '../../../const.dart';
 import 'contact_info_widget.dart';
 
-class SidebarWidget extends StatelessWidget {
+class SidebarWidget extends ConsumerWidget {
   const SidebarWidget({
     super.key,
   });
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     return Container(
       margin: const EdgeInsets.only(
         top: 10,
@@ -25,10 +28,17 @@ class SidebarWidget extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(10),
-            child: ClipRRect(
-              borderRadius: BorderRadius.circular(10),
-              child: Image.asset(
-                "assets/img/gerardggf_logo.jpg",
+            child: InkWell(
+              onTap: () {
+                ref
+                    .read(homeControllerProvider.notifier)
+                    .updateSection(Sections.info.name);
+              },
+              child: ClipRRect(
+                borderRadius: BorderRadius.circular(10),
+                child: Image.asset(
+                  "assets/img/gerardggf_logo.jpg",
+                ),
               ),
             ),
           ),
@@ -75,6 +85,7 @@ class SidebarWidget extends StatelessWidget {
                   label: texts.global.phoneNumber,
                   data: "+34 622806551",
                   asset: const Icon(Icons.phone_iphone),
+                  url: 'copy',
                 ),
               ],
             ),

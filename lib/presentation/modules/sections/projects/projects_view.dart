@@ -17,7 +17,7 @@ class ProjectsView extends StatelessWidget {
             borderRadius: BorderRadius.circular(20),
           ),
           padding: const EdgeInsets.all(20),
-          margin: const EdgeInsets.all(15),
+          margin: const EdgeInsets.all(10),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
@@ -76,47 +76,96 @@ class ProjectsView extends StatelessWidget {
           shrinkWrap: true,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            mainAxisExtent: 220,
+            childAspectRatio: (1 / 1.8),
           ),
           padding: const EdgeInsets.symmetric(horizontal: 5),
           children: [
             ProjectContainerWidget(
-              name: 'MBoard',
-              type: texts.projects.desktopApplication,
-              content: texts.projects.mboardText,
-              date: DateTime(2018),
-            ),
-            ProjectContainerWidget(
-              name: 'Llocs',
+              name: 'Ebntz',
               type: texts.projects.mobileApp,
-              date: DateTime(2022),
-              content: texts.projects.llocsText,
+              date: DateTime(2023),
+              content: texts.projects.ebntzText,
+              screenshotPaths: const [
+                "ebntz_1.jpg",
+                "ebntz_2.jpg",
+                "ebntz_3.jpg",
+                "ebntz_4.jpg"
+              ],
             ),
             ProjectContainerWidget(
               name: 'Cubets',
               type: texts.projects.mobileApp,
               content: texts.projects.cubetsText,
               date: DateTime(2022),
-            ),
-            ProjectContainerWidget(
-              name: 'Ebntz',
-              type: texts.projects.mobileApp,
-              date: DateTime(2023),
-              content: texts.projects.ebntzText,
+              screenshotPaths: const [
+                "cubets_1.jpg",
+                "cubets_2.jpg",
+                "cubets_3.jpg",
+                "cubets_4.jpg"
+              ],
             ),
             ProjectContainerWidget(
               name: 'Cubetis',
               type: texts.projects.mobileApp,
               content: texts.projects.cubetisText,
               date: DateTime(2023),
+              screenshotPaths: const [
+                "cubetis_1.jpg",
+                "cubetis_2.jpg",
+                "cubetis_3.jpg",
+                "cubetis_4.jpg"
+              ],
             ),
             ProjectContainerWidget(
-              name: 'Flutter Translations',
-              type: texts.projects.consoleApplication,
-              content: texts.projects.flutterTranslationsText,
-              date: DateTime(2023),
+              name: 'Llocs',
+              type: texts.projects.mobileApp,
+              date: DateTime(2022),
+              content: texts.projects.llocsText,
+              screenshotPaths: const [
+                "llocs_1.jpg",
+                "llocs_2.jpg",
+                "llocs_3.jpg",
+                "llocs_4.jpg"
+              ],
+            ),
+            ProjectContainerWidget(
+              name: 'Con colegas',
+              type: texts.projects.mobileApp,
+              content: texts.projects.conColegasText,
+              date: DateTime(2022),
+              screenshotPaths: const [
+                "concolegas_1.jpg",
+                "concolegas_2.jpg",
+                "concolegas_3.jpg",
+                "concolegas_4.jpg"
+              ],
             ),
           ],
+        ),
+        SizedBox(
+          height: 1200,
+          child: Column(
+            children: [
+              Expanded(
+                child: ProjectContainerWidget(
+                  name: 'MBoard',
+                  type: texts.projects.desktopApplication,
+                  content: texts.projects.mboardText,
+                  date: DateTime(2020),
+                  screenshotPaths: const ["mboard.png"],
+                ),
+              ),
+              Expanded(
+                child: ProjectContainerWidget(
+                  name: 'Flutter Translations',
+                  type: texts.projects.consoleApplication,
+                  content: texts.projects.flutterTranslationsText,
+                  date: DateTime(2023),
+                  screenshotPaths: const ["fluttertranslations.png"],
+                ),
+              ),
+            ],
+          ),
         ),
       ],
     );

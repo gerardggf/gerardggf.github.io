@@ -2,24 +2,27 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../../const.dart';
+import '../../../../domain/enums.dart';
 import '../../../utils/format_datetimes.dart';
+import '../../home/home_controller.dart';
 
 class EducationContainerWidget extends ConsumerWidget {
   const EducationContainerWidget({
     super.key,
     required this.school,
     required this.degree,
-    required this.assetPath,
+    this.assetPath,
     required this.content,
     required this.startDate,
     this.finishDate,
-    this.technologies,
+    this.skills,
   });
 
-  final String school, degree, content, assetPath;
+  final String school, degree, content;
+  final String? assetPath;
   final DateTime startDate;
   final DateTime? finishDate;
-  final List<String>? technologies;
+  final List<String>? skills;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -32,12 +35,13 @@ class EducationContainerWidget extends ConsumerWidget {
       margin: const EdgeInsets.all(10),
       child: Row(
         children: [
-          Expanded(
-            child: Padding(
-              padding: const EdgeInsets.all(10),
-              child: Image.asset(assetPath),
+          if (assetPath != null)
+            Expanded(
+              child: Padding(
+                padding: const EdgeInsets.all(10),
+                child: Image.asset(assetPath!),
+              ),
             ),
-          ),
           Expanded(
             flex: 5,
             child: Column(
@@ -64,9 +68,9 @@ class EducationContainerWidget extends ConsumerWidget {
                   ),
                 ),
                 Text(content),
-                if (technologies != null)
+                if (skills != null)
                   Wrap(
-                    children: technologies!
+                    children: skills!
                         .map(
                           (e) => Padding(
                             padding: const EdgeInsets.all(5).copyWith(
@@ -74,6 +78,11 @@ class EducationContainerWidget extends ConsumerWidget {
                               bottom: 0,
                             ),
                             child: InkWell(
+                              onTap: () {
+                                ref
+                                    .read(homeControllerProvider.notifier)
+                                    .updateSection(Sections.education.name);
+                              },
                               child: Chip(
                                 label: Text(e),
                               ),

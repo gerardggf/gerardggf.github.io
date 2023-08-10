@@ -17,13 +17,20 @@ class EducationView extends ConsumerWidget {
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
           EducationContainerWidget(
+            school: 'Sagrat Cor de Jesús de Terrassa',
+            degree: texts.education.baccalaureate,
+            content: texts.education.bachelorOfSocialSciences,
+            startDate: DateTime(2015, 9),
+            finishDate: DateTime(2017, 6),
+          ),
+          EducationContainerWidget(
             school: 'Universitat Autónoma de Barcelona (UAB)',
             degree: texts.education.bussinesAndTechnology,
             content: texts.education
                 .universityDegreeInBusinessAndTechnologyWithAMentionInItInfrastructureManagement,
-            startDate: DateTime(2018, 9),
+            startDate: DateTime(2017, 9),
             finishDate: DateTime(2021, 6),
-            technologies: const [
+            skills: const [
               'Excel',
               'VBA',
               'C#',
@@ -90,7 +97,7 @@ class EducationView extends ConsumerWidget {
           Padding(
             padding: const EdgeInsets.all(30),
             child: Text(
-              texts.education.mostUsedTechnologies,
+              texts.education.skills,
               style: const TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 32,
@@ -100,91 +107,91 @@ class EducationView extends ConsumerWidget {
           ),
           const Column(
             children: [
-              EducationTechnologyItemWidget(
+              EducationSkillItemWidget(
                 technology: 'Excel',
                 percentValue: 98,
               ),
-              EducationTechnologyItemWidget(
+              EducationSkillItemWidget(
                 technology: 'Flutter',
                 percentValue: 97,
               ),
-              EducationTechnologyItemWidget(
+              EducationSkillItemWidget(
                 technology: 'Dart',
                 percentValue: 96,
               ),
-              EducationTechnologyItemWidget(
+              EducationSkillItemWidget(
                 technology: 'Firebase',
                 percentValue: 91,
               ),
-              EducationTechnologyItemWidget(
+              EducationSkillItemWidget(
                 technology: 'APIs',
                 percentValue: 89,
               ),
-              EducationTechnologyItemWidget(
+              EducationSkillItemWidget(
                 technology: 'Google ML Kit',
                 percentValue: 88,
               ),
-              EducationTechnologyItemWidget(
+              EducationSkillItemWidget(
                 technology: 'Bluetooth',
                 percentValue: 85,
               ),
-              EducationTechnologyItemWidget(
+              EducationSkillItemWidget(
                 technology: 'Stripe',
                 percentValue: 84,
               ),
-              EducationTechnologyItemWidget(
-                technology: 'Hardware',
+              EducationSkillItemWidget(
+                technology: 'SQL',
                 percentValue: 79,
               ),
-              EducationTechnologyItemWidget(
-                technology: 'SQL',
-                percentValue: 78,
-              ),
-              EducationTechnologyItemWidget(
+              EducationSkillItemWidget(
                 technology: 'ACL Analytics',
+                percentValue: 77,
+              ),
+              EducationSkillItemWidget(
+                technology: 'AnyPoint Studio',
                 percentValue: 76,
               ),
-              EducationTechnologyItemWidget(
+              EducationSkillItemWidget(
                 technology: 'HTML',
                 percentValue: 74,
               ),
-              EducationTechnologyItemWidget(
+              EducationSkillItemWidget(
                 technology: 'VBA',
                 percentValue: 73,
               ),
-              EducationTechnologyItemWidget(
+              EducationSkillItemWidget(
+                technology: 'DataWeave',
+                percentValue: 72,
+              ),
+              EducationSkillItemWidget(
                 technology: 'Python',
                 percentValue: 70,
               ),
-              EducationTechnologyItemWidget(
+              EducationSkillItemWidget(
                 technology: 'TypeScript',
                 percentValue: 67,
               ),
-              EducationTechnologyItemWidget(
+              EducationSkillItemWidget(
                 technology: 'CSS',
                 percentValue: 60,
               ),
-              EducationTechnologyItemWidget(
+              EducationSkillItemWidget(
                 technology: 'C#',
                 percentValue: 60,
               ),
-              EducationTechnologyItemWidget(
+              EducationSkillItemWidget(
                 technology: 'AWS',
                 percentValue: 57,
               ),
-              EducationTechnologyItemWidget(
+              EducationSkillItemWidget(
                 technology: 'SAP',
                 percentValue: 55,
               ),
-              EducationTechnologyItemWidget(
+              EducationSkillItemWidget(
                 technology: 'Navision',
                 percentValue: 55,
               ),
-              EducationTechnologyItemWidget(
-                technology: 'SAP',
-                percentValue: 55,
-              ),
-              EducationTechnologyItemWidget(
+              EducationSkillItemWidget(
                 technology: 'GeinforERP',
                 percentValue: 50,
               ),

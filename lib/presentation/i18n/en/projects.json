@@ -2,7 +2,7 @@
     "mainPersonalProjects": "Main personal projects",
     "itShouldBeNotedThatTheProjectsInWhichIHaveFocusedAndDedicatedMyTimeTheMostAreThoseCarriedOuttheVastMajorityFromScratchForTheCompaniesForWhichICurrentlyWorkedOrIHaveWorked": "It should be noted that the projects in which I have focused and dedicated my time the most are those carried out (the vast majority from scratch) for the companies for which I currently worked or I have worked,",
     "whichIHaveNotIncludedInThisPortfolio": "which I have not included in this portfolio",
-    "butIHighlightTheShinywallAndZycleApplications": "but I highlight the ShinyWall and Zycle applications.",
+    "butIHighlightTheShinywallAndZycleApplications": "but I would like to highlight the ShinyWall and Zycle apps.",
     "currentlyMostOfTheseProjectsAreUnderDevelopmentButTheirCodeIsAccessibleFromMyPersonalGithubAccount": "Currently, most of these projects are under development, but their code is accessible from my",
     "mobileApp": "Mobile app",
     "desktopApplication": "Desktop application",
@@ -10,8 +10,9 @@
     "consoleApplication":"Console application",
     "mboardText": "My first desktop application. Created in Python with a local SQLite database for creating and editing climbing routes. There has been no continuity",
     "llocsText":"One of my first Flutter apps, using Firebase Authentication, Firebase Firestore, and Firebase Storage. There has been no continuity.",
+    "conColegasText":"This is one of my first Flutter apps. Very casual app for teenagers to hang out with friends, through the games 'Never have I ever', 'Truth or dare' and 'Who is more likely than'.",
     "cubetsText":"Arcade game with different levels in which you must collect coins and dodge enemies to move on to the next one. There has been no continuity.",
-    "cubetisText":"Improvement of the Cubets game, applying a clean architecture and introducing new logic. Under development",
-    "ebntzText":"Social network that allows you to search by names of festivals and artists directly through the poster of the event or festival using artificial intelligence. In development.",
-    "flutterTranslationsText":"Program for generating translated literals in \".json\" or \".arb\" format for the best-known libraries dedicated to managing \"l10n\" and \"slang\" translations, the most used"
+    "cubetisText":"Improvement of the Cubets game, applying a clean architecture and introducing new logics. Under development.",
+    "ebntzText":"Social network that allows you to search by names of festivals and artists directly through the lineup of the event or festival using text recognition.",
+    "flutterTranslationsText":"Program for generating translated literals for a Flutter application, in different formats, to facilitate this part of the development of an application that is sometimes somewhat cumbersome."
 }

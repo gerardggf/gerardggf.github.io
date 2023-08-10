@@ -15,12 +15,12 @@ class ExperienceContainerWidget extends ConsumerWidget {
       required this.content,
       required this.startDate,
       this.finishDate,
-      this.technologies});
+      this.skills});
 
   final String company, position, content;
   final DateTime startDate;
   final DateTime? finishDate;
-  final List<String>? technologies;
+  final List<String>? skills;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -53,9 +53,9 @@ class ExperienceContainerWidget extends ConsumerWidget {
             ),
           ),
           Text(content),
-          if (technologies != null)
+          if (skills != null)
             Wrap(
-              children: technologies!
+              children: skills!
                   .map(
                     (e) => Padding(
                       padding: const EdgeInsets.all(5).copyWith(

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class EducationTechnologyItemWidget extends StatelessWidget {
-  const EducationTechnologyItemWidget({
+class EducationSkillItemWidget extends StatelessWidget {
+  const EducationSkillItemWidget({
     super.key,
     required this.technology,
     required this.percentValue,

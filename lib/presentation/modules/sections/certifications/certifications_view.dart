@@ -8,7 +8,7 @@ class CertificationsView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: const EdgeInsets.all(20),
+      padding: const EdgeInsets.all(20).copyWith(top: 0),
       child: Column(
         children: [
           CertificationContainerWidget(
@@ -19,6 +19,7 @@ class CertificationsView extends StatelessWidget {
                 .certificationAsASystemsIntegrationApplicationsDeveloperAndDataTransformationWithDataweave,
             date: DateTime(2022, 7),
             certificatePath: 'certifications/mcd_level1.png',
+            skills: const ['AnyPoint Studio', 'DataWeave', 'APIs'],
           ),
           CertificationContainerWidget(
             school: 'Cambridge University',
@@ -135,7 +136,7 @@ class CertificationsView extends StatelessWidget {
           ),
           CertificationContainerWidget(
             school: 'Programming Hub',
-            certification: 'Kotlin',
+            certification: 'Machine Learning',
             assetPath: '/icons/programming_hub.png',
             certificatePath: 'certifications/machine_learning.png',
             date: DateTime(2022, 8),

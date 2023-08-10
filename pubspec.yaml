@@ -75,6 +75,31 @@ flutter:
   # To add assets to your application, add an assets section, like this:
   assets:
     - assets/img/gerardggf_logo.jpg
+
+    - assets/img/projects/cubets_1.jpg
+    - assets/img/projects/cubets_2.jpg
+    - assets/img/projects/cubets_3.jpg
+    - assets/img/projects/cubets_4.jpg
+    - assets/img/projects/ebntz_1.jpg
+    - assets/img/projects/ebntz_2.jpg
+    - assets/img/projects/ebntz_3.jpg
+    - assets/img/projects/ebntz_4.jpg
+    - assets/img/projects/cubetis_1.jpg
+    - assets/img/projects/cubetis_2.jpg
+    - assets/img/projects/cubetis_3.jpg
+    - assets/img/projects/cubetis_4.jpg
+    - assets/img/projects/concolegas_1.jpg
+    - assets/img/projects/concolegas_2.jpg
+    - assets/img/projects/concolegas_3.jpg
+    - assets/img/projects/concolegas_4.jpg
+    - assets/img/projects/llocs_1.jpg
+    - assets/img/projects/llocs_2.jpg
+    - assets/img/projects/llocs_3.jpg
+    - assets/img/projects/llocs_4.jpg
+    - assets/img/projects/fluttertranslations.png
+    - assets/img/projects/mboard.png
+
+
     - assets/icons/github.png
     - assets/icons/linkedin.png
     - assets/icons/uab.png

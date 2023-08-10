@@ -16,13 +16,13 @@ class CertificationContainerWidget extends ConsumerStatefulWidget {
     this.date,
     this.content,
     this.certificatePath,
-    this.technologies,
+    this.skills,
   });
 
   final String school, certification;
   final String? content, certificatePath, assetPath;
   final DateTime? date;
-  final List<String>? technologies;
+  final List<String>? skills;
 
   @override
   ConsumerState<CertificationContainerWidget> createState() =>
@@ -80,9 +80,9 @@ class _CertificationContainerWidgetState
                   ),
                 ),
                 if (widget.content != null) Text('· ${widget.content}'),
-                if (widget.technologies != null)
+                if (widget.skills != null)
                   Wrap(
-                    children: widget.technologies!
+                    children: widget.skills!
                         .map(
                           (e) => Padding(
                             padding: const EdgeInsets.all(5).copyWith(

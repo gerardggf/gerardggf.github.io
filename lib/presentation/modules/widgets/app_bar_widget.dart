@@ -97,45 +97,53 @@ class AppBarWidget extends ConsumerWidget {
           ),
           Expanded(
             flex: 5,
-            child: Row(
-              children: [
-                Expanded(
-                  child: CustomAppBarTextButton(
-                    iconData: Icons.work,
-                    label: texts.global.experience,
-                    onPressed: () {
-                      notifier.updateSection(Sections.experience.name);
-                    },
+            child: Padding(
+              padding: const EdgeInsets.symmetric(vertical: 10),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  Expanded(
+                    child: CustomAppBarTextButton(
+                      iconData: Icons.computer,
+                      label: texts.global.projects,
+                      onPressed: () {
+                        notifier.updateSection(Sections.projects.name);
+                      },
+                      section: Sections.projects.name,
+                    ),
                   ),
-                ),
-                Expanded(
-                  child: CustomAppBarTextButton(
-                    iconData: Icons.book,
-                    label: texts.global.education,
-                    onPressed: () {
-                      notifier.updateSection(Sections.education.name);
-                    },
+                  Expanded(
+                    child: CustomAppBarTextButton(
+                      iconData: Icons.work,
+                      label: texts.global.experience,
+                      onPressed: () {
+                        notifier.updateSection(Sections.experience.name);
+                      },
+                      section: Sections.experience.name,
+                    ),
                   ),
-                ),
-                Expanded(
-                  child: CustomAppBarTextButton(
-                    iconData: CupertinoIcons.doc,
-                    label: texts.global.certificates,
-                    onPressed: () {
-                      notifier.updateSection(Sections.certifications.name);
-                    },
+                  Expanded(
+                    child: CustomAppBarTextButton(
+                      iconData: Icons.book,
+                      label: texts.global.education,
+                      onPressed: () {
+                        notifier.updateSection(Sections.education.name);
+                      },
+                      section: Sections.education.name,
+                    ),
                   ),
-                ),
-                Expanded(
-                  child: CustomAppBarTextButton(
-                    iconData: Icons.computer,
-                    label: texts.global.projects,
-                    onPressed: () {
-                      notifier.updateSection(Sections.projects.name);
-                    },
+                  Expanded(
+                    child: CustomAppBarTextButton(
+                      iconData: CupertinoIcons.doc,
+                      label: texts.global.certificates,
+                      onPressed: () {
+                        notifier.updateSection(Sections.certifications.name);
+                      },
+                      section: Sections.certifications.name,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
           ),
         ],
@@ -144,33 +152,38 @@ class AppBarWidget extends ConsumerWidget {
   }
 }
 
-class CustomAppBarTextButton extends StatelessWidget {
+class CustomAppBarTextButton extends ConsumerWidget {
   const CustomAppBarTextButton({
     super.key,
     required this.iconData,
     required this.label,
     required this.onPressed,
+    required this.section,
   });
 
   final IconData iconData;
   final String label;
   final VoidCallback onPressed;
+  final String section;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    final bool isSelected =
+        ref.watch(homeControllerProvider).section == section;
     return TextButton.icon(
       onPressed: onPressed,
       icon: Icon(
         iconData,
         color: Colors.white,
+        size: isSelected ? 35 : 25,
       ),
       label: FittedBox(
         fit: BoxFit.scaleDown,
         child: Text(
           label,
           overflow: TextOverflow.ellipsis,
-          style: const TextStyle(
-            fontSize: 20,
+          style: TextStyle(
+            fontSize: isSelected ? 30 : 18,
             color: Colors.white,
           ),
         ),

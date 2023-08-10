@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gerardggf_cv/const.dart';
+import 'package:gerardggf_cv/generated/translations.g.dart';
+import 'package:gerardggf_cv/presentation/utils/custom_snack_bar.dart';
 import 'package:gerardggf_cv/presentation/utils/url_actions.dart';
 
 class ContactInfoWidget extends StatelessWidget {
@@ -24,9 +27,21 @@ class ContactInfoWidget extends StatelessWidget {
       child: InkWell(
         onTap: url == null
             ? null
-            : () async => launchSomeUrl(
-                  Uri.parse(url!),
-                ),
+            : url!.toLowerCase() == 'copy'
+                ? () {
+                    Clipboard.setData(
+                      const ClipboardData(text: "+34622806551"),
+                    );
+                    showCustomSnackBar(
+                      context: context,
+                      text: texts.global.phoneNumberCopiedTopClipboard,
+                    );
+                  }
+                : () async {
+                    await launchSomeUrl(
+                      Uri.parse(url!),
+                    );
+                  },
         focusColor: Colors.red,
         child: Container(
           padding: const EdgeInsets.all(kPadding),
@@ -58,7 +73,7 @@ class ContactInfoWidget extends StatelessWidget {
                     ),
                     FittedBox(
                       fit: BoxFit.scaleDown,
-                      child: Text(
+                      child: SelectableText(
                         data,
                         style: TextStyle(
                           color: url == null ? Colors.black : Colors.blue,
