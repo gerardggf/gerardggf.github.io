@@ -29,7 +29,7 @@ class LanguagesFloatingActionButtonWidget extends ConsumerWidget {
                     notifier.updateLocale(AppLocale.ca.name);
                     html.window.location.reload();
                   },
-                  label: Text(texts.global.catalan),
+                  label: const Text('Català'),
                 ),
               ),
               Container(
@@ -39,7 +39,7 @@ class LanguagesFloatingActionButtonWidget extends ConsumerWidget {
                     notifier.updateLocale(AppLocale.es.name);
                     html.window.location.reload();
                   },
-                  label: Text(texts.global.spanish),
+                  label: const Text('Español'),
                 ),
               ),
               Container(
@@ -49,7 +49,7 @@ class LanguagesFloatingActionButtonWidget extends ConsumerWidget {
                     notifier.updateLocale(AppLocale.en.name);
                     html.window.location.reload();
                   },
-                  label: Text(texts.global.english),
+                  label: const Text('English'),
                 ),
               ),
             ],

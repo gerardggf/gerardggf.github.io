@@ -38,7 +38,10 @@ class EducationView extends ConsumerWidget {
               'HTML',
               'CSS',
               'TypeScript',
-              'SAP'
+              'SAP',
+              'Access',
+              'Firebase',
+              'Angular',
             ],
             assetPath: 'icons/uab.png',
           ),
@@ -110,22 +113,27 @@ class EducationView extends ConsumerWidget {
               EducationSkillItemWidget(
                 technology: 'Excel',
                 percentValue: 98,
+                remark: true,
               ),
               EducationSkillItemWidget(
                 technology: 'Flutter',
                 percentValue: 97,
+                remark: true,
               ),
               EducationSkillItemWidget(
                 technology: 'Dart',
                 percentValue: 96,
+                remark: true,
               ),
               EducationSkillItemWidget(
                 technology: 'Firebase',
                 percentValue: 91,
+                remark: true,
               ),
               EducationSkillItemWidget(
                 technology: 'APIs',
                 percentValue: 89,
+                remark: true,
               ),
               EducationSkillItemWidget(
                 technology: 'Google ML Kit',
@@ -145,7 +153,11 @@ class EducationView extends ConsumerWidget {
               ),
               EducationSkillItemWidget(
                 technology: 'ACL Analytics',
-                percentValue: 77,
+                percentValue: 78,
+              ),
+              EducationSkillItemWidget(
+                technology: 'Access',
+                percentValue: 78,
               ),
               EducationSkillItemWidget(
                 technology: 'AnyPoint Studio',
@@ -188,8 +200,12 @@ class EducationView extends ConsumerWidget {
                 percentValue: 55,
               ),
               EducationSkillItemWidget(
+                technology: 'Angular',
+                percentValue: 54,
+              ),
+              EducationSkillItemWidget(
                 technology: 'Navision',
-                percentValue: 55,
+                percentValue: 52,
               ),
               EducationSkillItemWidget(
                 technology: 'GeinforERP',

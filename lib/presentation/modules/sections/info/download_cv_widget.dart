@@ -8,10 +8,11 @@ class DownloadCvWidget extends StatelessWidget {
     super.key,
     required this.title,
     required this.path,
+    required this.languageCode,
     this.enabled = true,
   });
 
-  final String title, path;
+  final String title, path, languageCode;
   final bool enabled;
 
   @override
@@ -33,7 +34,7 @@ class DownloadCvWidget extends StatelessWidget {
                 onTap: !enabled
                     ? null
                     : () {
-                        downloadCV(path);
+                        downloadCV(path, languageCode);
                       },
                 child: Center(
                   child: Text(
@@ -54,7 +55,7 @@ class DownloadCvWidget extends StatelessWidget {
                   onPressed: !enabled
                       ? null
                       : () {
-                          downloadCV(path);
+                          downloadCV(path, languageCode);
                         },
                   icon: const Icon(
                     Icons.download,

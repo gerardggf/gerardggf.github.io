@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gerardggf_cv/generated/translations.g.dart';
@@ -124,7 +123,7 @@ class AppBarWidget extends ConsumerWidget {
                   ),
                   Expanded(
                     child: CustomAppBarTextButton(
-                      iconData: Icons.book,
+                      iconData: Icons.school,
                       label: texts.global.education,
                       onPressed: () {
                         notifier.updateSection(Sections.education.name);
@@ -134,7 +133,7 @@ class AppBarWidget extends ConsumerWidget {
                   ),
                   Expanded(
                     child: CustomAppBarTextButton(
-                      iconData: CupertinoIcons.doc,
+                      iconData: Icons.book,
                       label: texts.global.certificates,
                       onPressed: () {
                         notifier.updateSection(Sections.certifications.name);

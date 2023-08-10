@@ -9,8 +9,8 @@ Future<void> launchSomeUrl(Uri url) async {
   }
 }
 
-void downloadCV(String path) {
+void downloadCV(String path, String languageCode) {
   AnchorElement(href: path)
-    ..download = 'CV English'
+    ..download = 'CV $languageCode Gerard Gutiérrez'
     ..click();
 }

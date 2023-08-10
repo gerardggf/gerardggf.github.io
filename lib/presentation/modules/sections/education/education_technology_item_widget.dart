@@ -5,10 +5,12 @@ class EducationSkillItemWidget extends StatelessWidget {
     super.key,
     required this.technology,
     required this.percentValue,
+    this.remark = false,
   });
 
   final String technology;
   final int percentValue;
+  final bool remark;
 
   @override
   Widget build(BuildContext context) {
@@ -23,9 +25,10 @@ class EducationSkillItemWidget extends StatelessWidget {
             child: Text(
               technology,
               textAlign: TextAlign.end,
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
+                color: remark ? Colors.black : Colors.black54,
               ),
             ),
           ),

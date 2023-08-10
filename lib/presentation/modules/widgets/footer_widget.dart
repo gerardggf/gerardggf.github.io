@@ -33,7 +33,7 @@ class FooterWidget extends ConsumerWidget {
             const Text('-'),
             const SizedBox(width: 20),
             Text(
-              "Terrassa, Barcelona  ${DateTime.now().year}",
+              "Terrassa, Barcelona (Catalonia, Spain)  ${DateTime.now().year}",
             ),
           ],
         ),
