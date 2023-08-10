@@ -1,6 +1,5 @@
 {
-    "introText":"Tinc {{age}} anys, resideixo a Terrassa (Barcelona), i em dedico al desenvolupament d'aplicacions multiplataforma amb Flutter. Sóc un amant de l'esport i la música; i d'aquesta última, fer-la sonar amb la guitarra",
+    "introText":"El meu nom es Gerard i tinc {{age}} anys. Resideixo a Terrassa (Barcelona), i em dedico al desenvolupament d'aplicacions multiplataforma amb Flutter. Sóc un amant de l'esport i la música; i d'aquesta última, fer-la sonar amb la guitarra.",
     "introText2":"Aquesta pàgina web ha estat desenvolupada des de zero amb aquesta tecnologia.",
     "introtext3":"A continuació es pot descarregar el meu Currículum Vitae en diferents llengües, o bé navegar per les diferents pestanyes d'aquesta página per obtenir més informació detallada sobre la meva carrera professional."
-
 }

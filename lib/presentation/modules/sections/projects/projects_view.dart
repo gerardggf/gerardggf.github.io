@@ -76,7 +76,7 @@ class ProjectsView extends StatelessWidget {
           shrinkWrap: true,
           gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
-            childAspectRatio: (1 / 1.8),
+            childAspectRatio: (1 / 1.5),
           ),
           padding: const EdgeInsets.symmetric(horizontal: 5),
           children: [

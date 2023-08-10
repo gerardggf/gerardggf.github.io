@@ -147,6 +147,11 @@ class CertificationsView extends StatelessWidget {
             certificatePath: 'certifications/manipulador_alimentos.png',
             date: DateTime(2022, 8),
           ),
+          CertificationContainerWidget(
+            school: 'Dirección General de Tráfico',
+            certification: 'Permiso B de conducción',
+            date: DateTime(2018, 1),
+          ),
         ],
       ),
     );
