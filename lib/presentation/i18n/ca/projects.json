@@ -13,5 +13,6 @@
     "cubetsText":"Joc d'arcade amb diferents nivells on has de recollir monedes i esquivar-los enemics per passar al següent. No se li ha donat continuïtat.",
     "cubetisText":"Millora del joc Cubets, aplicant una arquitectura neta i introduint noves lògiques. En desenvolupament.",
     "ebntzText":"Xarxa social que et permet cercar per noms de festivals i artistes directament a través del cartell de l'esdeveniment o festival utilitzant reconeixement de text",
-    "flutterTranslationsText":"Programa de generació de literals traduïts per una aplicació amb Flutter, en diferents formats, per facilitar aquesta part del desenvolupament d'una aplicació que a vegades es una mica aparatosa."
+    "flutterTranslationsText":"Programa de generació de literals traduïts per una aplicació amb Flutter, en diferents formats, per facilitar aquesta part del desenvolupament d'una aplicació que a vegades es una mica aparatosa.",
+    "isSmallWidthText":"Para ver más información acerca de este proyecto, accede a esta página desde un ordenador o tablet"
 }

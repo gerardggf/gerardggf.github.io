@@ -14,5 +14,6 @@
     "cubetsText":"Arcade game with different levels in which you must collect coins and dodge enemies to move on to the next one. There has been no continuity.",
     "cubetisText":"Improvement of the Cubets game, applying a clean architecture and introducing new logics. Under development.",
     "ebntzText":"Social network that allows you to search by names of festivals and artists directly through the lineup of the event or festival using text recognition.",
-    "flutterTranslationsText":"Program for generating translated literals for a Flutter application, in different formats, to facilitate this part of the development of an application that is sometimes somewhat cumbersome."
+    "flutterTranslationsText":"Program for generating translated literals for a Flutter application, in different formats, to facilitate this part of the development of an application that is sometimes somewhat cumbersome.",
+    "isSmallWidthText":"To see more information about this project, access this page from a computer or tablet"
 }

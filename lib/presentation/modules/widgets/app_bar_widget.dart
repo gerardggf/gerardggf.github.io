@@ -6,7 +6,12 @@ import '../../../domain/enums.dart';
 import '../home/home_controller.dart';
 
 class AppBarWidget extends ConsumerWidget {
-  const AppBarWidget({super.key});
+  const AppBarWidget({
+    super.key,
+    required this.isSmallWidth,
+  });
+
+  final bool isSmallWidth;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -42,9 +47,9 @@ class AppBarWidget extends ConsumerWidget {
                 ),
                 child: Stack(
                   children: [
-                    const Row(
+                    Row(
                       children: [
-                        Expanded(
+                        const Expanded(
                           child: FittedBox(
                             fit: BoxFit.fitHeight,
                             child: Text(
@@ -58,36 +63,37 @@ class AppBarWidget extends ConsumerWidget {
                             ),
                           ),
                         ),
-                        Expanded(
-                          flex: 2,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Expanded(
-                                child: FittedBox(
-                                  fit: BoxFit.fitWidth,
-                                  child: Text(
-                                    'Gerard Gutiérrez ',
-                                    style: TextStyle(
-                                      color: Colors.white,
+                        if (!isSmallWidth)
+                          const Expanded(
+                            flex: 2,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Expanded(
+                                  child: FittedBox(
+                                    fit: BoxFit.fitWidth,
+                                    child: Text(
+                                      'Gerard Gutiérrez',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                              Expanded(
-                                child: FittedBox(
-                                  fit: BoxFit.fitWidth,
-                                  child: Text(
-                                    'Flotats',
-                                    style: TextStyle(
-                                      color: Colors.white,
+                                Expanded(
+                                  child: FittedBox(
+                                    fit: BoxFit.fitWidth,
+                                    child: Text(
+                                      'Flotats',
+                                      style: TextStyle(
+                                        color: Colors.white,
+                                      ),
                                     ),
                                   ),
                                 ),
-                              ),
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
                       ],
                     ),
                     if (ref.watch(homeControllerProvider).section ==
@@ -120,6 +126,7 @@ class AppBarWidget extends ConsumerWidget {
                 children: [
                   Expanded(
                     child: CustomAppBarTextButton(
+                      isSmallWidth: isSmallWidth,
                       iconData: Icons.computer,
                       label: texts.global.projects,
                       onPressed: () {
@@ -130,6 +137,7 @@ class AppBarWidget extends ConsumerWidget {
                   ),
                   Expanded(
                     child: CustomAppBarTextButton(
+                      isSmallWidth: isSmallWidth,
                       iconData: Icons.work,
                       label: texts.global.experience,
                       onPressed: () {
@@ -140,6 +148,7 @@ class AppBarWidget extends ConsumerWidget {
                   ),
                   Expanded(
                     child: CustomAppBarTextButton(
+                      isSmallWidth: isSmallWidth,
                       iconData: Icons.school,
                       label: texts.global.education,
                       onPressed: () {
@@ -150,6 +159,7 @@ class AppBarWidget extends ConsumerWidget {
                   ),
                   Expanded(
                     child: CustomAppBarTextButton(
+                      isSmallWidth: isSmallWidth,
                       iconData: Icons.book,
                       label: texts.global.certificates,
                       onPressed: () {
@@ -175,35 +185,46 @@ class CustomAppBarTextButton extends ConsumerWidget {
     required this.label,
     required this.onPressed,
     required this.section,
+    required this.isSmallWidth,
   });
 
   final IconData iconData;
   final String label;
   final VoidCallback onPressed;
   final String section;
+  final bool isSmallWidth;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final bool isSelected =
         ref.watch(homeControllerProvider).section == section;
-    return TextButton.icon(
-      onPressed: onPressed,
-      icon: Icon(
-        iconData,
-        color: Colors.white,
-        size: isSelected ? 35 : 25,
-      ),
-      label: FittedBox(
-        fit: BoxFit.scaleDown,
-        child: Text(
-          label,
-          overflow: TextOverflow.ellipsis,
-          style: TextStyle(
-            fontSize: isSelected ? 30 : 20,
-            color: Colors.white,
-          ),
-        ),
-      ),
-    );
+    return isSmallWidth
+        ? IconButton(
+            onPressed: onPressed,
+            icon: Icon(
+              iconData,
+              color: isSelected ? Colors.blue : Colors.white,
+              size: 25,
+            ),
+          )
+        : TextButton.icon(
+            onPressed: onPressed,
+            icon: Icon(
+              iconData,
+              color: Colors.white,
+              size: isSelected ? 35 : 25,
+            ),
+            label: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                label,
+                overflow: TextOverflow.ellipsis,
+                style: TextStyle(
+                  fontSize: isSelected ? 30 : 20,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          );
   }
 }

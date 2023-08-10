@@ -80,14 +80,16 @@ class EducationView extends ConsumerWidget {
             children: [
               _buildLanguageItem(
                 language: texts.global.catalan,
-                certificateText: 'C2 (${texts.education.baccalaureate}',
+                certificateText: 'C2 (${texts.education.baccalaureate})',
                 level: texts.education.nativeLevel,
               ),
+              const SizedBox(width: 10),
               _buildLanguageItem(
                 language: texts.global.spanish,
-                certificateText: 'C2 (${texts.education.baccalaureate}',
+                certificateText: 'C2 (${texts.education.baccalaureate})',
                 level: texts.education.nativeLevel,
               ),
+              const SizedBox(width: 10),
               _buildLanguageItem(
                 language: texts.global.english,
                 certificateText: 'B2 (FCE Cambridge)',
@@ -236,7 +238,7 @@ class EducationView extends ConsumerWidget {
             ),
             const SizedBox(height: 10),
             Text(
-              '${texts.global.certificate}: $certificateText)',
+              '${texts.global.certificate}: $certificateText',
             ),
             Text(level),
           ],

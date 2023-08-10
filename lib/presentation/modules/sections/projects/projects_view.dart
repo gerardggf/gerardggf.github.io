@@ -5,7 +5,12 @@ import 'package:gerardggf_cv/presentation/modules/sections/projects/project_cont
 import 'package:gerardggf_cv/presentation/utils/url_actions.dart';
 
 class ProjectsView extends StatelessWidget {
-  const ProjectsView({super.key});
+  const ProjectsView({
+    super.key,
+    required this.isSmallWidth,
+  });
+
+  final bool isSmallWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -82,6 +87,7 @@ class ProjectsView extends StatelessWidget {
           padding: const EdgeInsets.symmetric(horizontal: 5),
           children: [
             ProjectContainerWidget(
+              isSmallWidth: isSmallWidth,
               name: 'Ebntz',
               type: texts.projects.mobileApp,
               date: DateTime(2023),
@@ -94,6 +100,7 @@ class ProjectsView extends StatelessWidget {
               ],
             ),
             ProjectContainerWidget(
+              isSmallWidth: isSmallWidth,
               name: 'Cubets',
               type: texts.projects.mobileApp,
               content: texts.projects.cubetsText,
@@ -106,6 +113,7 @@ class ProjectsView extends StatelessWidget {
               ],
             ),
             ProjectContainerWidget(
+              isSmallWidth: isSmallWidth,
               name: 'Cubetis',
               type: texts.projects.mobileApp,
               content: texts.projects.cubetisText,
@@ -118,6 +126,7 @@ class ProjectsView extends StatelessWidget {
               ],
             ),
             ProjectContainerWidget(
+              isSmallWidth: isSmallWidth,
               name: 'Llocs',
               type: texts.projects.mobileApp,
               date: DateTime(2022),
@@ -130,6 +139,7 @@ class ProjectsView extends StatelessWidget {
               ],
             ),
             ProjectContainerWidget(
+              isSmallWidth: isSmallWidth,
               name: 'Con colegas',
               type: texts.projects.mobileApp,
               content: texts.projects.conColegasText,
@@ -149,6 +159,7 @@ class ProjectsView extends StatelessWidget {
             children: [
               Expanded(
                 child: ProjectContainerWidget(
+                  isSmallWidth: isSmallWidth,
                   name: 'MBoard',
                   type: texts.projects.desktopApplication,
                   content: texts.projects.mboardText,
@@ -158,6 +169,7 @@ class ProjectsView extends StatelessWidget {
               ),
               Expanded(
                 child: ProjectContainerWidget(
+                  isSmallWidth: isSmallWidth,
                   name: 'Flutter Translations',
                   type: texts.projects.consoleApplication,
                   content: texts.projects.flutterTranslationsText,

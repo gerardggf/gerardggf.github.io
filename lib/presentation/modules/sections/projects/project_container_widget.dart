@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:gerardggf_cv/generated/translations.g.dart';
 import '../../../../const.dart';
 
 class ProjectContainerWidget extends StatefulWidget {
@@ -8,12 +9,14 @@ class ProjectContainerWidget extends StatefulWidget {
     required this.type,
     required this.content,
     required this.date,
+    required this.isSmallWidth,
     this.screenshotPaths,
   });
 
   final String name, type, content;
   final DateTime date;
   final List<String>? screenshotPaths;
+  final bool isSmallWidth;
 
   @override
   State<ProjectContainerWidget> createState() => _ProjectContainerWidgetState();
@@ -56,25 +59,25 @@ class _ProjectContainerWidgetState extends State<ProjectContainerWidget> {
             ),
           ),
           const SizedBox(height: 10),
-          Text(
-            widget.content,
-          ),
-          if (widget.screenshotPaths != null)
+          if (widget.isSmallWidth)
+            Text(
+              texts.projects.isSmallWidthText,
+              maxLines: 5,
+              overflow: TextOverflow.ellipsis,
+              style: const TextStyle(color: Colors.deepOrange),
+            ),
+          if (!widget.isSmallWidth)
+            Text(
+              widget.content,
+            ),
+          if (widget.screenshotPaths != null && !widget.isSmallWidth)
             Expanded(
               child: widget.screenshotPaths!.length == 1
                   ? Padding(
                       padding: const EdgeInsets.symmetric(vertical: 15),
-                      child: PageView(
-                        controller: _pageController,
-                        physics: const BouncingScrollPhysics(),
-                        scrollDirection: Axis.horizontal,
-                        children: [
-                          for (var path in widget.screenshotPaths!)
-                            Image.asset(
-                              'img/projects/$path',
-                              fit: BoxFit.fitWidth,
-                            ),
-                        ],
+                      child: Image.asset(
+                        'img/projects/${widget.screenshotPaths![0]}',
+                        fit: BoxFit.fitWidth,
                       ),
                     )
                   : Row(
@@ -130,7 +133,8 @@ class _ProjectContainerWidgetState extends State<ProjectContainerWidget> {
                     ),
             ),
           if (widget.screenshotPaths != null &&
-              widget.screenshotPaths?.length != 1)
+              widget.screenshotPaths?.length != 1 &&
+              !widget.isSmallWidth)
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
