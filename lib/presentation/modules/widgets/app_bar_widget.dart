@@ -105,8 +105,8 @@ class AppBarWidget extends ConsumerWidget {
                             color: Colors.white,
                             shape: BoxShape.circle,
                           ),
-                          width: 15,
-                          height: 15,
+                          width: 12,
+                          height: 12,
                         ),
                       ),
                   ],
@@ -207,24 +207,47 @@ class CustomAppBarTextButton extends ConsumerWidget {
               size: 25,
             ),
           )
-        : TextButton.icon(
-            onPressed: onPressed,
-            icon: Icon(
-              iconData,
-              color: Colors.white,
-              size: isSelected ? 35 : 25,
-            ),
-            label: FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Text(
-                label,
-                overflow: TextOverflow.ellipsis,
-                style: TextStyle(
-                  fontSize: isSelected ? 30 : 20,
-                  color: Colors.white,
+        : Stack(
+            children: [
+              AnimatedContainer(
+                width: double.infinity,
+                height: double.infinity,
+                padding: EdgeInsets.all(isSelected ? 0 : 15),
+                duration: const Duration(milliseconds: 400),
+                child: TextButton.icon(
+                  onPressed: onPressed,
+                  icon: Icon(
+                    iconData,
+                    color: Colors.white,
+                    size: 30,
+                  ),
+                  label: FittedBox(
+                    fit: BoxFit.scaleDown,
+                    child: Text(
+                      label,
+                      style: const TextStyle(
+                        fontSize: 30,
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
                 ),
               ),
-            ),
+              if (isSelected)
+                Positioned(
+                  bottom: 0,
+                  left: 0,
+                  right: 0,
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                      shape: BoxShape.circle,
+                    ),
+                    width: 12,
+                    height: 12,
+                  ),
+                ),
+            ],
           );
   }
 }
