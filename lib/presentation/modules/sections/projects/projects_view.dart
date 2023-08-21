@@ -88,6 +88,19 @@ class ProjectsView extends StatelessWidget {
           children: [
             ProjectContainerWidget(
               isSmallWidth: isSmallWidth,
+              name: 'Cubetis',
+              type: texts.projects.mobileApp,
+              content: texts.projects.cubetisText,
+              date: DateTime(2023),
+              screenshotPaths: const [
+                "cubetis_1.jpg",
+                "cubetis_2.jpg",
+                "cubetis_3.jpg",
+                "cubetis_4.jpg"
+              ],
+            ),
+            ProjectContainerWidget(
+              isSmallWidth: isSmallWidth,
               name: 'Ebntz',
               type: texts.projects.mobileApp,
               date: DateTime(2023),
@@ -110,19 +123,6 @@ class ProjectsView extends StatelessWidget {
                 "cubets_2.jpg",
                 "cubets_3.jpg",
                 "cubets_4.jpg"
-              ],
-            ),
-            ProjectContainerWidget(
-              isSmallWidth: isSmallWidth,
-              name: 'Cubetis',
-              type: texts.projects.mobileApp,
-              content: texts.projects.cubetisText,
-              date: DateTime(2023),
-              screenshotPaths: const [
-                "cubetis_1.jpg",
-                "cubetis_2.jpg",
-                "cubetis_3.jpg",
-                "cubetis_4.jpg"
               ],
             ),
             ProjectContainerWidget(

@@ -213,7 +213,7 @@ class CustomAppBarTextButton extends ConsumerWidget {
                 width: double.infinity,
                 height: double.infinity,
                 padding: EdgeInsets.all(isSelected ? 0 : 15),
-                duration: const Duration(milliseconds: 400),
+                duration: const Duration(milliseconds: 500),
                 child: TextButton.icon(
                   onPressed: onPressed,
                   icon: Icon(
@@ -226,7 +226,7 @@ class CustomAppBarTextButton extends ConsumerWidget {
                     child: Text(
                       label,
                       style: const TextStyle(
-                        fontSize: 30,
+                        fontSize: 28,
                         color: Colors.white,
                       ),
                     ),
@@ -239,7 +239,7 @@ class CustomAppBarTextButton extends ConsumerWidget {
                   left: 0,
                   right: 0,
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.white,
                       shape: BoxShape.circle,
                     ),
