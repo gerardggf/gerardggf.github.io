@@ -42,11 +42,10 @@ class ContactInfoWidget extends StatelessWidget {
                       Uri.parse(url!),
                     );
                   },
-        focusColor: Colors.red,
         child: Container(
           padding: const EdgeInsets.all(kPadding),
           decoration: BoxDecoration(
-            color: color ?? Colors.white,
+            color: color,
             borderRadius: BorderRadius.circular(10),
           ),
           child: Row(

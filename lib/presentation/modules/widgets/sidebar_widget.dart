@@ -5,6 +5,7 @@ import 'package:gerardggf_cv/generated/translations.g.dart';
 import 'package:gerardggf_cv/presentation/modules/home/home_controller.dart';
 
 import '../../../const.dart';
+import '../../utils/url_actions.dart';
 import 'contact_info_widget.dart';
 
 class SidebarWidget extends ConsumerWidget {
@@ -15,19 +16,20 @@ class SidebarWidget extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     return Container(
-      margin: const EdgeInsets.only(
-        top: 15,
-      ),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(10),
+      padding: const EdgeInsets.all(5),
+      decoration: const BoxDecoration(
         color: AppColors.primary,
+        borderRadius: BorderRadius.only(
+          bottomRight: Radius.circular(5000),
+          topRight: Radius.circular(5000),
+        ),
       ),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.start,
         mainAxisSize: MainAxisSize.min,
         children: [
           Padding(
-            padding: const EdgeInsets.all(12),
+            padding: const EdgeInsets.all(30),
             child: InkWell(
               onTap: () {
                 ref
@@ -35,7 +37,7 @@ class SidebarWidget extends ConsumerWidget {
                     .updateSection(Sections.info.name);
               },
               child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(500),
                 child: Image.asset(
                   "assets/img/gerardggf_logo.jpg",
                 ),
@@ -79,15 +81,52 @@ class SidebarWidget extends ConsumerWidget {
                   label: texts.global.email,
                   data: "gerard.ggf@gmail.com",
                   url: Urls.sendEmailUrl(),
-                  asset: const Icon(Icons.mail),
+                  asset: const Icon(
+                    Icons.mail,
+                    size: 40,
+                  ),
                 ),
                 ContactInfoWidget(
                   label: texts.global.phoneNumber,
                   data: "+34 622806551",
-                  asset: const Icon(Icons.phone_iphone),
+                  asset: const Icon(
+                    Icons.phone_iphone,
+                    size: 40,
+                  ),
                   url: 'copy',
                 ),
               ],
+            ),
+          ),
+          InkWell(
+            onTap: () async => launchSomeUrl(
+              Uri.parse(Urls.buymeACoffee),
+            ),
+            child: Container(
+              margin: const EdgeInsets.all(25),
+              padding: const EdgeInsets.all(15),
+              decoration: BoxDecoration(
+                color: Colors.yellow,
+                borderRadius: BorderRadius.circular(50),
+              ),
+              child: const Row(
+                children: [
+                  Expanded(
+                    child: Icon(
+                      Icons.coffee,
+                    ),
+                  ),
+                  Expanded(
+                    flex: 2,
+                    child: Text(
+                      'Buy me a coffee',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                ],
+              ),
             ),
           ),
         ],

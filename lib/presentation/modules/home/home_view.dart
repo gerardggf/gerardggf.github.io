@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gerardggf_cv/presentation/modules/home/home_controller.dart';
 import '../../../const.dart';
-import '../../utils/url_actions.dart';
 import '../sections/certifications/certifications_view.dart';
 import '../sections/education/education_view.dart';
 import '../sections/experience/experience_view.dart';
@@ -54,7 +53,6 @@ class _HomeViewState extends ConsumerState<HomeView> {
               children: [
                 ListView(
                   physics: const BouncingScrollPhysics(),
-                  padding: const EdgeInsets.all(kPadding),
                   children: [
                     const SizedBox(
                       height: kToolbarHeight + 30,
@@ -63,41 +61,10 @@ class _HomeViewState extends ConsumerState<HomeView> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         if (!isSmallWidth)
-                          Expanded(
+                          const Expanded(
                             child: Column(
                               children: [
-                                const SidebarWidget(),
-                                InkWell(
-                                  onTap: () async => launchSomeUrl(
-                                    Uri.parse(Urls.buymeACoffee),
-                                  ),
-                                  child: Container(
-                                    margin: const EdgeInsets.all(25),
-                                    padding: const EdgeInsets.all(15),
-                                    decoration: BoxDecoration(
-                                      color: Colors.yellow,
-                                      borderRadius: BorderRadius.circular(50),
-                                    ),
-                                    child: const Row(
-                                      children: [
-                                        Expanded(
-                                          child: Icon(
-                                            Icons.coffee,
-                                          ),
-                                        ),
-                                        Expanded(
-                                          flex: 2,
-                                          child: Text(
-                                            'Buy me a coffee',
-                                            style: TextStyle(
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                ),
+                                SidebarWidget(),
                               ],
                             ),
                           ),
