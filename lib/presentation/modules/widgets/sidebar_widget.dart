@@ -5,7 +5,7 @@ import 'package:gerardggf_cv/generated/translations.g.dart';
 import 'package:gerardggf_cv/presentation/modules/home/home_controller.dart';
 
 import '../../../const.dart';
-import '../../utils/url_actions.dart';
+import '../../utils/functions/url_actions.dart';
 import 'contact_info_widget.dart';
 
 class SidebarWidget extends ConsumerWidget {

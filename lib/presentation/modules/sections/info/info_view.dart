@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gerardggf_cv/generated/translations.g.dart';
+import 'package:gerardggf_cv/presentation/modules/sections/info/canvas_message_widget.dart';
 
 import 'download_cv_widget.dart';
 
@@ -29,23 +30,23 @@ class InfoView extends StatelessWidget {
             ],
           ),
           const SizedBox(
-            height: 20,
+            height: 40,
           ),
           Text(
             texts.info.introText(
               age: getMyAge(),
             ),
-            style: const TextStyle(fontSize: 22),
+            style: const TextStyle(fontSize: 20),
           ),
           const SizedBox(height: 25),
           Text(
             texts.info.introText2,
-            style: const TextStyle(fontSize: 22),
+            style: const TextStyle(fontSize: 20),
           ),
           const SizedBox(height: 25),
           Text(
             texts.info.introtext3,
-            style: const TextStyle(fontSize: 22),
+            style: const TextStyle(fontSize: 20),
           ),
           const SizedBox(height: 40),
           Row(
@@ -68,6 +69,7 @@ class InfoView extends StatelessWidget {
               ),
             ],
           ),
+          const CanvasMessageWidget(),
         ],
       ),
     );

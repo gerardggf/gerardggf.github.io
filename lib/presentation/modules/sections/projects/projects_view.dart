@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:gerardggf_cv/const.dart';
 import 'package:gerardggf_cv/generated/translations.g.dart';
 import 'package:gerardggf_cv/presentation/modules/sections/projects/project_container_widget.dart';
-import 'package:gerardggf_cv/presentation/utils/url_actions.dart';
+
+import '../../../utils/functions/url_actions.dart';
 
 class ProjectsView extends StatelessWidget {
   const ProjectsView({

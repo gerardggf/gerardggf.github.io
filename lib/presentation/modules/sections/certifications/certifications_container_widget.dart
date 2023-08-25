@@ -3,9 +3,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gerardggf_cv/domain/enums.dart';
 import 'package:gerardggf_cv/generated/translations.g.dart';
 import 'package:gerardggf_cv/presentation/modules/home/home_controller.dart';
-
 import '../../../../const.dart';
-import '../../../utils/format_datetimes.dart';
+import '../../../utils/functions/format_datetimes.dart';
 
 class CertificationContainerWidget extends ConsumerStatefulWidget {
   const CertificationContainerWidget({
@@ -73,7 +72,7 @@ class _CertificationContainerWidgetState
                 Text(
                   widget.date != null
                       ? getMonthYearFromDatetime(widget.date!)!
-                      : 'Cursando',
+                      : texts.certificates.attending,
                   style: const TextStyle(
                     fontStyle: FontStyle.italic,
                     color: Colors.black87,

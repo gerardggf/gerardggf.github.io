@@ -3,7 +3,8 @@ import 'package:flutter/services.dart';
 import 'package:gerardggf_cv/const.dart';
 import 'package:gerardggf_cv/generated/translations.g.dart';
 import 'package:gerardggf_cv/presentation/utils/custom_snack_bar.dart';
-import 'package:gerardggf_cv/presentation/utils/url_actions.dart';
+
+import '../../utils/functions/url_actions.dart';
 
 class ContactInfoWidget extends StatelessWidget {
   const ContactInfoWidget({

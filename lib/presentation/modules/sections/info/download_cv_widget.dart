@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
-
 import '../../../../const.dart';
-import '../../../utils/url_actions.dart';
+import '../../../utils/functions/url_actions.dart';
 
 class DownloadCvWidget extends StatelessWidget {
   const DownloadCvWidget({
@@ -28,7 +27,7 @@ class DownloadCvWidget extends StatelessWidget {
               width: double.infinity,
               decoration: BoxDecoration(
                 color: AppColors.primary,
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(15),
               ),
               child: InkWell(
                 onTap: !enabled
@@ -50,7 +49,13 @@ class DownloadCvWidget extends StatelessWidget {
             ),
             Positioned(
               child: Container(
-                color: Colors.black,
+                decoration: const BoxDecoration(
+                  color: Colors.black,
+                  borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                  ),
+                ),
                 child: IconButton(
                   onPressed: !enabled
                       ? null

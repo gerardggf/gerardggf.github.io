@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-
 import '../../../../const.dart';
 import '../../../../domain/enums.dart';
-import '../../../utils/format_datetimes.dart';
+import '../../../utils/functions/format_datetimes.dart';
 import '../../home/home_controller.dart';
 
 class EducationContainerWidget extends ConsumerWidget {

@@ -111,6 +111,8 @@ flutter:
     - assets/icons/sololearn.png
     - assets/icons/cambridge.png
     - assets/icons/programming_hub.png
+    - assets/icons/cubets_face.png
+    - assets/icons/cubets_face_2.png
 
     - assets/certifications/mcd_level1.png
     - assets/certifications/php.jpg
