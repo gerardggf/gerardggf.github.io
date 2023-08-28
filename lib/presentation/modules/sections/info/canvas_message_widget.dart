@@ -54,7 +54,7 @@ class _CanvasMessageWidgetState extends State<CanvasMessageWidget> {
               child: Align(
                 alignment: Alignment.centerLeft,
                 child: Text(
-                  "Thinking outside\n the box while still\nworrying about what's inside",
+                  "Thinking outside\nthe box while still\nworrying about what's inside",
                   style: TextStyle(
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
