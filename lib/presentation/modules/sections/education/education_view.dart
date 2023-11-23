@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:gerardggf_cv/const.dart';
 import 'package:gerardggf_cv/domain/enums.dart';
 import 'package:gerardggf_cv/generated/translations.g.dart';
 import 'package:gerardggf_cv/presentation/modules/home/home_controller.dart';
@@ -70,6 +71,7 @@ class EducationView extends ConsumerWidget {
             icon: const Icon(
               Icons.add,
               size: 40,
+              color: AppColors.secondary,
             ),
             onPressed: () {
               ref
@@ -80,6 +82,7 @@ class EducationView extends ConsumerWidget {
               texts.education.seeAllCertifications,
               style: const TextStyle(
                 fontSize: 24,
+                color: AppColors.secondary,
               ),
             ),
           ),

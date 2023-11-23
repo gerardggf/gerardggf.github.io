@@ -39,6 +39,7 @@ class EducationSkillItemWidget extends StatelessWidget {
             flex: 4,
             child: LinearProgressIndicator(
               value: percentValue / 100,
+              color: AppColors.secondary,
             ),
           ),
           const SizedBox(width: 30),

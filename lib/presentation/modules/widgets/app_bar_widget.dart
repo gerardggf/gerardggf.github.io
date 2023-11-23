@@ -198,7 +198,7 @@ class CustomAppBarTextButton extends ConsumerWidget {
             onPressed: onPressed,
             icon: Icon(
               iconData,
-              color: isSelected ? Colors.blue : Colors.white,
+              color: isSelected ? AppColors.secondary : Colors.white,
               size: 25,
             ),
           )
@@ -213,7 +213,7 @@ class CustomAppBarTextButton extends ConsumerWidget {
                   onPressed: onPressed,
                   icon: Icon(
                     iconData,
-                    color: Colors.white,
+                    color: isSelected ? AppColors.secondary : Colors.white,
                     size: 30,
                   ),
                   label: FittedBox(

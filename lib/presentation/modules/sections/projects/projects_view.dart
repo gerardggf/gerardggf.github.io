@@ -70,7 +70,7 @@ class ProjectsView extends StatelessWidget {
                       ),
                       TextSpan(
                         text: texts.projects.personalGithubAccount,
-                        style: const TextStyle(color: Colors.blue),
+                        style: const TextStyle(color: AppColors.secondary),
                       ),
                     ],
                   ),

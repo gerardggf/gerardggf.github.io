@@ -5,7 +5,7 @@ import '../../const.dart';
 void showCustomSnackBar({
   required BuildContext context,
   required String text,
-  Color color = Colors.blue,
+  Color color = AppColors.secondary,
   int milliseconds = 2000,
 }) {
   ScaffoldMessenger.of(context).hideCurrentSnackBar();

@@ -28,7 +28,10 @@ class FooterWidget extends ConsumerWidget {
                     .read(homeControllerProvider.notifier)
                     .updateSection(Sections.info.name);
               },
-              child: Text(texts.info.home),
+              child: Text(
+                texts.info.home,
+                style: const TextStyle(color: AppColors.secondary),
+              ),
             ),
             const SizedBox(width: 10),
             const Text('-'),
@@ -48,7 +51,10 @@ class FooterWidget extends ConsumerWidget {
                     break;
                 }
               },
-              child: Text('${texts.global.download} CV'),
+              child: Text(
+                '${texts.global.download} CV',
+                style: const TextStyle(color: AppColors.secondary),
+              ),
             ),
             const SizedBox(width: 10),
             const Text('-'),
