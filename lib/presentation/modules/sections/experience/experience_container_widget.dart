@@ -40,17 +40,20 @@ class ExperienceContainerWidget extends ConsumerWidget {
               fontSize: 24,
             ),
           ),
+          const SizedBox(height: 5),
           Text(
             company,
             style: const TextStyle(fontWeight: FontWeight.bold),
           ),
+          const SizedBox(height: 5),
           Text(
             '${getMonthYearFromDatetime(startDate)} - ${getMonthYearFromDatetime(finishDate) ?? texts.experience.currently}',
             style: const TextStyle(
               fontStyle: FontStyle.italic,
-              color: Colors.black87,
+              color: Colors.white70,
             ),
           ),
+          const SizedBox(height: 5),
           Text(content),
           if (skills != null)
             Wrap(

@@ -45,6 +45,7 @@ class CertificationsView extends StatelessWidget {
             certification: 'Advanced Flutter',
             assetPath: '/icons/udemy.png',
             date: DateTime(2023, 10),
+            certificatePath: 'certifications/flutter_avanzado.jpeg',
           ),
           CertificationContainerWidget(
             school: 'Datacamp',

@@ -55,18 +55,18 @@ class InfoView extends StatelessWidget {
               DownloadCvWidget(
                 title: '${texts.global.download}\nCV ${texts.global.catalan}',
                 path: 'assets/cv_english.pdf',
-                languageCode: 'CA',
+                languageCode: 'ca',
                 enabled: false,
               ),
               DownloadCvWidget(
                 title: '${texts.global.download}\nCV ${texts.global.spanish}',
                 path: 'assets/cv_espanol.pdf',
-                languageCode: 'ES',
+                languageCode: 'es',
               ),
               DownloadCvWidget(
                 title: '${texts.global.download}\nCV ${texts.global.english}',
                 path: 'assets/cv_english.pdf',
-                languageCode: 'EN',
+                languageCode: 'en',
               ),
             ],
           ),

@@ -30,7 +30,7 @@ class EducationSkillItemWidget extends StatelessWidget {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: remark ? AppColors.text : Colors.white30,
+                color: remark ? AppColors.text : Colors.white60,
               ),
             ),
           ),

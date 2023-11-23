@@ -86,6 +86,40 @@ class EducationView extends ConsumerWidget {
           const SizedBox(height: 30),
           const Divider(),
           Padding(
+            padding: const EdgeInsets.all(30).copyWith(top: 20),
+            child: Text(
+              texts.education.languages,
+              style: const TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 32,
+              ),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          Row(
+            children: [
+              _buildLanguageItem(
+                language: texts.global.catalan,
+                certificateText: 'C2 (${texts.education.baccalaureate})',
+                level: texts.education.nativeLevel,
+              ),
+              const SizedBox(width: 10),
+              _buildLanguageItem(
+                language: texts.global.english,
+                certificateText: 'B2 (FCE Cambridge)',
+                level: texts.education.advancedLevel,
+              ),
+              const SizedBox(width: 10),
+              _buildLanguageItem(
+                language: texts.global.spanish,
+                certificateText: 'C2 (${texts.education.baccalaureate})',
+                level: texts.education.nativeLevel,
+              ),
+            ],
+          ),
+          const SizedBox(height: 30),
+          const Divider(),
+          Padding(
             padding: const EdgeInsets.all(30),
             child: Text(
               texts.education.skills,
@@ -198,40 +232,6 @@ class EducationView extends ConsumerWidget {
               EducationSkillItemWidget(
                 technology: 'GeinforERP',
                 percentValue: 50,
-              ),
-            ],
-          ),
-          const SizedBox(height: 30),
-          const Divider(),
-          Padding(
-            padding: const EdgeInsets.all(30).copyWith(top: 20),
-            child: Text(
-              texts.education.languages,
-              style: const TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 32,
-              ),
-              textAlign: TextAlign.center,
-            ),
-          ),
-          Row(
-            children: [
-              _buildLanguageItem(
-                language: texts.global.catalan,
-                certificateText: 'C2 (${texts.education.baccalaureate})',
-                level: texts.education.nativeLevel,
-              ),
-              const SizedBox(width: 10),
-              _buildLanguageItem(
-                language: texts.global.spanish,
-                certificateText: 'C2 (${texts.education.baccalaureate})',
-                level: texts.education.nativeLevel,
-              ),
-              const SizedBox(width: 10),
-              _buildLanguageItem(
-                language: texts.global.english,
-                certificateText: 'B2 (FCE Cambridge)',
-                level: texts.education.advancedLevel,
               ),
             ],
           ),
