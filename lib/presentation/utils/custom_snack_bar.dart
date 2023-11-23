@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../const.dart';
+
 void showCustomSnackBar({
   required BuildContext context,
   required String text,
@@ -14,7 +16,7 @@ void showCustomSnackBar({
       content: Text(
         text,
         style: const TextStyle(
-          color: Colors.white,
+          color: AppColors.text,
         ),
       ),
       duration: Duration(milliseconds: milliseconds),

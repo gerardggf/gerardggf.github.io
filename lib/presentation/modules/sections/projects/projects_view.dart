@@ -46,6 +46,7 @@ class ProjectsView extends StatelessWidget {
                     text: '',
                     style: const TextStyle(
                       fontSize: 18,
+                      color: AppColors.text,
                     ),
                     children: [
                       TextSpan(

@@ -29,7 +29,6 @@ class _CanvasMessageWidgetState extends State<CanvasMessageWidget> {
               padding: const EdgeInsets.all(2),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20),
-                color: Colors.orange,
                 gradient: const LinearGradient(
                   colors: [
                     Colors.deepOrange,
@@ -47,7 +46,7 @@ class _CanvasMessageWidgetState extends State<CanvasMessageWidget> {
               width: 100,
               height: 100,
               decoration: BoxDecoration(
-                border: Border.all(width: 3),
+                border: Border.all(width: 3, color: Colors.white),
               ),
             ),
             const ShakeWidget(

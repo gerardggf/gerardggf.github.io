@@ -144,8 +144,9 @@ class _ProjectContainerWidgetState extends State<ProjectContainerWidget> {
                     height: 10,
                     width: 10,
                     decoration: BoxDecoration(
-                      color:
-                          currentPage == i ? Colors.black : Colors.transparent,
+                      color: currentPage == i
+                          ? AppColors.primary
+                          : Colors.transparent,
                       border: Border.all(width: 1),
                       shape: BoxShape.circle,
                     ),

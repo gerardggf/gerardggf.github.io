@@ -76,7 +76,7 @@ class ContactInfoWidget extends StatelessWidget {
                       child: SelectableText(
                         data,
                         style: TextStyle(
-                          color: url == null ? Colors.black : Colors.blue,
+                          color: url == null ? AppColors.primary : Colors.blue,
                         ),
                       ),
                     ),

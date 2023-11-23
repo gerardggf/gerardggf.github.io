@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../const.dart';
+
 class EducationSkillItemWidget extends StatelessWidget {
   const EducationSkillItemWidget({
     super.key,
@@ -28,7 +30,7 @@ class EducationSkillItemWidget extends StatelessWidget {
               style: TextStyle(
                 fontSize: 18,
                 fontWeight: FontWeight.bold,
-                color: remark ? Colors.black : Colors.black54,
+                color: remark ? AppColors.text : Colors.white30,
               ),
             ),
           ),

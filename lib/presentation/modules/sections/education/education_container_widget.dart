@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../../../../const.dart';
 import '../../../../domain/enums.dart';
+import '../../../../generated/translations.g.dart';
 import '../../../utils/functions/format_datetimes.dart';
 import '../../home/home_controller.dart';
 
@@ -10,7 +11,7 @@ class EducationContainerWidget extends ConsumerWidget {
     super.key,
     required this.school,
     required this.degree,
-    this.assetPath,
+    this.img,
     required this.content,
     required this.startDate,
     this.finishDate,
@@ -18,7 +19,7 @@ class EducationContainerWidget extends ConsumerWidget {
   });
 
   final String school, degree, content;
-  final String? assetPath;
+  final Image? img;
   final DateTime startDate;
   final DateTime? finishDate;
   final List<String>? skills;
@@ -34,11 +35,11 @@ class EducationContainerWidget extends ConsumerWidget {
       margin: const EdgeInsets.all(10),
       child: Row(
         children: [
-          if (assetPath != null)
+          if (img != null)
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(10),
-                child: Image.asset(assetPath!),
+                child: img,
               ),
             ),
           Expanded(
@@ -60,7 +61,7 @@ class EducationContainerWidget extends ConsumerWidget {
                   ),
                 ),
                 Text(
-                  '${getMonthYearFromDatetime(startDate)} - ${getMonthYearFromDatetime(finishDate) ?? 'Cursando'}',
+                  '${getMonthYearFromDatetime(startDate)} - ${getMonthYearFromDatetime(finishDate) ?? texts.certificates.attending}',
                   style: const TextStyle(
                     fontStyle: FontStyle.italic,
                     color: Colors.black87,

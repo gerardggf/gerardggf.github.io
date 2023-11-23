@@ -75,6 +75,7 @@ class SidebarWidget extends ConsumerWidget {
                   url: Urls.github,
                   asset: Image.asset(
                     'assets/icons/github.png',
+                    color: Colors.white,
                   ),
                 ),
                 ContactInfoWidget(
@@ -114,6 +115,7 @@ class SidebarWidget extends ConsumerWidget {
                   Expanded(
                     child: Icon(
                       Icons.coffee,
+                      color: AppColors.primary,
                     ),
                   ),
                   Expanded(
@@ -122,6 +124,7 @@ class SidebarWidget extends ConsumerWidget {
                       'Buy me a coffee',
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
+                        color: AppColors.primary,
                       ),
                     ),
                   ),

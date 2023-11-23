@@ -43,7 +43,27 @@ class EducationView extends ConsumerWidget {
               'Firebase',
               'Angular',
             ],
-            assetPath: 'icons/uab.png',
+            img: Image.asset(
+              'icons/uab.png',
+              color: Colors.white,
+            ),
+          ),
+          const SizedBox(height: 20),
+          EducationContainerWidget(
+            school: 'Universitat Oberta de Catalunya (UOC)',
+            degree: texts.education.cybersecurityAndPrivacy,
+            content: texts.education.cybersecurityAndPrivacyDescription,
+            startDate: DateTime(2024, 2),
+            finishDate: null,
+            skills: const [
+              'Python',
+              'Machine Learning',
+              'SQL',
+              'HTML',
+              'CSS',
+              'TypeScript',
+            ],
+            img: Image.asset('icons/uoc.png'),
           ),
           const SizedBox(height: 20),
           TextButton.icon(

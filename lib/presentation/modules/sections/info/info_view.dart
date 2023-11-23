@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:gerardggf_cv/const.dart';
 import 'package:gerardggf_cv/generated/translations.g.dart';
-import 'package:gerardggf_cv/presentation/modules/sections/info/canvas_message_widget.dart';
+import 'package:gerardggf_cv/presentation/modules/sections/info/widgets/canvas_message_widget.dart';
 
-import 'download_cv_widget.dart';
+import 'widgets/download_cv_widget.dart';
 
 class InfoView extends StatelessWidget {
   const InfoView({super.key});
@@ -87,7 +88,7 @@ class RectPainter extends CustomPainter {
   @override
   void paint(Canvas canvas, Size size) {
     var paint1 = Paint()
-      ..color = Colors.yellow
+      ..color = AppColors.secondary
       ..style = PaintingStyle.fill;
     canvas.drawRect(
       const Offset(25, 50) & const Size(600, 25),

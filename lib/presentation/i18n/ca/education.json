@@ -1,11 +1,13 @@
 {
-    "languages":"Idiomes",
-    "bussinesAndTechnology":"Empresa i Tecnologia",
+    "languages": "Idiomes",
+    "bussinesAndTechnology": "Empresa i Tecnologia",
     "universityDegreeInBusinessAndTechnologyWithAMentionInItInfrastructureManagement": "Grau universitari d'Empresa i Tecnologia amb menció de gestió d'infraestructura informàtica.",
     "seeAllCertifications": "Veure totes les certificacions",
     "nativeLevel": "Nivell nadiu",
     "advancedLevel": "Nivell avançat",
     "baccalaureate": "Batxillerat",
     "bachelorOfSocialSciences": "Batxillerat de Ciències Socials",
-    "skills":"Habilitats"
-    }
+    "skills": "Habilitats",
+    "cybersecurityAndPrivacy": "Ciberseguretat i privadesa",
+    "cybersecurityAndPrivacyDescription": "Màster universitari en Ciberseguretat i Privadesa amb especialitat en Tecnologies."
+}

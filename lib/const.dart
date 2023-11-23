@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 const double kPadding = 15.0;
 
 class AppColors {
-  static const Color primary = Colors.black12;
+  AppColors._();
+  static const Color primary = Colors.black;
+  static const Color secondary = Colors.orange;
+  static const Color text = Colors.white;
+  static const Color containers = Color.fromARGB(255, 56, 56, 56);
 }
 
 class Urls {

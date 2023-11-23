@@ -47,7 +47,10 @@ class _CertificationContainerWidgetState
             Expanded(
               child: Padding(
                 padding: const EdgeInsets.all(10),
-                child: Image.asset(widget.assetPath!),
+                child: Image.asset(
+                  widget.assetPath!,
+                  color: Colors.white,
+                ),
               ),
             ),
           const SizedBox(width: 10),
@@ -63,22 +66,28 @@ class _CertificationContainerWidgetState
                     fontSize: 24,
                   ),
                 ),
+                const SizedBox(height: 5),
                 Text(
                   widget.school,
                   style: const TextStyle(
                     fontWeight: FontWeight.bold,
                   ),
                 ),
+                const SizedBox(height: 5),
                 Text(
                   widget.date != null
                       ? getMonthYearFromDatetime(widget.date!)!
                       : texts.certificates.attending,
                   style: const TextStyle(
                     fontStyle: FontStyle.italic,
-                    color: Colors.black87,
+                    color: Colors.white70,
                   ),
                 ),
-                if (widget.content != null) Text('· ${widget.content}'),
+                if (widget.content != null) const SizedBox(height: 5),
+                if (widget.content != null)
+                  Text(
+                    '· ${widget.content}',
+                  ),
                 if (widget.skills != null)
                   Wrap(
                     children: widget.skills!

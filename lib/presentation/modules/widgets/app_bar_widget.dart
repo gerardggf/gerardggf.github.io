@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gerardggf_cv/generated/translations.g.dart';
 
+import '../../../const.dart';
 import '../../../domain/enums.dart';
 import '../home/home_controller.dart';
 
@@ -39,12 +40,6 @@ class AppBarWidget extends ConsumerWidget {
               ),
               child: Container(
                 padding: const EdgeInsets.all(10),
-                decoration: const BoxDecoration(
-                  borderRadius: BorderRadius.only(
-                    bottomRight: Radius.circular(50),
-                  ),
-                  color: Colors.black87,
-                ),
                 child: Stack(
                   children: [
                     Row(
@@ -55,7 +50,7 @@ class AppBarWidget extends ConsumerWidget {
                             child: Text(
                               "CV",
                               style: TextStyle(
-                                color: Colors.white,
+                                color: AppColors.text,
                                 fontSize: 30,
                                 fontWeight: FontWeight.w900,
                               ),
@@ -75,7 +70,7 @@ class AppBarWidget extends ConsumerWidget {
                                     child: Text(
                                       'Gerard Gutiérrez',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: AppColors.text,
                                       ),
                                     ),
                                   ),
@@ -86,7 +81,7 @@ class AppBarWidget extends ConsumerWidget {
                                     child: Text(
                                       'Flotats',
                                       style: TextStyle(
-                                        color: Colors.white,
+                                        color: AppColors.text,
                                       ),
                                     ),
                                   ),
@@ -227,7 +222,7 @@ class CustomAppBarTextButton extends ConsumerWidget {
                       label,
                       style: const TextStyle(
                         fontSize: 28,
-                        color: Colors.white,
+                        color: AppColors.text,
                       ),
                     ),
                   ),

@@ -54,6 +54,7 @@ class _MyAppState extends ConsumerState<MyApp> with RouterMixin {
             }
           : null,
       child: MaterialApp.router(
+        theme: ThemeData.dark(),
         supportedLocales: AppLocaleUtils.supportedLocales,
         locale: Locale(LocaleSettings.currentLocale.name),
         debugShowCheckedModeBanner: false,
