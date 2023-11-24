@@ -139,7 +139,6 @@ class CertificationsView extends StatelessWidget {
           CertificationContainerWidget(
             school: 'Programming Hub',
             certification: 'Machine Learning',
-            assetPath: '/icons/programming_hub.png',
             certificatePath: 'certifications/machine_learning.png',
             date: DateTime(2022, 12),
           ),

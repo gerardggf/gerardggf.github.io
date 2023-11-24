@@ -26,7 +26,7 @@ class EducationView extends ConsumerWidget {
           ),
           EducationContainerWidget(
             school: 'Universitat Autónoma de Barcelona (UAB)',
-            degree: texts.education.bussinesAndTechnology,
+            degree: texts.education.bussinessAndTechnology,
             content: texts.education
                 .universityDegreeInBusinessAndTechnologyWithAMentionInItInfrastructureManagement,
             startDate: DateTime(2017, 9),
