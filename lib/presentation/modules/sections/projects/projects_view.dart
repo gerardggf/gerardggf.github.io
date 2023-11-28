@@ -90,6 +90,20 @@ class ProjectsView extends StatelessWidget {
           children: [
             ProjectContainerWidget(
               isSmallWidth: isSmallWidth,
+              name: 'ShinyWall',
+              type: texts.projects.mobileApp,
+              content: texts.projects.shinywallText,
+              date: DateTime(2023),
+              screenshotPaths: const [
+                "shinywall_1.jpg",
+                "shinywall_3.jpg",
+                "shinywall_2.jpg",
+                "shinywall_4.jpg",
+                "shinywall_5.jpg",
+              ],
+            ),
+            ProjectContainerWidget(
+              isSmallWidth: isSmallWidth,
               name: 'Cubetis',
               type: texts.projects.mobileApp,
               content: texts.projects.cubetisText,

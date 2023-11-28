@@ -39,6 +39,11 @@ flutter:
 
   assets:
     - assets/img/gerardggf_logo.jpg
+    - assets/img/projects/shinywall_1.jpg
+    - assets/img/projects/shinywall_2.jpg
+    - assets/img/projects/shinywall_3.jpg
+    - assets/img/projects/shinywall_4.jpg
+    - assets/img/projects/shinywall_5.jpg
     - assets/img/projects/cubets_1.jpg
     - assets/img/projects/cubets_2.jpg
     - assets/img/projects/cubets_3.jpg
