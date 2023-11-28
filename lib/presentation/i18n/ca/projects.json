@@ -6,7 +6,7 @@
     "currentlyMostOfTheseProjectsAreUnderDevelopmentButTheirCodeIsAccessibleFromMyPersonalGithubAccount": "Actualment, la majoria d'aquests projectes es troben en desenvolupament, però el codi és accessible des del meu",
     "mobileApp": "Aplicació mòbil",
     "desktopApplication": "Aplicacio d'escriptori",
-    "personalGithubAccount": "compte personal de Github",
+    "personalGithubAccount": "compte personal de Github.",
     "consoleApplication": "Aplicació de consola",
     "mboardText": "La meva primera aplicació. Creada a Python amb una base de dades local SQLite per a la creació i edició de vies d'escalada. No se li ha donat continuïtat.",
     "llocsText": "Una de les meves primeres aplicacions amb Flutter, en la qual s'utilitza Firebase Authentication, Firebase Firestore i Firebase Storage. No se li ha donat continuïtat.",
