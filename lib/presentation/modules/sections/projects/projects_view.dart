@@ -62,10 +62,6 @@ class ProjectsView extends StatelessWidget {
                       ),
                       TextSpan(
                         text:
-                            ',${texts.projects.butIHighlightTheShinywallAndZycleApplications}',
-                      ),
-                      TextSpan(
-                        text:
                             '\n\n${texts.projects.currentlyMostOfTheseProjectsAreUnderDevelopmentButTheirCodeIsAccessibleFromMyPersonalGithubAccount} ',
                       ),
                       TextSpan(
