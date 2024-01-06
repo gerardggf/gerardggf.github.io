@@ -7,10 +7,11 @@ import '../models/project_model.dart';
 final projectsRepositoryProvider = Provider<ProjectsRepository>(
   (ref) => ProjectsRepositoryImpl(
     ref.watch(firebaseFirestoreProvider),
+    ref.watch(firebaseStorageProvider),
   ),
 );
 
 abstract class ProjectsRepository {
   Future<List<ProjectModel>?> getProjects();
-  Future<bool> createProjectModel();
+  Future<bool> createProjectModel(String locale);
 }

@@ -6,6 +6,8 @@ import 'package:gerardggf_cv/domain/models/info_model.dart';
 import 'package:gerardggf_cv/domain/repositories/info_repository.dart';
 import 'package:gerardggf_cv/generated/translations.g.dart';
 
+import '../../const.dart';
+
 class InfoRepositoryImpl implements InfoRepository {
   final FirebaseFirestore firestore;
 
@@ -15,9 +17,9 @@ class InfoRepositoryImpl implements InfoRepository {
   Future<InfoModel?> getInfo() async {
     try {
       final doc = firestore
-          .collection("cv")
+          .collection(FirebasePaths.cv)
           .doc(Sections.info.name)
-          .collection("texts")
+          .collection(FirebasePaths.texts)
           .doc(LocaleSettings.currentLocale.name);
       final info = await doc.get();
       if (info.data() == null) return null;
@@ -33,14 +35,23 @@ class InfoRepositoryImpl implements InfoRepository {
   }
 
   @override
-  Future<bool> createInfoModel() async {
+  Future<bool> createInfoModel(String locale) async {
     try {
-      const locale = 'en';
-      final data = Texts.infoEn;
+      final data = () {
+        switch (locale) {
+          case 'ca':
+            return Texts.infoCa;
+          case 'es':
+            return Texts.infoEs;
+          default:
+            return Texts.infoEn;
+        }
+      }();
+
       final doc = firestore
-          .collection("cv")
+          .collection(FirebasePaths.cv)
           .doc(Sections.info.name)
-          .collection("texts")
+          .collection(FirebasePaths.texts)
           .doc(locale);
       await doc.set(data);
       return true;

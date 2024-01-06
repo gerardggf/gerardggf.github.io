@@ -75,8 +75,8 @@ class _ProjectContainerWidgetState extends State<ProjectContainerWidget> {
               child: widget.screenshotPaths!.length == 1
                   ? Padding(
                       padding: const EdgeInsets.symmetric(vertical: 15),
-                      child: Image.asset(
-                        'img/projects/${widget.screenshotPaths![0]}',
+                      child: Image.network(
+                        widget.screenshotPaths![0],
                         fit: BoxFit.fitWidth,
                       ),
                     )
@@ -106,8 +106,8 @@ class _ProjectContainerWidgetState extends State<ProjectContainerWidget> {
                               scrollDirection: Axis.horizontal,
                               children: [
                                 for (var path in widget.screenshotPaths!)
-                                  Image.asset(
-                                    'img/projects/$path',
+                                  Image.network(
+                                    path,
                                     fit: BoxFit.fitHeight,
                                   ),
                               ],

@@ -94,7 +94,7 @@ class SidebarWidget extends ConsumerWidget {
           ),
           InkWell(
             onTap: () async => launchSomeUrl(
-              Uri.parse(Urls.buymeACoffee),
+              Uri.parse(Urls.buyMeACoffee),
             ),
             child: Container(
               margin: const EdgeInsets.all(25),

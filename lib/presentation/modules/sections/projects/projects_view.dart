@@ -31,6 +31,10 @@ class ProjectsView extends ConsumerWidget {
           return const ErrorLoadingWidget(
               error: 'No se ha podido cargar la información');
         }
+        final mobileProjects = data.where((e) => e.fullWidth != true).toList()
+          ..sort((a, b) => a.position?.compareTo(b.position ?? 0) ?? 1);
+        final desktopProjects = data.where((e) => e.fullWidth == true).toList()
+          ..sort((a, b) => a.position?.compareTo(b.position ?? 0) ?? 1);
         return Column(
           children: [
             Container(
@@ -100,20 +104,14 @@ class ProjectsView extends ConsumerWidget {
               ),
               padding: const EdgeInsets.symmetric(horizontal: 5),
               children: [
-                for (var project in data)
+                for (var project in mobileProjects)
                   ProjectContainerWidget(
                     isSmallWidth: isSmallWidth,
                     name: project.title,
                     type: project.appType,
                     content: project.description,
                     date: DateTime(project.year),
-                    screenshotPaths: const [
-                      "shinywall_1.jpg",
-                      "shinywall_3.jpg",
-                      "shinywall_2.jpg",
-                      "shinywall_4.jpg",
-                      "shinywall_5.jpg",
-                    ],
+                    screenshotPaths: project.assets,
                   ),
                 // ProjectContainerWidget(
                 //   isSmallWidth: isSmallWidth,
@@ -186,26 +184,26 @@ class ProjectsView extends ConsumerWidget {
               height: 1200,
               child: Column(
                 children: [
-                  Expanded(
-                    child: ProjectContainerWidget(
-                      isSmallWidth: isSmallWidth,
-                      name: 'MBoard',
-                      type: texts.projects.desktopApplication,
-                      content: texts.projects.mboardText,
-                      date: DateTime(2020),
-                      screenshotPaths: const ["mboard.png"],
+                  for (var project in desktopProjects)
+                    Expanded(
+                      child: ProjectContainerWidget(
+                          isSmallWidth: isSmallWidth,
+                          name: project.title,
+                          type: project.appType,
+                          content: project.description,
+                          date: DateTime(project.year),
+                          screenshotPaths: project.assets),
                     ),
-                  ),
-                  Expanded(
-                    child: ProjectContainerWidget(
-                      isSmallWidth: isSmallWidth,
-                      name: 'Flutter Translations',
-                      type: texts.projects.consoleApplication,
-                      content: texts.projects.flutterTranslationsText,
-                      date: DateTime(2023),
-                      screenshotPaths: const ["fluttertranslations.png"],
-                    ),
-                  ),
+                  // Expanded(
+                  //   child: ProjectContainerWidget(
+                  //     isSmallWidth: isSmallWidth,
+                  //     name: 'Flutter Translations',
+                  //     type: texts.projects.consoleApplication,
+                  //     content: texts.projects.flutterTranslationsText,
+                  //     date: DateTime(2023),
+                  //     screenshotPaths: const ["fluttertranslations.png"],
+                  //   ),
+                  // ),
                 ],
               ),
             ),

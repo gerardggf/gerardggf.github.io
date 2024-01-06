@@ -4,44 +4,40 @@ import 'package:flutter/foundation.dart';
 import 'package:gerardggf_cv/const.dart';
 import 'package:gerardggf_cv/data/texts/texts.dart';
 import 'package:gerardggf_cv/domain/enums.dart';
-import 'package:gerardggf_cv/domain/models/project_model.dart';
-import 'package:gerardggf_cv/domain/repositories/projects_repository.dart';
+import 'package:gerardggf_cv/domain/models/experience_model.dart';
+import 'package:gerardggf_cv/domain/repositories/experience_repository.dart';
 import 'package:gerardggf_cv/generated/translations.g.dart';
 
-class ProjectsRepositoryImpl implements ProjectsRepository {
+class ExperienceRepositoryImpl implements ExperienceRepository {
   final FirebaseFirestore firestore;
   final FirebaseStorage storage;
 
-  ProjectsRepositoryImpl(
+  ExperienceRepositoryImpl(
     this.firestore,
     this.storage,
   );
 
   @override
-  Future<List<ProjectModel>?> getProjects() async {
+  Future<List<ExperienceModel>?> getExperience() async {
     try {
       final collection = firestore
           .collection(FirebasePaths.cv)
-          .doc(Sections.projects.name)
+          .doc(Sections.experience.name)
           .collection(LocaleSettings.currentLocale.name);
       final result = await collection.get();
       if (result.docs.isEmpty) return [];
-      final noAssetsProjects = result.docs
-          .map(
-            (e) => ProjectModel.fromJson(
-              e.data(),
-            ),
-          )
-          .toList();
-
-      final List<ProjectModel> projects = [];
-      for (var project in noAssetsProjects) {
-        project = project.copyWith(
-          assets: await _getAssets(project.assets),
+      final experiences = result.docs.map((e) {
+        return ExperienceModel.fromJson(
+          e.data(),
         );
-        projects.add(project);
+      }).toList();
+      for (var experience in experiences) {
+        if (experience.logo != null) {
+          final logo = await _getAsset(experience.logo!);
+          experience = experience.copyWith(logo: logo);
+        }
       }
-      return projects;
+      return experiences;
     } catch (e) {
       if (kDebugMode) {
         print(e);
@@ -51,22 +47,22 @@ class ProjectsRepositoryImpl implements ProjectsRepository {
   }
 
   @override
-  Future<bool> createProjectModel(String locale) async {
+  Future<bool> createExperienceModel(String locale) async {
     final data = () {
       switch (locale) {
         case 'ca':
-          return Texts.projectsCa;
+          return Texts.experienceEn;
         case 'es':
-          return Texts.projectsEs;
+          return Texts.experienceEn;
         default:
-          return Texts.projectsEn;
+          return Texts.experienceEn;
       }
     }();
 
     try {
       final collection = firestore
           .collection(FirebasePaths.cv)
-          .doc(Sections.projects.name)
+          .doc(Sections.experience.name)
           .collection(locale);
       for (var project in data) {
         await collection.doc(project["title"] as String).set(project);
@@ -80,23 +76,18 @@ class ProjectsRepositoryImpl implements ProjectsRepository {
     }
   }
 
-  Future<List<String>> _getAssets(List<String> assetsPath) async {
+  Future<String?> _getAsset(String path) async {
     try {
-      final List<String> assetsUrls = [];
-      for (var path in assetsPath) {
-        final assetUrl = await storage
-            .ref('${FirebasePaths.projectsStorage}/$path')
-            .getDownloadURL();
-        assetsUrls.add(assetUrl);
-      }
-      return assetsUrls;
+      return await storage
+          .ref('${FirebasePaths.logosStorage}/$path')
+          .getDownloadURL();
     } catch (e) {
       if (kDebugMode) {
         print(
           e.toString(),
         );
       }
-      return [];
+      return null;
     }
   }
 }

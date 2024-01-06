@@ -12,5 +12,5 @@ final infoRepositoryProvider = Provider<InfoRepository>(
 
 abstract class InfoRepository {
   Future<InfoModel?> getInfo();
-  Future<bool> createInfoModel();
+  Future<bool> createInfoModel(String locale);
 }

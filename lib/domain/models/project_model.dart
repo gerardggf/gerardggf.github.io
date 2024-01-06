@@ -4,6 +4,8 @@ class ProjectModel {
   final String description;
   final int year;
   final List<String> assets;
+  final bool? fullWidth;
+  final int? position;
 
   ProjectModel({
     required this.title,
@@ -11,6 +13,8 @@ class ProjectModel {
     required this.description,
     required this.year,
     required this.assets,
+    required this.fullWidth,
+    required this.position,
   });
 
   ProjectModel copyWith({
@@ -19,6 +23,8 @@ class ProjectModel {
     String? description,
     int? year,
     List<String>? assets,
+    bool? fullWidth,
+    int? position,
   }) =>
       ProjectModel(
         title: title ?? this.title,
@@ -26,6 +32,8 @@ class ProjectModel {
         description: description ?? this.description,
         year: year ?? this.year,
         assets: assets ?? this.assets,
+        fullWidth: fullWidth ?? this.fullWidth,
+        position: position ?? this.position,
       );
 
   factory ProjectModel.fromJson(Map<String, dynamic> json) => ProjectModel(
@@ -34,6 +42,8 @@ class ProjectModel {
         description: json["description"],
         year: json["year"],
         assets: List<String>.from(json["assets"].map((x) => x)),
+        fullWidth: json["fullWidth"],
+        position: json["position"],
       );
 
   Map<String, dynamic> toJson() => {
@@ -42,5 +52,7 @@ class ProjectModel {
         "description": description,
         "year": year,
         "assets": List<dynamic>.from(assets.map((x) => x)),
+        "fullWidth": fullWidth,
+        "position": position,
       };
 }

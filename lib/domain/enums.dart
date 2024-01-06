@@ -10,3 +10,9 @@ enum Preferences {
   section,
   locale,
 }
+
+enum StorageCollections {
+  certifications,
+  logos,
+  projects,
+}

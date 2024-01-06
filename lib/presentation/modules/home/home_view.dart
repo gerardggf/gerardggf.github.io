@@ -1,10 +1,8 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:gerardggf_cv/domain/repositories/info_repository.dart';
-import 'package:gerardggf_cv/domain/repositories/projects_repository.dart';
+import 'package:gerardggf_cv/presentation/modules/home/build_create_firebase_model_widget.dart';
 import 'package:gerardggf_cv/presentation/modules/home/home_controller.dart';
-import 'package:gerardggf_cv/presentation/utils/custom_snack_bar.dart';
 import '../../../const.dart';
 import '../sections/certifications/certifications_view.dart';
 import '../sections/education/education_view.dart';
@@ -102,76 +100,12 @@ class _HomeViewState extends ConsumerState<HomeView> {
               AppBarWidget(
                 isSmallWidth: isSmallWidth,
               ),
-              if (kDebugMode) _buildCreateFirebaseModel(),
+              if (kDebugMode) const BuildCreateFirebaseModelWidget(),
             ],
           );
         },
       ),
       floatingActionButton: const LanguagesFloatingActionButtonWidget(),
-    );
-  }
-
-  Widget _buildCreateFirebaseModel() {
-    return Positioned(
-      left: 0,
-      bottom: 0,
-      child: Column(
-        children: [
-          ElevatedButton(
-            onPressed: () async {
-              final result =
-                  await ref.read(infoRepositoryProvider).createInfoModel();
-              if (!mounted) return;
-              if (result) {
-                showCustomSnackBar(
-                    context: context,
-                    text: 'Información creada',
-                    color: Colors.green);
-              } else {
-                showCustomSnackBar(
-                    context: context,
-                    text: 'Se ha producido un error',
-                    color: Colors.red);
-              }
-            },
-            child: const Text('Info'),
-          ),
-          const SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: () async {
-              final result = await ref
-                  .read(projectsRepositoryProvider)
-                  .createProjectModel();
-              if (!mounted) return;
-              if (result) {
-                showCustomSnackBar(
-                    context: context, text: 'Información cargada');
-              } else {
-                showCustomSnackBar(
-                    context: context,
-                    text: 'Se ha producido un error',
-                    color: Colors.red);
-              }
-            },
-            child: const Text('Projects'),
-          ),
-          const SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text('Experience'),
-          ),
-          const SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text('Education'),
-          ),
-          const SizedBox(height: 10),
-          ElevatedButton(
-            onPressed: () {},
-            child: const Text('Certifications'),
-          ),
-        ],
-      ),
     );
   }
 }
