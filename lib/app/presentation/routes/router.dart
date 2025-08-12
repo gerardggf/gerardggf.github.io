@@ -25,22 +25,26 @@ final goRouterProvider = Provider<GoRouter>((ref) {
           GoRoute(
             path: '/projects',
             name: ProjectsView.routeName,
-            builder: (context, state) => const ProjectsView(),
+            pageBuilder: (context, state) =>
+                const NoTransitionPage(child: ProjectsView()),
           ),
           GoRoute(
             path: '/experience',
             name: ExperienceView.routeName,
-            builder: (context, state) => const ExperienceView(),
+            pageBuilder: (context, state) =>
+                const NoTransitionPage(child: ExperienceView()),
           ),
           GoRoute(
             path: '/education',
             name: EducationView.routeName,
-            builder: (context, state) => const EducationView(),
+            pageBuilder: (context, state) =>
+                const NoTransitionPage(child: EducationView()),
           ),
           GoRoute(
             path: '/contact',
             name: ContactView.routeName,
-            builder: (context, state) => const ContactView(),
+            pageBuilder: (context, state) =>
+                const NoTransitionPage(child: ContactView()),
           ),
         ],
       ),

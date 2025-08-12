@@ -127,8 +127,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
         8.h,
         Row(
           children: [
-            SizedBox(
-              width: 100,
+            Expanded(
               child: _DownloadCVCard(
                 onTap: () async {
                   if (!await launchUrl(
@@ -143,8 +142,8 @@ class _HomeViewState extends ConsumerState<HomeView> {
                 text: 'Español',
               ),
             ),
-            SizedBox(
-              width: 100,
+            10.w,
+            Expanded(
               child: _DownloadCVCard(onTap: () {}, text: 'Inglés'),
             ),
           ],
@@ -167,7 +166,11 @@ class _DownloadCVCard extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(16),
           child: Column(
-            children: [Icon(Icons.file_download, size: 34), Text(text)],
+            children: [
+              Icon(Icons.file_download, size: 34),
+              5.h,
+              Text(text, style: TextStyle(fontSize: 16)),
+            ],
           ),
         ),
       ),

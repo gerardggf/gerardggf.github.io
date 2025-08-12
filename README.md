@@ -1,4 +1,4 @@
-# CV Gerard Gutiérrex Flotats
+# CV Gerard Gutiérrxez Flotats
 
 To compile the app: 
 - flutter pub get

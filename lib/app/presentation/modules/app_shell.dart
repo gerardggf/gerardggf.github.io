@@ -64,7 +64,7 @@ class AppShell extends StatelessWidget {
                 constraints: const BoxConstraints(maxWidth: 1100),
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
-                    horizontal: 24,
+                    horizontal: 30,
                   ).copyWith(top: 24),
                   child: child,
                 ),
