@@ -1,0 +1,47 @@
+name: Deploy Flutter Web to GitHub Pages
+
+on:
+  push:
+    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: subosito/flutter-action@v2
+        with:
+          channel: stable
+          flutter-version: "3.32.2" #current flutter version
+
+      - name: Install dependencies
+        run: flutter pub get
+    
+      - name: Generate translations
+        run: flutter pub run slang
+
+      - name: Run build_runner
+        run: flutter pub run build_runner build
+
+      - name: Build web
+        run: flutter build web --release
+
+      - name: Prepare for GitHub Pages
+        run: |
+          cp build/web/index.html build/web/404.html
+          touch build/web/.nojekyll
+
+      - name: Deploy to main branch
+        run: |
+          rm -rf .git
+          cd build/web
+          git init
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add .
+          git commit -m "Deploy Flutter Web"
+          git branch -M main
+          git remote add origin https://github.com/gerardggf/gerardggf.github.io.git
+          git push -f origin main
