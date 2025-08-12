@@ -1,6 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:gerardggf_cv/app/core/utils/extensions/num_to_sizedbox.dart';
-import 'package:gerardggf_cv/app/core/utils/url_launcher.dart';
+import 'package:gerardggf_cv/app/core/utils/functions/snack_bar.dart';
+import 'package:gerardggf_cv/app/core/utils/functions/url_launcher.dart';
+import 'package:gerardggf_cv/app/presentation/modules/home/home_view.dart';
+import 'package:go_router/go_router.dart';
 
 class ContactView extends StatelessWidget {
   const ContactView({super.key});
@@ -16,7 +20,17 @@ class ContactView extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
         ),
         10.h,
-        _ContactRow(icon: Icons.phone, label: '+34 622 80 65 51'),
+        _ContactRow(
+          icon: Icons.phone,
+          label: '+34 622 80 65 51',
+          onTap: () {
+            Clipboard.setData(ClipboardData(text: '+34 622 80 65 51'));
+            showSnackBarText(
+              context,
+              'Número de contacto copiado en el portapapeles',
+            );
+          },
+        ),
         _ContactRow(
           icon: Icons.email_outlined,
           label: 'gerard.ggf@gmail.com',
@@ -30,19 +44,29 @@ class ContactView extends StatelessWidget {
         ),
         _ContactRow(
           icon: Icons.link,
-          label: 'linkedin.com/in/gerardgutierrez',
+          label: 'LinkedIn',
           onTap: () =>
               launchUrlString('https://linkedin.com/in/gerardgutierrez'),
         ),
         _ContactRow(
           icon: Icons.code,
-          label: 'github.com/gerardggf',
+          label: 'GitHub',
           onTap: () => launchUrlString('https://github.com/gerardggf'),
         ),
         _ContactRow(
           icon: Icons.queue_music,
-          label: 'github.com/gerardggf',
+          label: 'YouTube',
           onTap: () => launchUrlString('https://www.youtube.com/@sanfaina/'),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(30),
+          child: TextButton.icon(
+            onPressed: () {
+              context.goNamed(HomeView.routeName);
+            },
+            label: Text('Inicio'),
+            icon: Icon(Icons.home),
+          ),
         ),
       ],
     );
@@ -63,6 +87,7 @@ class _ContactRow extends StatelessWidget {
       child: Card(
         child: ListTile(
           leading: Icon(icon),
+          onTap: onTap,
           title: SelectableText(label),
           trailing: const Icon(Icons.open_in_new),
         ),

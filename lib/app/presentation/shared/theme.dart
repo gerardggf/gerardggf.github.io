@@ -179,7 +179,7 @@ class AppTheme {
     ),
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
-        foregroundColor: AppColors.light,
+        foregroundColor: AppColors.lightSec,
         textStyle: const TextStyle(fontWeight: FontWeight.bold),
       ),
     ),
@@ -243,7 +243,7 @@ class AppTheme {
     ),
     textButtonTheme: TextButtonThemeData(
       style: TextButton.styleFrom(
-        foregroundColor: AppColors.darkSec,
+        foregroundColor: AppColors.dark,
         textStyle: const TextStyle(fontWeight: FontWeight.bold),
       ),
     ),

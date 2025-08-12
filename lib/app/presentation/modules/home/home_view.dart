@@ -3,7 +3,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gerardggf_cv/app/core/constants/assets.dart';
 import 'package:gerardggf_cv/app/core/utils/extensions/num_to_sizedbox.dart';
+import 'package:gerardggf_cv/app/presentation/modules/experience/experience_view.dart';
+import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
+
+//TODO:traducir todo al inglés
 
 class HomeView extends ConsumerStatefulWidget {
   const HomeView({super.key});
@@ -31,7 +35,10 @@ class _HomeViewState extends ConsumerState<HomeView> {
           crossAxisAlignment: WrapCrossAlignment.center,
           children: const [
             Icon(Icons.place, size: 18),
-            Text('Terrassa, España'),
+            Text('Terrassa, Barcelona, España'),
+            SizedBox(width: 16),
+            Icon(Icons.call, size: 18),
+            Text('+34 622 806 65 51'),
             SizedBox(width: 16),
             Icon(Icons.link, size: 18),
             Text('linkedin.com/in/gerardgutierrez'),
@@ -147,6 +154,16 @@ class _HomeViewState extends ConsumerState<HomeView> {
               child: _DownloadCVCard(onTap: () {}, text: 'Inglés'),
             ),
           ],
+        ),
+        Padding(
+          padding: const EdgeInsets.all(30),
+          child: TextButton.icon(
+            onPressed: () {
+              context.goNamed(ExperienceView.routeName);
+            },
+            label: Text('Experiencia'),
+            icon: Icon(Icons.keyboard_arrow_down),
+          ),
         ),
       ],
     );

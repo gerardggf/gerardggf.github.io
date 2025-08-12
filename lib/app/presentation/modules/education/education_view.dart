@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gerardggf_cv/app/core/utils/extensions/num_to_sizedbox.dart';
+import 'package:gerardggf_cv/app/presentation/modules/contact/contact_view.dart';
+import 'package:go_router/go_router.dart';
 
 class EducationView extends StatelessWidget {
   const EducationView({super.key});
@@ -9,7 +11,7 @@ class EducationView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: const [
+      children: [
         Text(
           'Educación',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
@@ -27,6 +29,16 @@ class EducationView extends StatelessWidget {
               'Empresa y Tecnología · Mención en gestión de la infraestructura IT',
           location: 'Barcelona, España',
           dates: 'Sept. 2017 – Junio 2021',
+        ),
+        Padding(
+          padding: const EdgeInsets.all(30),
+          child: TextButton.icon(
+            onPressed: () {
+              context.goNamed(ContactView.routeName);
+            },
+            label: Text('Contacto'),
+            icon: Icon(Icons.keyboard_arrow_down),
+          ),
         ),
       ],
     );

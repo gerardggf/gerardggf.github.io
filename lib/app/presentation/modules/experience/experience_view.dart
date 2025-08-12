@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:gerardggf_cv/app/core/utils/extensions/num_to_sizedbox.dart';
+import 'package:gerardggf_cv/app/presentation/modules/education/education_view.dart';
+import 'package:go_router/go_router.dart';
 
 class ExperienceView extends StatelessWidget {
   const ExperienceView({super.key});
@@ -9,7 +11,7 @@ class ExperienceView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView(
-      children: const [
+      children: [
         Text(
           'Experiencia',
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
@@ -26,7 +28,7 @@ class ExperienceView extends StatelessWidget {
         ),
         _JobCard(
           company: 'Shiny Wall (Proyecto paralelo)',
-          role: 'Ingeniero de software',
+          role: 'Ingeniero de software · Responsable de desarrollo Front-End',
           location: 'Rubí, España',
           dates: 'Feb. 2023 – Presente',
           bullets: [
@@ -36,7 +38,7 @@ class ExperienceView extends StatelessWidget {
         ),
         _JobCard(
           company: 'Appex Factory',
-          role: 'Ingeniero de software',
+          role: 'Ingeniero de software · Responsable de desarrollo móvil',
           location: 'Sabadell, España',
           dates: 'Oct. 2022 – Sept. 2025',
           bullets: [
@@ -66,6 +68,16 @@ class ExperienceView extends StatelessWidget {
             'Participé en la migración del sistema ERP y colaboré en el desarrollo de la nueva web corporativa.',
             'Implementé mejoras en la automatización de procesos internos, incrementando la eficiencia operativa.',
           ],
+        ),
+        Padding(
+          padding: const EdgeInsets.all(30),
+          child: TextButton.icon(
+            onPressed: () {
+              context.goNamed(EducationView.routeName);
+            },
+            label: Text('Educación'),
+            icon: Icon(Icons.keyboard_arrow_down),
+          ),
         ),
       ],
     );
