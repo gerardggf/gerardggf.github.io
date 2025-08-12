@@ -1,6 +1,6 @@
 # gerardggf_cv
 
-Run "flutter pub run slang" and "flutter pub run build_runner build".
+A new Flutter project.
 
 ## Getting Started
 
