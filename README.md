@@ -7,3 +7,5 @@ To compile the app:
 
 To build the web folder:
 - flutter build web--release
+
+See [deploy.yml]
