@@ -10,37 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - uses: subosito/flutter-action@v2
         with:
-          channel: stable
-          flutter-version: "3.32.2" #current flutter version
-
-      - name: Install dependencies
-        run: flutter pub get
-    
-      - name: Generate translations
-        run: flutter pub run slang
-
-      - name: Run build_runner
-        run: flutter pub run build_runner build --delete-conflicting-outputs
-
-      - name: Build web
-        run: flutter build web --release
-
-      - name: Prepare for GitHub Pages
-        run: |
-          cp build/web/index.html build/web/404.html
-          touch build/web/.nojekyll
-
-      - name: Deploy to gerardggf.github.io
-        run: |
-          cd build/web
-          git init
-          git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
-          git add .
-          git commit -m "Deploy Flutter Web"
-          git branch -M main
-          git remote add origin https://github.com/gerardggf/gerardggf.github.io.git
-          git push -f origin main
+          flutter-version: "3.32.2"
+      - run: flutter pub get
+      - run: flutter pub run slang
+      - run: flutter pub run build_runner build --delete-conflicting-outputs
+      - run: flutter build web --release
+      - run: cp build/web/index.html build/web/404.html
+      - run: touch build/web/.nojekyll
+      - uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./build/web
+          publish_branch: gh-pages
