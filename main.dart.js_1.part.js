@@ -2,39 +2,39 @@
 a[b][c]=a[b][c]||[]
 a[b][c].push({p:"main.dart.js_1",e:"beginPart"})})(self,"$__dart_deferred_initializers__","eventLog")
 $__dart_deferred_initializers__.current=function(a,b,c,$){var B,C,A={
-aF1(d,e,f){var y=new B.qh(C.mL),x=new A.Rb(y)
-y.r=A.aUM(x)
+aFR(d,e,f){var y=new B.qp(C.mS),x=new A.Rx(y)
+y.r=A.aVF(x)
 return x},
-aUK(d,e){switch(e){case"global.language":return"Catal\xe0"
+aVD(d,e){switch(e){case"global.language":return"Catal\xe0"
 case"global.anErrorHasOccurred":return"S'ha produi\u0308t un error"
 case"global.pageNotFound":return"No s'ha trobat la pa\u0300gina"
 default:return null}},
-aUM(d){return new A.aum(d)},
-Rb:function Rb(d){this.a=d
+aVF(d){return new A.avb(d)},
+Rx:function Rx(d){this.a=d
 this.c=this.b=$},
-atn:function atn(){},
-aum:function aum(d){this.a=d}}
+aub:function aub(){},
+avb:function avb(d){this.a=d}}
 B=c[0]
 C=c[2]
 A=a.updateHolder(c[3],A)
-A.Rb.prototype={
-i(d,e){return this.a.zp(e)},
-gzq(){var y,x=this,w=x.c
+A.Rx.prototype={
+i(d,e){return this.a.zK(e)},
+gzL(){var y,x=this,w=x.c
 if(w===$){y=x.b
-if(y===$){y!==$&&B.a2()
-x.b=x}w!==$&&B.a2()
-w=x.c=new A.atn()}return w},
-$ieL:1,
-$ift:1,
-guk(){return this.a}}
-A.atn.prototype={
-gDt(){return"S'ha produi\u0308t un error"}}
+if(y===$){y!==$&&B.a1()
+x.b=x}w!==$&&B.a1()
+w=x.c=new A.aub()}return w},
+$ieQ:1,
+$ify:1,
+guy(){return this.a}}
+A.aub.prototype={
+gDT(){return"S'ha produi\u0308t un error"}}
 var z=a.updateTypes([])
-A.aum.prototype={
-$1(d){return A.aUK(this.a,d)},
-$S:63};(function inheritance(){var y=a.inheritMany,x=a.inherit
-y(B.t,[A.Rb,A.atn])
-x(A.aum,B.j9)})()
-B.aza(b.typeUniverse,JSON.parse('{"Rb":{"eL":[],"ft":["eM","eL"]}}'))};
+A.avb.prototype={
+$1(d){return A.aVD(this.a,d)},
+$S:53};(function inheritance(){var y=a.inheritMany,x=a.inherit
+y(B.t,[A.Rx,A.aub])
+x(A.avb,B.je)})()
+B.azY(b.typeUniverse,JSON.parse('{"Rx":{"eQ":[],"fy":["eS","eQ"]}}'))};
 ((a,b)=>{a[b]=a.current
-a.eventLog.push({p:"main.dart.js_1",e:"endPart",h:b})})($__dart_deferred_initializers__,"2K+criNk5doedWCIv91589//3HU=");
+a.eventLog.push({p:"main.dart.js_1",e:"endPart",h:b})})($__dart_deferred_initializers__,"5oKKlcWbvZ3d71CdsdWXiei8azM=");
