@@ -1,8 +1,11 @@
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:gerardggf_cv/app/core/constants/assets.dart';
 import 'package:gerardggf_cv/app/core/utils/extensions/num_to_sizedbox.dart';
+import 'package:gerardggf_cv/app/core/utils/functions/snack_bar.dart';
+import 'package:gerardggf_cv/app/core/utils/functions/url_launcher.dart';
 import 'package:gerardggf_cv/app/presentation/modules/experience/experience_view.dart';
 import 'package:go_router/go_router.dart';
 import 'package:url_launcher/url_launcher.dart';
@@ -33,18 +36,37 @@ class _HomeViewState extends ConsumerState<HomeView> {
           spacing: 12,
           runSpacing: 8,
           crossAxisAlignment: WrapCrossAlignment.center,
-          children: const [
+          children: [
             Icon(Icons.place, size: 18),
             Text('Terrassa, Barcelona, España'),
             SizedBox(width: 16),
-            Icon(Icons.call, size: 18),
-            Text('+34 622 806 65 51'),
+            TextButton.icon(
+              onPressed: () {
+                Clipboard.setData(ClipboardData(text: '+34 622 80 65 51'));
+                showSnackBarText(
+                  context,
+                  'Número de contacto copiado en el portapapeles',
+                );
+              },
+              icon: Icon(Icons.call, size: 18),
+              label: Text('+34 622 806 65 51'),
+            ),
             SizedBox(width: 16),
-            Icon(Icons.link, size: 18),
-            Text('linkedin.com/in/gerardgutierrez'),
+            TextButton.icon(
+              onPressed: () {
+                launchUrlString('https://linkedin.com/in/gerardgutierrez');
+              },
+              icon: Icon(Icons.link, size: 18),
+              label: Text('linkedin.com/in/gerardgutierrez'),
+            ),
             SizedBox(width: 16),
-            Icon(Icons.code, size: 18),
-            Text('github.com/gerardggf'),
+            TextButton.icon(
+              onPressed: () {
+                launchUrlString('https://github.com/gerardggf');
+              },
+              icon: Icon(Icons.code, size: 18),
+              label: Text('github.com/gerardggf'),
+            ),
           ],
         ),
         20.h,
@@ -71,6 +93,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
             Chip(label: Text('SQL')),
             Chip(label: Text('Stripe')),
             Chip(label: Text('DataWeave')),
+
             Chip(label: Text('JavaScript')),
             Chip(label: Text('HTML')),
             Chip(
@@ -95,6 +118,9 @@ class _HomeViewState extends ConsumerState<HomeView> {
             Chip(
               label: Text('VBA', style: TextStyle(color: Colors.grey)),
             ),
+            Chip(
+              label: Text('C#', style: TextStyle(color: Colors.grey)),
+            ),
           ],
         ),
         24.h,
@@ -111,12 +137,14 @@ class _HomeViewState extends ConsumerState<HomeView> {
             Chip(label: Text('Firebase')),
             Chip(label: Text('REST APIs')),
             Chip(label: Text('GitHub')),
+            Chip(label: Text('BitBucket')),
             Chip(label: Text('Codemagic')),
             Chip(label: Text('AnyPoint Studio')),
             Chip(label: Text('XCode')),
             Chip(label: Text('Trello')),
             Chip(label: Text('Excel')),
             Chip(label: Text('Android Studio')),
+            Chip(label: Text('Gradle')),
             Chip(label: Text('GCP')),
             Chip(
               label: Text('AWS', style: TextStyle(color: Colors.grey)),

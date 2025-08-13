@@ -17,19 +17,78 @@ class EducationView extends StatelessWidget {
           style: TextStyle(fontWeight: FontWeight.bold, fontSize: 32),
         ),
         _EduCard(
-          school: 'UNIVERSITAT OBERTA de CATALUNYA (UOC)',
-          degree:
+          title: 'UNIVERSITAT OBERTA de CATALUNYA (UOC)',
+          content:
               'Máster en Ciberseguridad y Privacidad · Mención en tecnologías',
           location: 'Barcelona, España',
           dates: 'Feb. 2024 – Feb. 2026',
         ),
         _EduCard(
-          school: 'UNIVERSITAT AUTÒNOMA de BARCELONA (UAB)',
-          degree:
+          title: 'UNIVERSITAT AUTÒNOMA de BARCELONA (UAB)',
+          content:
               'Empresa y Tecnología · Mención en gestión de la infraestructura IT',
           location: 'Barcelona, España',
           dates: 'Sept. 2017 – Junio 2021',
         ),
+        10.h,
+        const Divider(),
+        10.h,
+        Text(
+          'Idiomas',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
+        ),
+        _EduCard(title: 'Catalán', content: 'Nivel nativo. Certificación C2'),
+        _EduCard(title: 'Español', content: 'Nivel nativo.'),
+        _EduCard(
+          title: 'Inglés',
+          content: 'Nivel avanzado. Certificación FCE (B2)',
+        ),
+        10.h,
+        const Divider(),
+        10.h,
+        Text(
+          'Cursos y certificaciones',
+          style: TextStyle(fontWeight: FontWeight.bold, fontSize: 26),
+        ),
+        _EduCard(
+          title: 'Mulesoft Certified Developer Level 1',
+          content: 'Mulesoft',
+          dates: '2022',
+        ),
+        _EduCard(title: 'Flutter avanzado', content: 'Udemy', dates: '2023'),
+        _EduCard(title: 'Flutter Isolates', content: 'Udemy', dates: '2023'),
+        _EduCard(title: 'Flutter desde cero', content: 'Udemy', dates: '2022'),
+        _EduCard(
+          title: 'Advanced Course in Excel',
+          content: 'edX',
+          dates: '2021',
+        ),
+        _EduCard(
+          title: 'Intermeditate SQL Server',
+          content: 'Datacamp',
+          dates: '2021',
+        ),
+        _EduCard(
+          title: 'Functions for manipulating data in SQL Server',
+          content: 'Datacamp',
+          dates: '2021',
+        ),
+        _EduCard(
+          title: 'SQL Relational Databases',
+          content: 'Datacamp',
+          dates: '2020',
+        ),
+        _EduCard(
+          title: 'Introduction to SQL Server',
+          content: 'Datacamp',
+          dates: '2020',
+        ),
+        _EduCard(
+          title: 'HTML, JavaScript, C#, Angular & Kotlin',
+          content: 'Sololearn',
+          dates: '2020',
+        ),
+
         Padding(
           padding: const EdgeInsets.all(30),
           child: TextButton.icon(
@@ -46,12 +105,13 @@ class EducationView extends StatelessWidget {
 }
 
 class _EduCard extends StatelessWidget {
-  final String school, degree, location, dates;
+  final String title, content;
+  final String? location, dates;
   const _EduCard({
-    required this.school,
-    required this.degree,
-    required this.location,
-    required this.dates,
+    required this.title,
+    required this.content,
+    this.location,
+    this.dates,
   });
 
   @override
@@ -64,13 +124,16 @@ class _EduCard extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              school,
+              title,
               style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
             ),
             6.h,
-            Text(degree),
+            Text(
+              content + (location == null && dates != null ? ' · $dates' : ''),
+            ),
             4.h,
-            Text('$location · $dates', style: const TextStyle(fontSize: 13)),
+            if (location != null)
+              Text('$location · $dates', style: const TextStyle(fontSize: 13)),
           ],
         ),
       ),
