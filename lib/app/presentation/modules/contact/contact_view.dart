@@ -85,11 +85,17 @@ class _ContactRow extends StatelessWidget {
       onTap: onTap,
       borderRadius: BorderRadius.circular(15),
       child: Card(
-        child: ListTile(
-          leading: Icon(icon),
-          onTap: onTap,
-          title: SelectableText(label),
-          trailing: const Icon(Icons.open_in_new),
+        margin: EdgeInsets.symmetric(vertical: 5),
+        child: Padding(
+          padding: const EdgeInsets.all(20),
+          child: Row(
+            children: [
+              Icon(icon),
+              10.w,
+              Expanded(child: Text(label)),
+              Icon(Icons.open_in_new),
+            ],
+          ),
         ),
       ),
     );

@@ -37,20 +37,20 @@ class AppShell extends StatelessWidget {
               destinations: const [
                 NavigationRailDestination(
                   icon: Icon(Icons.home),
-                  label: Text('Home'),
+                  label: Text('Inicio'),
                 ),
 
                 NavigationRailDestination(
                   icon: Icon(Icons.work_outline),
-                  label: Text('Experience'),
+                  label: Text('Experiencia'),
                 ),
                 NavigationRailDestination(
                   icon: Icon(Icons.school_outlined),
-                  label: Text('Education'),
+                  label: Text('Educación'),
                 ),
                 NavigationRailDestination(
                   icon: Icon(Icons.mail_outline),
-                  label: Text('Contact'),
+                  label: Text('Contacto'),
                 ),
                 // NavigationRailDestination(
                 //   icon: Icon(Icons.work_outline),
@@ -92,14 +92,20 @@ class AppShell extends StatelessWidget {
                 }
               },
               destinations: const [
-                NavigationDestination(icon: Icon(Icons.home), label: 'Home'),
+                NavigationDestination(icon: Icon(Icons.home), label: 'Inicio'),
 
                 NavigationDestination(
                   icon: Icon(Icons.work_outline),
-                  label: 'Exp',
+                  label: 'Experiencia',
                 ),
-                NavigationDestination(icon: Icon(Icons.school), label: 'Edu'),
-                NavigationDestination(icon: Icon(Icons.mail), label: 'Contact'),
+                NavigationDestination(
+                  icon: Icon(Icons.school),
+                  label: 'Educación',
+                ),
+                NavigationDestination(
+                  icon: Icon(Icons.mail),
+                  label: 'Contacto',
+                ),
               ],
             ),
     );

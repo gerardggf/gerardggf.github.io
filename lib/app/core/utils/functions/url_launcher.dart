@@ -11,3 +11,9 @@ Future<void> launchUrlC(Uri url) async {
     throw Exception('Could not launch $url');
   }
 }
+
+Future<void> launchNewTabPdf(String url) async {
+  if (!await launchUrl(Uri.parse(url), webOnlyWindowName: '_blank')) {
+    throw Exception('Could not launch $url');
+  }
+}

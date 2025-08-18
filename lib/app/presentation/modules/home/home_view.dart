@@ -1,4 +1,3 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -8,7 +7,6 @@ import 'package:gerardggf_cv/app/core/utils/functions/snack_bar.dart';
 import 'package:gerardggf_cv/app/core/utils/functions/url_launcher.dart';
 import 'package:gerardggf_cv/app/presentation/modules/experience/experience_view.dart';
 import 'package:go_router/go_router.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 //TODO:traducir todo al inglés
 
@@ -39,7 +37,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
           children: [
             Icon(Icons.place, size: 18),
             Text('Terrassa, Barcelona, España'),
-            SizedBox(width: 16),
+            16.w,
             TextButton.icon(
               onPressed: () {
                 Clipboard.setData(ClipboardData(text: '+34 622 80 65 51'));
@@ -51,7 +49,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
               icon: Icon(Icons.call, size: 18),
               label: Text('+34 622 806 65 51'),
             ),
-            SizedBox(width: 16),
+            16.w,
             TextButton.icon(
               onPressed: () {
                 launchUrlString('https://linkedin.com/in/gerardgutierrez');
@@ -59,7 +57,7 @@ class _HomeViewState extends ConsumerState<HomeView> {
               icon: Icon(Icons.link, size: 18),
               label: Text('linkedin.com/in/gerardgutierrez'),
             ),
-            SizedBox(width: 16),
+            16.w,
             TextButton.icon(
               onPressed: () {
                 launchUrlString('https://github.com/gerardggf');
@@ -165,21 +163,19 @@ class _HomeViewState extends ConsumerState<HomeView> {
             Expanded(
               child: _DownloadCVCard(
                 onTap: () async {
-                  if (!await launchUrl(
-                    Uri.parse(Assets.cvEsp),
-                    webOnlyWindowName: '_blank',
-                  )) {
-                    if (kDebugMode) {
-                      print('No se pudo abrir el CV');
-                    }
-                  }
+                  launchNewTabPdf(Assets.cvEsp);
                 },
                 text: 'Español',
               ),
             ),
             10.w,
             Expanded(
-              child: _DownloadCVCard(onTap: () {}, text: 'Inglés'),
+              child: _DownloadCVCard(
+                onTap: () {
+                  launchNewTabPdf(Assets.cvEn);
+                },
+                text: 'Inglés',
+              ),
             ),
           ],
         ),

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:gerardggf_cv/app/core/constants/assets.dart';
 import 'package:gerardggf_cv/app/core/utils/extensions/num_to_sizedbox.dart';
+import 'package:gerardggf_cv/app/core/utils/functions/url_launcher.dart';
 import 'package:gerardggf_cv/app/presentation/modules/contact/contact_view.dart';
 import 'package:go_router/go_router.dart';
 
@@ -54,10 +56,43 @@ class EducationView extends StatelessWidget {
           title: 'Mulesoft Certified Developer Level 1',
           content: 'Mulesoft',
           dates: '2022',
+          onPressed: () async {
+            launchNewTabPdf(Assets.mule);
+          },
         ),
-        _EduCard(title: 'Flutter avanzado', content: 'Udemy', dates: '2023'),
+        _EduCard(
+          title: 'Introduction to Model Context Protocol',
+          content: 'Anthropic',
+          dates: '2025',
+          onPressed: () async {
+            launchNewTabPdf(Assets.introMcp);
+          },
+        ),
+        _EduCard(
+          title: 'Flutter avanzado',
+          content: 'Udemy',
+          dates: '2023',
+          onPressed: () async {
+            launchNewTabPdf(Assets.flutterAvanzado);
+          },
+        ),
         _EduCard(title: 'Flutter Isolates', content: 'Udemy', dates: '2023'),
-        _EduCard(title: 'Flutter desde cero', content: 'Udemy', dates: '2022'),
+        _EduCard(
+          title: 'Flutter desde cero',
+          content: 'Udemy',
+          dates: '2022',
+          onPressed: () async {
+            launchNewTabPdf(Assets.flutterDesdeCero);
+          },
+        ),
+        _EduCard(
+          title: 'Desarrollo de Apps Móviles',
+          content: 'Google Actívate',
+          dates: '2021',
+          onPressed: () async {
+            launchNewTabPdf(Assets.desarrolloApps);
+          },
+        ),
         _EduCard(
           title: 'Advanced Course in Excel',
           content: 'edX',
@@ -67,26 +102,47 @@ class EducationView extends StatelessWidget {
           title: 'Intermeditate SQL Server',
           content: 'Datacamp',
           dates: '2021',
+          onPressed: () async {
+            launchNewTabPdf(Assets.intermediateSqlServer);
+          },
         ),
         _EduCard(
           title: 'Functions for manipulating data in SQL Server',
           content: 'Datacamp',
           dates: '2021',
+          onPressed: () async {
+            launchNewTabPdf(Assets.functionsManipulSql);
+          },
         ),
         _EduCard(
-          title: 'SQL Relational Databases',
+          title: 'Introduction to Relational Databases in SQL',
           content: 'Datacamp',
           dates: '2020',
+          onPressed: () async {
+            launchNewTabPdf(Assets.introDbSql);
+          },
         ),
         _EduCard(
           title: 'Introduction to SQL Server',
           content: 'Datacamp',
+          onPressed: () async {
+            launchNewTabPdf(Assets.introSqlServer);
+          },
           dates: '2020',
         ),
+
         _EduCard(
-          title: 'HTML, JavaScript, C#, Angular & Kotlin',
-          content: 'Sololearn',
+          title: 'Protege tu negocio: Ciberseguridad en el Teletrabajo',
+          content: 'Google Actívate',
           dates: '2020',
+          onPressed: () async {
+            launchNewTabPdf(Assets.ciberseguridadTeletrabajo);
+          },
+        ),
+        _EduCard(
+          title: 'HTML, JavaScript, C#, Php, Angular & Kotlin',
+          content: 'Sololearn',
+          dates: '2020/2021',
         ),
 
         Padding(
@@ -107,34 +163,58 @@ class EducationView extends StatelessWidget {
 class _EduCard extends StatelessWidget {
   final String title, content;
   final String? location, dates;
+  final VoidCallback? onPressed;
   const _EduCard({
     required this.title,
     required this.content,
     this.location,
     this.dates,
+    this.onPressed,
   });
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      margin: const EdgeInsets.symmetric(vertical: 10),
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              title,
-              style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+    return Padding(
+      padding: const EdgeInsets.symmetric(vertical: 10),
+      child: InkWell(
+        borderRadius: BorderRadius.circular(10),
+        onTap: onPressed,
+        child: Card(
+          child: Padding(
+            padding: const EdgeInsets.all(16),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: const TextStyle(
+                          fontSize: 18,
+                          fontWeight: FontWeight.w800,
+                        ),
+                      ),
+                      6.h,
+                      Text(
+                        content +
+                            (location == null && dates != null
+                                ? ' · $dates'
+                                : ''),
+                      ),
+                      4.h,
+                      if (location != null)
+                        Text(
+                          '$location · $dates',
+                          style: const TextStyle(fontSize: 13),
+                        ),
+                    ],
+                  ),
+                ),
+                if (onPressed != null) Icon(Icons.open_in_new),
+              ],
             ),
-            6.h,
-            Text(
-              content + (location == null && dates != null ? ' · $dates' : ''),
-            ),
-            4.h,
-            if (location != null)
-              Text('$location · $dates', style: const TextStyle(fontSize: 13)),
-          ],
+          ),
         ),
       ),
     );
