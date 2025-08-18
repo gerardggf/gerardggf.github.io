@@ -81209,70 +81209,70 @@ return A.aak(A.a([l,new A.dA("UNIVERSITAT OBERTA de CATALUNYA (UOC)","M\xe1ster 
 A.a69.prototype={
 $0(){var s=0,r=A.P(t.H)
 var $async$$0=A.L(function(a,b){if(a===1)return A.M(b,r)
-while(true)switch(s){case 0:A.fY("assets/certificates/mule1.pdf")
+while(true)switch(s){case 0:A.fY("mule1.pdf")
 return A.N(null,r)}})
 return A.O($async$$0,r)},
 $S:9}
 A.a6a.prototype={
 $0(){var s=0,r=A.P(t.H)
 var $async$$0=A.L(function(a,b){if(a===1)return A.M(b,r)
-while(true)switch(s){case 0:A.fY("assets/certificates/intro_mcp.pdf")
+while(true)switch(s){case 0:A.fY("intro_mcp.pdf")
 return A.N(null,r)}})
 return A.O($async$$0,r)},
 $S:9}
 A.a6b.prototype={
 $0(){var s=0,r=A.P(t.H)
 var $async$$0=A.L(function(a,b){if(a===1)return A.M(b,r)
-while(true)switch(s){case 0:A.fY("assets/certificates/flutter_avanzado_udemy.pdf")
+while(true)switch(s){case 0:A.fY("flutter_avanzado_udemy.pdf")
 return A.N(null,r)}})
 return A.O($async$$0,r)},
 $S:9}
 A.a6c.prototype={
 $0(){var s=0,r=A.P(t.H)
 var $async$$0=A.L(function(a,b){if(a===1)return A.M(b,r)
-while(true)switch(s){case 0:A.fY("assets/certificates/flutter_desde_cero_udemy.pdf")
+while(true)switch(s){case 0:A.fY("flutter_desde_cero_udemy.pdf")
 return A.N(null,r)}})
 return A.O($async$$0,r)},
 $S:9}
 A.a6d.prototype={
 $0(){var s=0,r=A.P(t.H)
 var $async$$0=A.L(function(a,b){if(a===1)return A.M(b,r)
-while(true)switch(s){case 0:A.fY("assets/certificates/desarrollo_apps.pdf")
+while(true)switch(s){case 0:A.fY("desarrollo_apps.pdf")
 return A.N(null,r)}})
 return A.O($async$$0,r)},
 $S:9}
 A.a6e.prototype={
 $0(){var s=0,r=A.P(t.H)
 var $async$$0=A.L(function(a,b){if(a===1)return A.M(b,r)
-while(true)switch(s){case 0:A.fY("assets/certificates/intermediate_sql_server.pdf")
+while(true)switch(s){case 0:A.fY("intermediate_sql_server.pdf")
 return A.N(null,r)}})
 return A.O($async$$0,r)},
 $S:9}
 A.a6f.prototype={
 $0(){var s=0,r=A.P(t.H)
 var $async$$0=A.L(function(a,b){if(a===1)return A.M(b,r)
-while(true)switch(s){case 0:A.fY("assets/certificates/functions_manipul_sql.pdf")
+while(true)switch(s){case 0:A.fY("functions_manipul_sql.pdf")
 return A.N(null,r)}})
 return A.O($async$$0,r)},
 $S:9}
 A.a6g.prototype={
 $0(){var s=0,r=A.P(t.H)
 var $async$$0=A.L(function(a,b){if(a===1)return A.M(b,r)
-while(true)switch(s){case 0:A.fY("assets/certificates/intro_db_sql.pdf")
+while(true)switch(s){case 0:A.fY("intro_db_sql.pdf")
 return A.N(null,r)}})
 return A.O($async$$0,r)},
 $S:9}
 A.a6h.prototype={
 $0(){var s=0,r=A.P(t.H)
 var $async$$0=A.L(function(a,b){if(a===1)return A.M(b,r)
-while(true)switch(s){case 0:A.fY("assets/certificates/intro_sql_server.pdf")
+while(true)switch(s){case 0:A.fY("intro_sql_server.pdf")
 return A.N(null,r)}})
 return A.O($async$$0,r)},
 $S:9}
 A.a6i.prototype={
 $0(){var s=0,r=A.P(t.H)
 var $async$$0=A.L(function(a,b){if(a===1)return A.M(b,r)
-while(true)switch(s){case 0:A.fY("assets/certificates/ciberseguridad_teletrabajo.pdf")
+while(true)switch(s){case 0:A.fY("ciberseguridad_teletrabajo.pdf")
 return A.N(null,r)}})
 return A.O($async$$0,r)},
 $S:9}
@@ -81322,12 +81322,12 @@ $S:0}
 A.aq0.prototype={
 $0(){var s=0,r=A.P(t.H)
 var $async$$0=A.L(function(a,b){if(a===1)return A.M(b,r)
-while(true)switch(s){case 0:A.fY("assets/cv_esp.pdf")
+while(true)switch(s){case 0:A.fY("cv_esp.pdf")
 return A.N(null,r)}})
 return A.O($async$$0,r)},
 $S:9}
 A.aq1.prototype={
-$0(){A.fY("assets/cv_en.pdf")},
+$0(){A.fY("cv_en.pdf")},
 $S:0}
 A.aq2.prototype={
 $0(){A.h5(this.a,"experience")},
