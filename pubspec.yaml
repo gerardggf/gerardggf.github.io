@@ -44,6 +44,6 @@ flutter:
 
   assets:
     - assets/
-    - assets/certificates/
+    - assets/pdfs/
     - assets/img/
     - assets/img/projects/

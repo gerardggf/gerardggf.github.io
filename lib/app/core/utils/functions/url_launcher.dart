@@ -14,7 +14,9 @@ Future<void> launchUrlC(Uri url) async {
 }
 
 Future<void> launchNewTabPdf(String name) async {
-  final url = kDebugMode ? Uri.parse(name) : Uri.base.resolve('pdfs/$name');
+  final url = kDebugMode
+      ? Uri.parse('assets/`pdfs`/$name')
+      : Uri.base.resolve('pdfs/$name');
   if (!await launchUrl(url, webOnlyWindowName: '_blank')) {
     throw Exception('Could not launch $url');
   }

@@ -17,7 +17,7 @@ jobs:
       - run: flutter pub run slang
       - run: flutter pub run build_runner build --delete-conflicting-outputs
       - run: flutter build web --release --base-href "/"
-      - run: mkdir -p build/web/pdfs && cp -r assets/certificates/* build/web/pdfs/ || true
+      - run: mkdir -p build/web/pdfs && cp -r assets/pdfs/* build/web/pdfs/ || true
       - run: cp build/web/index.html build/web/404.html
       - run: touch build/web/.nojekyll
       - uses: peaceiris/actions-gh-pages@v4
